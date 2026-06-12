@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --font-inter: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-hanken: "Hanken Grotesk", "Segoe UI", Arial, sans-serif;
+  --background: #f9f9fc;
+  --surface: #ffffff;
+  --surface-soft: #f3f3f6;
+  --surface-muted: #e8e8ea;
+  --primary: #273b78;
+  --primary-deep: #0c2461;
+  --accent: #0d9fc4;
+  --secondary: #006780;
+  --text: #1a1c1e;
+  --muted: #454650;
+  --outline: #c5c6d1;
+}
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-hanken);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-muted: var(--surface-muted);
+  --color-primary: var(--primary);
+  --color-primary-deep: var(--primary-deep);
+  --color-accent: var(--accent);
+  --color-secondary: var(--secondary);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-outline: var(--outline);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-inter), Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
