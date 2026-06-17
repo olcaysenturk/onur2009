@@ -25,3 +25,4 @@ pnpm-debug.log*
 # editor/system
 .DS_Store
 .vscode/settings.json
+.vscode/mcp.json
