@@ -32,8 +32,7 @@ export function Header() {
     "/sobaklava-distribution",
     "/bulgatex-consulting",
   ]);
-  const servicesLabel =
-    language === "tr" ? "Markalar" : language === "bg" ? "Марки" : "Brands";
+  const servicesLabel = t.common.brandsLabel;
   const serviceDropdownItems = serviceSlugs.map((slug) => ({
     label: t.divisions[slug].title,
     description: t.divisions[slug].eyebrow,

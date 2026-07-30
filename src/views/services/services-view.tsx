@@ -6,82 +6,13 @@ import { ArrowRight, Lightbulb, Truck } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { useLanguage } from "@/hooks/useLanguage";
 import { pageImages } from "@/lib/pages";
-import type { Language } from "@/types/i18n";
+import { images } from "@/lib/site";
+import type { Translation } from "@/locales/types";
 
-type ServicesContent = {
-  title: string;
-  body: string;
-  explore: string;
-  viewDetails: string;
-  exploreService: string;
-  visitBoutiques: string;
-  discoverNetwork: string;
-  consult: string;
-  tags: string[];
-  footerBody: string;
-  footerCopyright: string;
-  footerDivisions: string;
-  footerBrands: string;
-  footerLegal: string;
-};
-
-const contentByLanguage: Record<Language, ServicesContent> = {
-  en: {
-    title: "Our Business Divisions",
-    body:
-      "Altinyildiz Group International operates across six core divisions, delivering premium B2B solutions globally. We combine deep industry expertise with an unwavering commitment to structural integrity and operational excellence.",
-    explore: "Explore Division",
-    viewDetails: "View Details",
-    exploreService: "Explore Service",
-    visitBoutiques: "Visit Boutiques",
-    discoverNetwork: "Discover Network",
-    consult: "Consult With Us",
-    tags: ["Agriculture & Trade", "Fleet Maintenance", "Retail & Fashion", "FMCG Distribution", "Strategic Advisory"],
-    footerBody: "The Architect of Success. Structuring global trade, logistics, and consulting with unwavering reliability.",
-    footerCopyright: "© 2024 LOGO International. All rights reserved.",
-    footerDivisions: "Divisions",
-    footerBrands: "Brands",
-    footerLegal: "Legal",
-  },
-  tr: {
-    title: "İş Birimlerimiz",
-    body:
-      "Altinyildiz Group International altı ana birimde faaliyet gösterir ve global ölçekte premium B2B çözümler sunar. Derin sektör uzmanlığını operasyonel mükemmellik ile birleştiririz.",
-    explore: "Birimi İncele",
-    viewDetails: "Detayları Gör",
-    exploreService: "Hizmeti İncele",
-    visitBoutiques: "Butikleri Gör",
-    discoverNetwork: "Ağı Keşfet",
-    consult: "Bizimle Görüş",
-    tags: ["Tarım & Ticaret", "Filo Bakımı", "Perakende & Moda", "FMCG Dağıtım", "Stratejik Danışmanlık"],
-    footerBody: "Başarının mimarı. Küresel ticaret, lojistik ve danışmanlığı güvenilirlikle yapılandırıyoruz.",
-    footerCopyright: "© 2024 LOGO International. Tüm hakları saklıdır.",
-    footerDivisions: "Birimler",
-    footerBrands: "Markalar",
-    footerLegal: "Yasal",
-  },
-  bg: {
-    title: "Нашите бизнес дивизии",
-    body:
-      "Altinyildiz Group International оперира в шест основни дивизии и доставя премиум B2B решения глобално, с фокус върху структурна надеждност и оперативно качество.",
-    explore: "Виж дивизията",
-    viewDetails: "Виж детайли",
-    exploreService: "Виж услугата",
-    visitBoutiques: "Виж бутиците",
-    discoverNetwork: "Виж мрежата",
-    consult: "Консултирай се",
-    tags: ["Земеделие & Търговия", "Поддръжка на флот", "Ритейл & Мода", "FMCG дистрибуция", "Стратегическо консултиране"],
-    footerBody: "Архитектът на успеха. Структурираме глобална търговия, логистика и консултиране с надеждност.",
-    footerCopyright: "© 2024 LOGO International. Всички права запазени.",
-    footerDivisions: "Дивизии",
-    footerBrands: "Марки",
-    footerLegal: "Правни",
-  },
-};
-
+type ServicesContent = Translation["servicesPage"];
 export default function ServicesPage() {
-  const { language, t } = useLanguage();
-  const content = contentByLanguage[language];
+  const { t } = useLanguage();
+  const content = t.servicesPage;
   const divisions = t.divisions;
 
   return (
@@ -164,7 +95,7 @@ function DarkFooter({ content }: { content: ServicesContent }) {
     <footer className="mt-20 bg-[#000613] px-4 py-16 text-white md:px-10 md:py-[120px]">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 md:grid-cols-12">
         <div className="md:col-span-4">
-          <div className="mb-6 font-display text-[32px] font-bold leading-[40px]">LOGO</div>
+          <Image src={images.logo} alt="" width={600} height={300} className="h-auto w-36 rounded bg-white p-2" />
           <p className="max-w-xs text-sm leading-5 text-white/70">{content.footerBody}</p>
         </div>
         <FooterGroup title={content.footerDivisions} links={t.footer.groups[0]?.links ?? []} />

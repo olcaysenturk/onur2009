@@ -5,83 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
 import { useLanguage } from "@/hooks/useLanguage";
+import { images } from "@/lib/site";
 import { galleryImages } from "@/lib/assets";
-import type { Language } from "@/types/i18n";
-
-const galleryText: Record<Language, {
-  title: string;
-  body: string;
-  filters: string[];
-  items: { title: string; category: string }[];
-  footerBody: string;
-  footerSectors: string;
-  footerBrands: string;
-  footerLegal: string;
-  copyright: string;
-}> = {
-  en: {
-    title: "Our Operations",
-    body: "A visual portfolio showcasing our global logistics network, premium retail spaces, and state-of-the-art service centers. Built on precision and scale.",
-    filters: ["All", "Trucks", "Logistics", "Retail Stores", "Service Centers", "Food Products"],
-    items: [
-      { title: "Global Freight Terminals", category: "Logistics & Transport" },
-      { title: "European Fleet", category: "Trucks" },
-      { title: "Flagship Store", category: "Retail Stores" },
-      { title: "Advanced Diagnostics", category: "Service Centers" },
-      { title: "Cold Storage Hub", category: "Food Products" },
-      { title: "Global Headquarters", category: "Corporate" },
-    ],
-    footerBody: "The Architect of Success. Delivering global authority and structural integrity across diverse business sectors.",
-    footerSectors: "Sectors",
-    footerBrands: "Brands",
-    footerLegal: "Legal",
-    copyright: "© 2024 LOGO International. All rights reserved.",
-  },
-  tr: {
-    title: "Operasyonlarımız",
-    body: "Küresel lojistik ağımızı, premium perakende alanlarımızı ve modern servis merkezlerimizi gösteren görsel portföy.",
-    filters: ["Tümü", "Kamyonlar", "Lojistik", "Perakende", "Servis Merkezleri", "Gıda Ürünleri"],
-    items: [
-      { title: "Küresel Yük Terminalleri", category: "Lojistik & Taşımacılık" },
-      { title: "Avrupa Filosu", category: "Kamyonlar" },
-      { title: "Amiral Mağaza", category: "Perakende" },
-      { title: "Gelişmiş Diagnostik", category: "Servis Merkezleri" },
-      { title: "Soğuk Depo Merkezi", category: "Gıda Ürünleri" },
-      { title: "Küresel Merkez", category: "Kurumsal" },
-    ],
-    footerBody: "Başarının mimarı. Farklı iş alanlarında global otorite ve yapısal güvenilirlik sunuyoruz.",
-    footerSectors: "Sektörler",
-    footerBrands: "Markalar",
-    footerLegal: "Yasal",
-    copyright: "© 2024 LOGO International. Tüm hakları saklıdır.",
-  },
-  bg: {
-    title: "Нашите операции",
-    body: "Визуално портфолио на глобалната логистична мрежа, премиум ритейл пространства и модерни сервизни центрове.",
-    filters: ["Всички", "Камиони", "Логистика", "Ритейл", "Сервизни центрове", "Храни"],
-    items: [
-      { title: "Глобални товарни терминали", category: "Логистика & Транспорт" },
-      { title: "Европейски флот", category: "Камиони" },
-      { title: "Флагмански магазин", category: "Ритейл" },
-      { title: "Разширена диагностика", category: "Сервизни центрове" },
-      { title: "Хладилен склад", category: "Храни" },
-      { title: "Глобална централа", category: "Корпоративно" },
-    ],
-    footerBody: "Архитектът на успеха. Доставяме глобален авторитет и структурна надеждност.",
-    footerSectors: "Сектори",
-    footerBrands: "Марки",
-    footerLegal: "Правни",
-    copyright: "© 2024 LOGO International. Всички права запазени.",
-  },
-};
 
 const galleryCategoryIndexes = [
   2, 1, 2, 1, 3, 4, 4, 1, 5, 3, 3, 2, 2, 5, 3, 1, 5, 1, 5, 5, 2,
 ];
 
 export default function GalleryPage() {
-  const { language, t } = useLanguage();
-  const content = galleryText[language];
+  const { t } = useLanguage();
+  const content = t.galleryView;
   const [activeFilterIndex, setActiveFilterIndex] = useState(0);
   const galleryItems = galleryImages.map((image, index) => {
     const categoryIndex = galleryCategoryIndexes[index] ?? ((index % (content.filters.length - 1)) + 1);
@@ -144,7 +77,7 @@ export default function GalleryPage() {
       <footer className="bg-[#000613] px-5 py-[120px] text-white md:px-16">
         <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 md:grid-cols-12">
           <div className="md:col-span-4">
-            <div className="mb-6 font-display text-[32px] font-bold leading-[40px]">LOGO</div>
+            <Image src={images.logo} alt="" width={600} height={300} className="h-auto w-36 rounded bg-white p-2" />
             <p className="max-w-sm text-sm leading-5 text-white/70">{content.footerBody}</p>
           </div>
           <FooterGroup title={content.footerSectors} links={t.footer.groups[0]?.links ?? []} />

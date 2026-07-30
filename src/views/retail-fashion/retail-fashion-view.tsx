@@ -11,35 +11,12 @@ import { divisionPages, pageImages } from "@/lib/pages";
 const page = divisionPages.find((item) => item.slug === "retail-fashion");
 
 export default function RetailFashionPage() {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   if (!page) return null;
 
   const localizedPage = t.divisions[page.slug] ?? page;
-  const readStory =
-    language === "tr"
-      ? "Hikayenin tamamını oku"
-      : language === "bg"
-        ? "Прочетете цялата история"
-        : "Read our full story";
-  const statLabel =
-    language === "tr"
-      ? "Yıllık uzmanlık"
-      : language === "bg"
-        ? "Години експертиза"
-        : "Years of excellence";
-  const body =
-    language === "tr"
-      ? "Bulgaristan operasyonlarımız, tekstil ustalığının onlarca yıllık birikimini seçkin erkek giyimine taşır. Geleneksel terzilik tekniklerini çağdaş kurumsal estetikle birleştiriyoruz."
-      : language === "bg"
-        ? "Нашите операции в България пренасят десетилетия текстилно майсторство в премиум мъжкото облекло. Съчетаваме традиционни шивашки техники със съвременна корпоративна естетика."
-        : "As a proud extension of the Altinyildiz Group, our Bulgarian operations bring decades of textile mastery directly to discerning gentlemen. We merge traditional tailoring techniques with contemporary corporate aesthetics.";
-  const secondaryBody =
-    language === "tr"
-      ? "Her ürün, yapısal bütünlük ve profesyonel dinginlik taahhüdümüzü temsil eder."
-      : language === "bg"
-        ? "Всяка дреха представя нашия ангажимент към структурна цялост и професионална увереност."
-        : "Every garment represents our commitment to structural integrity, using only the finest fabrics designed to maintain composure in high-stakes environments.";
+  const content = t.retailPage;
 
   return (
     <>
@@ -73,27 +50,27 @@ export default function RetailFashionPage() {
                   20+
                 </div>
                 <div className="mt-3 font-display text-xs font-bold uppercase leading-4 tracking-[0.03em]">
-                  {statLabel}
+                  {content.statLabel}
                 </div>
               </div>
             </div>
 
             <div className="pt-10 md:col-span-5 md:col-start-8 md:pt-0">
               <span className="inline-flex rounded bg-accent/10 px-4 py-2 font-sans text-xs font-medium text-accent">
-                {language === "tr" ? "Mirasımız" : language === "bg" ? "Нашето наследство" : "Our Heritage"}
+                {content.heritageLabel}
               </span>
               <h1 className="mt-8 font-display text-[30px] font-semibold leading-10 text-primary md:text-[34px]">
                 {localizedPage.headline}
               </h1>
               <div className="mt-7 space-y-5 text-base leading-7 text-muted">
-                <p>{body}</p>
-                <p>{secondaryBody}</p>
+                <p>{content.body}</p>
+                <p>{content.secondaryBody}</p>
               </div>
               <Link
                 href="/about"
                 className="mt-8 inline-flex items-center gap-3 font-display text-sm font-bold text-primary transition-colors hover:text-accent"
               >
-                {readStory}
+                {content.readStory}
                 <ArrowRight aria-hidden className="h-5 w-5" />
               </Link>
             </div>

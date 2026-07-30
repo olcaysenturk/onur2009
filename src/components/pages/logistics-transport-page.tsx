@@ -5,177 +5,13 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Globe2, Map, Truck } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { pageImages } from "@/lib/pages";
-import type { Language } from "@/types/i18n";
+import { images } from "@/lib/site";
+import type { Translation } from "@/locales/types";
 
-type LogisticsContent = {
-  heroEyebrow: string;
-  heroTitle: string;
-  heroAccent: string;
-  heroBody: string;
-  heroPrimary: string;
-  heroSecondary: string;
-  operationsTitle: string;
-  operationsBody: string;
-  roadTitle: string;
-  roadBody: string;
-  roadItems: string[];
-  freightTitle: string;
-  freightBody: string;
-  freightLink: string;
-  customsTitle: string;
-  customsSteps: { title: string; body: string }[];
-  fleetTitle: string;
-  fleetBody: string;
-  footprintTitle: string;
-  footprintBody: string;
-  mapTitle: string;
-  mapBody: string;
-  footerBody: string;
-  footerCta: string;
-  footerCopyright: string;
-  footerDivisions: string;
-  footerBrands: string;
-  footerLegal: string;
-};
-
-const logisticsContent: Record<Language, LogisticsContent> = {
-  en: {
-    heroEyebrow: "Global Logistics Division",
-    heroTitle: "Precision Transport,",
-    heroAccent: "Global Scale.",
-    heroBody:
-      "Engineered for high-stakes B2B operations. We deliver structural integrity, visionary supply chain solutions, and the security of an established global leader.",
-    heroPrimary: "Explore Our Fleet",
-    heroSecondary: "Operational Map",
-    operationsTitle: "Architects of the Supply Chain",
-    operationsBody:
-      "Comprehensive logistical solutions designed for reliability and speed across international borders.",
-    roadTitle: "Road Transport",
-    roadBody:
-      "Our core competency. We operate a massive, modern fleet ensuring uninterrupted supply lines. From standard freight to temperature-controlled logistics, our road network is the backbone of regional trade.",
-    roadItems: ["FTL & LTL Services", "Specialized Cargo Handling"],
-    freightTitle: "Freight Forwarding",
-    freightBody:
-      "Seamless integration of air, sea, and rail freight to optimize your global supply chain flow.",
-    freightLink: "View Capabilities",
-    customsTitle: "Frictionless Customs clearance",
-    customsSteps: [
-      {
-        title: "Pre-Clearance Verification",
-        body: "Automated document checking to prevent delays at borders.",
-      },
-      {
-        title: "Dedicated Brokerage",
-        body: "In-house experts navigating complex international tariffs.",
-      },
-    ],
-    fleetTitle: "Modern, Sustainable Fleet",
-    fleetBody: "Euro 6 compliant vehicles maintained to rigorous aviation-style standards.",
-    footprintTitle: "Operational Footprint",
-    footprintBody: "Connecting strategic economic hubs across Europe and Asia.",
-    mapTitle: "Interactive Map Interface Pending Integration",
-    mapBody: "Connecting Turkey, Bulgaria, and broader European transit routes.",
-    footerBody:
-      "Architecting success through premium logistics, fresh produce trade, and robust corporate services.",
-    footerCta: "Contact Corporate",
-    footerCopyright: "© 2024 LOGO International. All rights reserved.",
-    footerDivisions: "Divisions",
-    footerBrands: "Brands",
-    footerLegal: "Legal",
-  },
-  tr: {
-    heroEyebrow: "Küresel Lojistik Birimi",
-    heroTitle: "Hassas Taşımacılık,",
-    heroAccent: "Küresel Ölçek.",
-    heroBody:
-      "Yüksek öncelikli B2B operasyonlar için tasarlandı. Yapısal güvenilirlik, vizyoner tedarik zinciri çözümleri ve köklü bir global liderin güvenini sunuyoruz.",
-    heroPrimary: "Filomuzu İncele",
-    heroSecondary: "Operasyon Haritası",
-    operationsTitle: "Tedarik Zincirinin Mimarları",
-    operationsBody:
-      "Uluslararası sınırlarda güvenilirlik ve hız için tasarlanmış kapsamlı lojistik çözümler.",
-    roadTitle: "Karayolu Taşımacılığı",
-    roadBody:
-      "Temel uzmanlığımız. Kesintisiz tedarik hatları için modern ve büyük ölçekli filo işletiyoruz. Standart yükten sıcaklık kontrollü lojistiğe kadar karayolu ağımız bölgesel ticaretin omurgasıdır.",
-    roadItems: ["FTL & LTL Hizmetleri", "Özel Kargo Elleçleme"],
-    freightTitle: "Freight Forwarding",
-    freightBody:
-      "Hava, deniz ve demiryolu yüklerinin kusursuz entegrasyonu ile global tedarik zinciri akışınızı optimize eder.",
-    freightLink: "Kabiliyetleri Gör",
-    customsTitle: "Sürtünmesiz Gümrük Süreci",
-    customsSteps: [
-      {
-        title: "Ön Kontrol Doğrulaması",
-        body: "Sınır gecikmelerini önlemek için otomatik belge kontrolü.",
-      },
-      {
-        title: "Dedike Gümrük Müşavirliği",
-        body: "Karmaşık uluslararası tarifeleri yöneten şirket içi uzmanlar.",
-      },
-    ],
-    fleetTitle: "Modern, Sürdürülebilir Filo",
-    fleetBody: "Euro 6 uyumlu araçlar, havacılık düzeyinde sıkı standartlarla bakımdan geçirilir.",
-    footprintTitle: "Operasyonel Kapsam",
-    footprintBody: "Avrupa ve Asya’daki stratejik ekonomik merkezleri birbirine bağlarız.",
-    mapTitle: "Etkileşimli Harita Entegrasyonu Bekleniyor",
-    mapBody: "Türkiye, Bulgaristan ve geniş Avrupa transit rotalarını bağlar.",
-    footerBody:
-      "Premium lojistik, yaş sebze meyve ticareti ve güçlü kurumsal hizmetlerle başarıyı tasarlıyoruz.",
-    footerCta: "Kurumsal İletişim",
-    footerCopyright: "© 2024 LOGO International. Tüm hakları saklıdır.",
-    footerDivisions: "Birimler",
-    footerBrands: "Markalar",
-    footerLegal: "Yasal",
-  },
-  bg: {
-    heroEyebrow: "Глобална логистична дивизия",
-    heroTitle: "Прецизен транспорт,",
-    heroAccent: "Глобален мащаб.",
-    heroBody:
-      "Проектирано за критични B2B операции. Доставяме структурна надеждност, визионерски решения за веригата и сигурността на утвърден глобален лидер.",
-    heroPrimary: "Виж флота",
-    heroSecondary: "Оперативна карта",
-    operationsTitle: "Архитекти на веригата за доставки",
-    operationsBody:
-      "Комплексни логистични решения за надеждност и скорост през международни граници.",
-    roadTitle: "Автомобилен транспорт",
-    roadBody:
-      "Нашата основна компетентност. Управляваме модерна мащабна флота за непрекъснати доставки — от стандартни товари до температурно контролирана логистика.",
-    roadItems: ["FTL & LTL услуги", "Специализирана обработка на товари"],
-    freightTitle: "Спедиция",
-    freightBody:
-      "Безпроблемна интеграция на въздушни, морски и железопътни товари за оптимизация на глобалната верига.",
-    freightLink: "Виж възможностите",
-    customsTitle: "Безпроблемно митническо оформяне",
-    customsSteps: [
-      {
-        title: "Предварителна проверка",
-        body: "Автоматизирана проверка на документи за избягване на забавяния.",
-      },
-      {
-        title: "Специализиран брокераж",
-        body: "Вътрешни експерти за сложни международни тарифи.",
-      },
-    ],
-    fleetTitle: "Модерен, устойчив флот",
-    fleetBody: "Euro 6 съвместими превозни средства с поддръжка по строги стандарти.",
-    footprintTitle: "Оперативен обхват",
-    footprintBody: "Свързваме стратегически икономически центрове в Европа и Азия.",
-    mapTitle: "Очаква се интеграция на интерактивна карта",
-    mapBody: "Свързване на Турция, България и европейски транзитни маршрути.",
-    footerBody:
-      "Проектираме успех чрез премиум логистика, търговия с пресни продукти и корпоративни услуги.",
-    footerCta: "Корпоративен контакт",
-    footerCopyright: "© 2024 LOGO International. Всички права запазени.",
-    footerDivisions: "Дивизии",
-    footerBrands: "Марки",
-    footerLegal: "Правни",
-  },
-};
-
+type LogisticsContent = Translation["logisticsTransportView"];
 export function LogisticsTransportPageContent() {
-  const { language, t } = useLanguage();
-  const content = logisticsContent[language];
+  const { t } = useLanguage();
+  const content = t.logisticsTransportView as LogisticsContent;
   const divisionLinks = t.footer.groups[0]?.links ?? [];
   const brandLinks = t.footer.groups[1]?.links ?? [];
   const legalLinks = t.footer.groups.at(-1)?.links ?? [];
@@ -324,7 +160,7 @@ export function LogisticsTransportPageContent() {
       <footer className="w-full bg-[#000613] px-4 py-16 md:px-10 md:py-[120px]">
         <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-6 md:grid-cols-12">
           <div className="mb-8 md:col-span-4 md:mb-0">
-            <h2 className="mb-6 font-display text-[32px] font-bold leading-[40px] text-white">LOGO</h2>
+            <Image src={images.logo} alt="" width={600} height={300} className="h-auto w-36 rounded bg-white p-2" />
             <p className="mb-8 max-w-sm text-sm leading-5 text-white/70">{content.footerBody}</p>
             <Link
               href="/contact"
