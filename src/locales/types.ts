@@ -173,7 +173,7 @@ export type Translation = {
     };
     partners: {
       eyebrow: string;
-      items: string[];
+      items: { name: string; logo: string }[];
     };
     contact: {
       title: string;

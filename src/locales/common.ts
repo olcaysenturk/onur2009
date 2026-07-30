@@ -1,6 +1,3 @@
-import type { Language } from "@/types/i18n";
-import type { Translation } from "./types";
-
 export const nav = {
   en: [
     { label: "Home", href: "/" },
@@ -135,22 +132,3 @@ export const divisionEn = {
     process: ["Audit & Analysis", "Strategic Blueprinting", "Execution & Integration"],
   },
 };
-
-export function localizeDivisions(language: Language): Translation["divisions"] {
-  if (language === "en") return divisionEn;
-
-  const prefix = language === "tr" ? "TR" : "BG";
-  return Object.fromEntries(
-    Object.entries(divisionEn).map(([slug, page]) => [
-      slug,
-      {
-        ...page,
-        eyebrow: `${prefix} • ${page.eyebrow}`,
-        description:
-          language === "tr"
-            ? `${page.description} Bu içerik aktif dil seçimine bağlı i18n kaynağından gelir.`
-            : `${page.description} Това съдържание идва от активния i18n езиков източник.`,
-      },
-    ]),
-  );
-}

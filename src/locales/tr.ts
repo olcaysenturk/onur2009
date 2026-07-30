@@ -1,6 +1,6 @@
 import type { Translation } from "./types";
 import { pageImages } from "@/lib/pages";
-import { localizeDivisions, nav } from "./common";
+import { nav } from "./common";
 
 export const tr: Translation = {
     nav: nav.tr,
@@ -21,7 +21,22 @@ export const tr: Translation = {
       stats: [{ value: "15+", label: "Yıllık Deneyim" }, { value: "40+", label: "Ulaşılan Ülke" }, { value: "250+", label: "Filo Aracı" }, { value: "1M+", label: "Teslim Edilen Ton" }],
       heritage: { eyebrow: "Mirasımız", title: "Küresel Otorite İnşa Etmek", body: "ONUR2009 uluslararası ticaret, lojistik ve premium hizmet dağıtımı kesişiminde faaliyet gösteren köklü bir gruptur.", link: "Mirasımızı Keşfet", highlights: [{ title: "Kurumsal ölçek", description: "Kurumsal tedarik zincirleri için küresel operasyonlar." }, { title: "Yönetici güvenilirliği", description: "Premium standartlarla yapılandırılmış teslimat." }] },
       services: { eyebrow: "Ekosistemimiz", title: "Entegre İş Birimleri", body: "Tedarik zinciri, perakende ve danışmanlık alanlarında mükemmellik sunan kapsamlı marka portföyü." },
-      partners: { eyebrow: "Sektör Liderlerinin Güvendiği Yapı", items: ["PARTNER ONE", "GLOBAL INC.", "LOGISTICS CO.", "TRADE CORP", "NEXUS ENTERPRISE"] },
+      partners: { eyebrow: "Sektör Liderlerinin Güvendiği Yapı", items: [
+        { name: "Paradise Center", logo: "/images/partners/partner-footer.png" },
+        { name: "Serdika Center", logo: "/images/partners/partner-85.png" },
+        { name: "KAM Market", logo: "/images/partners/kam.png" },
+        { name: "T Market", logo: "/images/partners/tmarket.png" },
+        { name: "Carrefour", logo: "/images/partners/carrefour.png" },
+        { name: "Kaufland", logo: "/images/partners/kaufland.png" },
+        { name: "Princes", logo: "/images/partners/princess.png" },
+        { name: "Fantastico", logo: "/images/partners/fantastico.png" },
+        { name: "HIT", logo: "/images/partners/hit.png" },
+        { name: "BILLA", logo: "/images/partners/billa.png" },
+        { name: "Hesburger", logo: "/images/partners/hesburger.png" },
+        { name: "eBag", logo: "/images/partners/partner-logo.png" },
+        { name: "Metro", logo: "/images/partners/metro.png" },
+        { name: "Hyatt Regency", logo: "/images/partners/hyatt.png" },
+      ] },
       contact: { title: "Küresel operasyonlarınızı yükseltmeye hazır mısınız?", body: "Kurumsal ölçekte lojistik, ticaret ve dağıtım çözümleri için yönetici danışmanlık ekibimizle görüşün.", primary: "Satış Ekibiyle Görüş", secondary: "Ofisi Ara", email: "sales@onur2009.com", note: "Küresel lojistik, ticaret, perakende ve danışmanlık hizmetleri" },
     },
     servicesPage: {
@@ -362,5 +377,205 @@ export const tr: Translation = {
       },
     ],
   },
-    divisions: localizeDivisions("tr"),
+    divisions: {
+      "logistics-transport": {
+            title: "Lojistik & Taşımacılık",
+            eyebrow: "Küresel Lojistik",
+            headline: "Hassas Taşımacılık, Küresel Ölçek.",
+            description: "Freight forwarding, karayolu taşımacılığı, gümrük işlemleri ve sürdürülebilir filo operasyonları için kontrollü lojistik ağı.",
+            introTitle: "Tedarik Zincirinin Mimarları",
+            introBody: "ONUR2009, kurumsal teslimat ihtiyaçları için planlama, broker desteği ve filo görünürlüğüyle karmaşık taşımaları koordine eder.",
+            cardsTitle: "Temel Operasyonlar",
+            cardsIntro: "Güvenilirlik, hız ve mevzuat güveni için yapılandırılmış yüksek hassasiyetli lojistik hizmetleri.",
+            cards: [
+                  {
+                        title: "Karayolu Taşımacılığı",
+                        description: "Rota planlama ve filo takibiyle özel karayolu operasyonları."
+                  },
+                  {
+                        title: "Freight Forwarding",
+                        description: "Zamana duyarlı yükler için sınır ötesi nakliye koordinasyonu."
+                  },
+                  {
+                        title: "Gümrükleme",
+                        description: "Ön kontrol ve özel broker akışlarıyla düzenli gümrük süreçleri."
+                  },
+                  {
+                        title: "Sürdürülebilir Filo",
+                        description: "Kapasite ve verimlilik için tasarlanmış modern filo planlaması."
+                  }
+            ],
+            processTitle: "Operasyonel Kapsam",
+            processIntro: "Tedarikçileri, limanları, gümrük noktalarını ve son teslimatı bağlayan bölgesel ağ.",
+            process: [
+                  "Rota analizi",
+                  "Yük konsolidasyonu",
+                  "Gümrük doğrulama",
+                  "Son teslimat"
+            ]
+      },
+      "fresh-produce-trade": {
+            title: "Yaş Sebze Meyve Ticareti",
+            eyebrow: "Premium Kategoriler",
+            headline: "Tazelik, kaynaktan varış noktasına kadar kontrollü.",
+            description: "Premium ürünler için sertifikalı üreticiler, soğuk zincir disiplini ve uluslararası ithalat-ihracat operasyonları.",
+            introTitle: "Hassas İthalat & İhracat Operasyonları",
+            introBody: "Bu birim, tutarlı ticari kalite için premium ürün tedariği, kontrol, soğuk taşıma ve teslimat planlamasını yönetir.",
+            cardsTitle: "Premium Kategoriler",
+            cardsIntro: "Tazelik, sezonluk yapı ve güvenilir dağıtım etrafında organize edilen ürün kategorileri.",
+            cards: [
+                  {
+                        title: "Narenciye",
+                        description: "Kontrollü elleçleme ile yüksek hacimli narenciye programları."
+                  },
+                  {
+                        title: "Sert Çekirdekli Meyveler",
+                        description: "Sıkı kalite sınıflandırmasıyla sezonluk tedarik."
+                  },
+                  {
+                        title: "Taze Sebzeler",
+                        description: "Güvenilir tedarikçilerden günlük taze sebze akışı."
+                  },
+                  {
+                        title: "Egzotik & Sezonluk",
+                        description: "Premium perakende ve toptan talep için özel ürün seçkisi."
+                  }
+            ],
+            processTitle: "Tedarik Zinciri Standartları",
+            processIntro: "Sıcaklık kontrolü, denetim, dokümantasyon ve teslimat pencereleri ürün bütünlüğünü korur.",
+            process: [
+                  "Üretici tedariği",
+                  "Kalite kontrol",
+                  "Gelişmiş soğuk zincir",
+                  "Uluslararası dağıtım"
+            ]
+      },
+      "auto-truck-service": {
+            title: "Oto & Kamyon Servisi",
+            eyebrow: "Filo Mühendisliği",
+            headline: "Hassas Mühendislik. Tavizsiz Güvenilirlik.",
+            description: "Filo sürekliliği için ticari araç servisi, önleyici bakım, gelişmiş arıza tespiti ve yedek parça desteği.",
+            introTitle: "Yetkili Parça Envanteri",
+            introBody: "Önleyici bakım, uzman diagnostik ve usta teknisyenler etrafında kurulan teknik servis operasyonu.",
+            cardsTitle: "Temel Yetkinlikler",
+            cardsIntro: "Kesintisiz iş operasyonları ve güvenilirlik odaklı filo servis kabiliyetleri.",
+            cards: [
+                  {
+                        title: "Önleyici Bakım",
+                        description: "Ticari filo sürekliliği için planlı servis programları."
+                  },
+                  {
+                        title: "Diagnostik & Onarım",
+                        description: "Karmaşık arıza tespiti ve hassas onarım iş akışları."
+                  },
+                  {
+                        title: "Parça Envanteri",
+                        description: "Daha hızlı servis dönüşü için yetkili parça bulunurluğu."
+                  },
+                  {
+                        title: "Usta Teknisyenler",
+                        description: "Ağır vasıta araçlar için uzman teknik ekipler."
+                  }
+            ],
+            processTitle: "Servis Değerlendirmesi",
+            processIntro: "Ticari müşteriler için yapılandırılmış kabul ve servis akışı.",
+            process: [
+                  "Filo kabulü",
+                  "Teknik değerlendirme",
+                  "Parça planlama",
+                  "Servis tamamlama"
+            ]
+      },
+      "retail-fashion": {
+            title: "Altınyıldız Classics Bulgaristan",
+            eyebrow: "Perakende & Moda",
+            headline: "Erkek Giyim Sanatında Ustalık",
+            description: "Bulgaristan genelinde premium klasik erkek giyim için özel perakende dağıtımı ve marka yönetimi.",
+            introTitle: "Premium Perakende Ağı",
+            introBody: "Altınyıldız Classics BG, seçkin erkek giyim ürünlerini dikkatle yönetilen perakende operasyonları ve marka sunumuyla buluşturur.",
+            cardsTitle: "Perakende Kabiliyetleri",
+            cardsIntro: "Tutarlı müşteri deneyimi için marka, mağaza ve dağıtım kabiliyetleri.",
+            cards: [
+                  {
+                        title: "Marka Yönetimi",
+                        description: "Premium erkek giyim standartlarının tutarlı sunumu."
+                  },
+                  {
+                        title: "Perakende Operasyonları",
+                        description: "Mağaza uygulaması, görsel düzenleme ve yerel pazar yönetimi."
+                  },
+                  {
+                        title: "Dağıtım Merkezleri",
+                        description: "Pazarda güvenilir ürün bulunurluğu."
+                  },
+                  {
+                        title: "Müşteri Deneyimi",
+                        description: "Premium perakende için profesyonel hizmet kültürü."
+                  }
+            ]
+      },
+      "sobaklava-distribution": {
+            title: "SO BAKLAVA",
+            eyebrow: "Premium Türk Tatlıları",
+            headline: "Tatlı Mükemmelliğin Mirası.",
+            description: "Onur 2009 operasyon ağı altında Türk tatlıları, baklava seçkisi, perakende ürünleri ve premium dağıtım yapısı.",
+            introTitle: "Marka Mirası",
+            introBody: "SO BAKLAVA, geleneksel Türk tatlı ustalığını disiplinli modern dağıtım yapısıyla Bulgaristan ve Avrupa pazarına taşır.",
+            cardsTitle: "Seçilmiş Portföy",
+            cardsIntro: "Kalite, tazelik, hediyeleşme ve perakende hazırlığı etrafında tasarlanan ürün vitrini.",
+            cards: [
+                  {
+                        title: "Cevizli Soğuk Baklava",
+                        description: "Sütlü dokusu, ceviz dolgusu ve premium sunumuyla soğuk baklava seçkisi."
+                  },
+                  {
+                        title: "Havuç Dilimi",
+                        description: "Yoğun fıstık dolgusu ve özel dilim sunumuyla imza lezzet."
+                  },
+                  {
+                        title: "Şöbiyet",
+                        description: "Kaymak, fıstık ve çıtır yufka dokusunu birleştiren geleneksel tat."
+                  },
+                  {
+                        title: "Dağıtım Kalitesi",
+                        description: "Ürün bütünlüğü için kontrollü taşıma, depolama ve mağaza operasyonu."
+                  }
+            ]
+      },
+      "bulgatex-consulting": {
+            title: "Bulgatex Consulting",
+            eyebrow: "Stratejik Danışmanlık",
+            headline: "Sınır ötesi büyüme için stratejik entegrasyon.",
+            description: "Pazar giriş desteği, ortaklık geliştirme, tekstil ticareti uzmanlığı ve ithalat-ihracat danışmanlığı.",
+            introTitle: "Stratejik Entegrasyon Süreci",
+            introBody: "Bulgatex Consulting, bölgesel ticarete giren veya büyüyen şirketleri analiz, ortaklık tasarımı ve uygulama yoluyla destekler.",
+            cardsTitle: "Temel Yetkinlikler",
+            cardsIntro: "Pazar erişimi, ticaret operasyonları ve tekstil sektörü uzmanlığı için danışmanlık kabiliyetleri.",
+            cards: [
+                  {
+                        title: "Pazar Giriş Desteği",
+                        description: "Bölgesel genişleme ve lansman planlaması için yapılandırılmış destek."
+                  },
+                  {
+                        title: "Ortaklık Geliştirme",
+                        description: "Nitelikli yerel partnerlerle ticari ilişki geliştirme."
+                  },
+                  {
+                        title: "Tekstil Ticaret Uzmanlığı",
+                        description: "Tekstil sektörü odaklı bilgi ve tedarik içgörüsü."
+                  },
+                  {
+                        title: "İthalat/İhracat Danışmanlığı",
+                        description: "Ticaret dokümantasyonu, süreç tasarımı ve operasyonel yönlendirme."
+                  }
+            ],
+            processTitle: "Danışmanlık Aşamaları",
+            processIntro: "Analiz, strateji ve uygulama olarak üç aşamalı model.",
+            process: [
+                  "Denetim & Analiz",
+                  "Stratejik Planlama",
+                  "Uygulama & Entegrasyon"
+            ]
+      }
+},
   };
