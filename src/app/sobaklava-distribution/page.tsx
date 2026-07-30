@@ -4,19 +4,22 @@ import SobaklavaDistributionView from "@/views/sobaklava-distribution/sobaklava-
 import { pageImages } from "@/lib/pages";
 
 export const metadata = createPageMetadata(
-  "SoBaklava Distribution",
-  "Premium baklava portfolio, retail assortments, and confectionery distribution for premium retail and hospitality networks.",
+  "SO BAKLAVA",
+  "SO BAKLAVA brings traditional Turkish desserts and bakery products to Bulgaria and Europe through Onur 2009's supply, import, logistics, retail, and distribution operations.",
   {
     path: "/sobaklava-distribution",
     keywords: [
-      "SoBaklava Distribution",
+      "SO BAKLAVA",
       "baklava",
+      "Turkish desserts",
+      "Seydioğlu Baklava",
+      "Aslı Börek",
       "confectionery distribution",
       "premium desserts",
       "retail assortments",
     ],
     image: pageImages.sobaklavaHero,
-    imageAlt: "SoBaklava premium baklava distribution",
+    imageAlt: "SO BAKLAVA Turkish desserts in Europe",
   },
 );
 
@@ -25,9 +28,9 @@ export default function SobaklavaDistributionPage() {
     <>
       <JsonLd
         data={buildServiceSchema({
-          name: "SoBaklava Distribution",
+          name: "SO BAKLAVA",
           description:
-            "Premium baklava portfolio, retail assortments, and confectionery distribution for premium retail and hospitality networks.",
+            "SO BAKLAVA brings traditional Turkish desserts and bakery products to Bulgaria and Europe through Onur 2009's supply, import, logistics, retail, and distribution operations.",
           path: "/sobaklava-distribution",
           image: pageImages.sobaklavaHero,
         })}

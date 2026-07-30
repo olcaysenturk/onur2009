@@ -139,12 +139,6 @@ export function Header() {
               ))}
             </div>
           </div>
-          <Link
-            href="/contact"
-            className="inline-flex min-h-10 items-center justify-center rounded-sm border border-primary-deep bg-primary-deep px-5 py-2.5 font-display text-xs font-bold text-white transition-colors hover:bg-primary"
-          >
-            {t.common.requestQuote}
-          </Link>
         </div>
 
         <button
