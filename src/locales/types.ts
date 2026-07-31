@@ -6,6 +6,19 @@ export type AboutViewTranslation = {
   body: string;
   primary: string;
   secondary: string;
+  overviewTitle: string;
+  overviewBody: string;
+  overviewHighlights: { title: string; body: string }[];
+  capabilitiesTitle: string;
+  capabilitiesBody: string;
+  capabilities: { title: string; body: string }[];
+  teamTitle: string;
+  teamBody: string;
+  team: { name: string; role: string }[];
+  partnershipTitle: string;
+  partnershipBody: string;
+  partnershipItems: { title: string; body: string }[];
+  partnershipClosing: string;
   purposeTitle: string;
   purposeBody: string;
   visionTitle: string;
@@ -68,18 +81,30 @@ export type ContactViewTranslation = {
 };
 
 export type BulgatexViewTranslation = {
-  badge: string;
-  title: string;
-  body: string;
-  primary: string;
-  secondary: string;
-  competenciesTitle: string;
-  competenciesBody: string;
-  learnMore: string;
-  cards: { title: string; body: string; tags?: string[] }[];
-  processTitle: string;
-  processBody: string;
-  phases: { title: string; body: string }[];
+  heroBadge: string;
+  heroTitlePrefix: string;
+  heroTitleGreen: string;
+  heroTitleRed: string;
+  heroBody: string;
+  heroPrimary: string;
+  heroSecondary: string;
+  servicesTitle: string;
+  services: { title: string; body: string }[];
+  storageTitle: string;
+  storageBody: string;
+  storageBenefits: { title: string; body: string }[];
+  storageExample: string;
+  reasonsTitle: string;
+  reasons: { value: string; label: string }[];
+  logisticsTitle: string;
+  logisticsBody: string;
+  logisticsItems: string[];
+  logisticsAdvantageTitle: string;
+  logisticsAdvantageBody: string;
+  ctaTitle: string;
+  ctaBody: string;
+  ctaPlaceholder: string;
+  ctaButton: string;
 };
 
 export type FreshProduceViewTranslation = {
@@ -175,6 +200,13 @@ export type Translation = {
       eyebrow: string;
       items: { name: string; logo: string }[];
     };
+    company: {
+      eyebrow: string;
+      title: string;
+      body: string;
+      cards: { title: string; body: string }[];
+      metrics: { value: string; label: string }[];
+    };
     contact: {
       title: string;
       body: string;
@@ -207,11 +239,34 @@ export type Translation = {
     footerLegal: string;
   };
   retailPage: {
-    readStory: string;
-    statLabel: string;
-    heritageLabel: string;
-    body: string;
-    secondaryBody: string;
+    heroEyebrow: string;
+    heroTitle: string;
+    heroBody: string;
+    heroCta: string;
+    scrollLabel: string;
+    partnershipEyebrow: string;
+    partnershipTitle: string;
+    partnershipBody: string;
+    partnershipQuote: string;
+    partnershipCta: string;
+    sealYear: string;
+    sealLabel: string;
+    collectionsTitle: string;
+    collectionsBody: string;
+    collectionsCta: string;
+    collections: {
+      eyebrow: string;
+      title: string;
+      body: string;
+      badge: string;
+    }[];
+    heritageTitle: string;
+    heritageBody: string;
+    metrics: { value: string; label: string }[];
+    storeTitle: string;
+    storeBody: string;
+    storePlaceholder: string;
+    storeButton: string;
   };
   sobaklava: {
     heroBadge: string;

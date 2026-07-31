@@ -37,6 +37,21 @@ export const tr: Translation = {
         { name: "Metro", logo: "/images/partners/metro.png" },
         { name: "Hyatt Regency", logo: "/images/partners/hyatt.png" },
       ] },
+      company: {
+        eyebrow: "Onur 2009 Ltd",
+        title: "Bulgaristan pazarında üretim, tedarik ve dağıtımı tek çatı altında yönetiyoruz.",
+        body: "2009 yılından bu yana meyve ve sebze ticaretinde aktif olarak faaliyet gösteriyoruz. Türkiye, Yunanistan, Sırbistan, Polonya, Litvanya ve diğer ülkelerden yıllık 8.000 tonun üzerinde ürün ithalatı ve dağıtımı yapabilecek operasyon kapasitesine ulaştık.",
+        cards: [
+          { title: "Güçlü Tedarikçi İlişkileri", body: "Türkiye'deki büyük üreticilerle uzun dönemli ortaklıklar kurarak yüksek kaliteli ürünleri rekabetçi fiyatlarla temin ediyoruz." },
+          { title: "Tam Süreç Yönetimi", body: "Üretimden taşımaya, depolamadan teslimata kadar tüm tedarik zinciri süreçlerini profesyonelce yönetiyoruz." },
+          { title: "Esneklik & Kapsamlı Hizmet", body: "Pazar analizleri, yeni ürün fırsatları ve müşteri taleplerine göre özelleştirilmiş ithalat çözümleri sağlıyoruz." },
+        ],
+        metrics: [
+          { value: "8.000t+", label: "Yıllık ithalat ve dağıtım kapasitesi" },
+          { value: "85", label: "Dekar bağ üretim alanı" },
+          { value: "1000t+", label: "Yıllık üzüm ihracatı" },
+        ],
+      },
       contact: { title: "Küresel operasyonlarınızı yükseltmeye hazır mısınız?", body: "Kurumsal ölçekte lojistik, ticaret ve dağıtım çözümleri için yönetici danışmanlık ekibimizle görüşün.", primary: "Satış Ekibiyle Görüş", secondary: "Ofisi Ara", email: "sales@onur2009.com", note: "Küresel lojistik, ticaret, perakende ve danışmanlık hizmetleri" },
     },
     servicesPage: {
@@ -58,11 +73,46 @@ export const tr: Translation = {
   },
     services: { eyebrow: "Hizmetlerimiz", title: "İş Birimlerimiz", body: "Yaş sebze meyve ticareti, lojistik, ticari araç servisi, perakende dağıtımı, gıda dağıtımı ve stratejik danışmanlığı kapsayan eksiksiz operasyon ekosistemi.", explore: "Birimi İncele" },
     retailPage: {
-      readStory: "Hikayenin tamamını oku",
-      statLabel: "Yıllık uzmanlık",
-      heritageLabel: "Mirasımız",
-      body: "Bulgaristan operasyonlarımız, tekstil ustalığının onlarca yıllık birikimini seçkin erkek giyimine taşır. Geleneksel terzilik tekniklerini çağdaş kurumsal estetikle birleştiriyoruz.",
-      secondaryBody: "Her ürün, yapısal bütünlük ve profesyonel dinginlik taahhüdümüzü temsil eder.",
+      heroEyebrow: "Est. 1952",
+      heroTitle: "1952'den Günümüze Tekstil Mirası",
+      heroBody: "Modern erkeğin stilini kaliteli kumaşlar ve üstün işçilikle şekillendiriyoruz. Sessiz lüksün ve kusursuz terziliğin adresi.",
+      heroCta: "Koleksiyonu Keşfet",
+      scrollLabel: "Aşağı Kaydır",
+      partnershipEyebrow: "Küresel Vizyon",
+      partnershipTitle: "AC&CO. Fashion x Onur 2009",
+      partnershipBody: "Türk hazır giyim kalitesinin Bulgaristan'daki resmi temsilcisi olarak, yetmiş yılı aşkın mirası Balkanlar'a taşıyoruz. Stratejik iş ortaklığımız, geleneksel ustalığı modern perakende deneyimiyle birleştiriyor.",
+      partnershipQuote: "Onur 2009 Bulgaria ile Balkanlar'da şıklığın yeni standartlarını belirliyoruz.",
+      partnershipCta: "Partnerlik Detayları",
+      sealYear: "1952",
+      sealLabel: "Ustalık Mührü",
+      collectionsTitle: "Seçkin Koleksiyonlar",
+      collectionsBody: "Her mekana ve her anınıza uygun rafine tasarımlar.",
+      collectionsCta: "Tümünü Gör",
+      collections: [
+        {
+          eyebrow: "Günlük Rafine",
+          title: "Smart Casual",
+          body: "Konfor ve şıklığın dengesi. Hafif dokulu kumaşlar ve modern kesimler.",
+          badge: "Yeni Sezon",
+        },
+        {
+          eyebrow: "Eskimeyen Şıklık",
+          title: "Klasik Şıklık",
+          body: "Özel günler ve iş hayatı için kusursuz İtalyan kesim takımlar.",
+          badge: "Premium Seri",
+        },
+      ],
+      heritageTitle: "70 Yıllık Terzilik Sanatı",
+      heritageBody: "1952 yılında temelleri atılan Altınyıldız, kumaş kalitesinden ödün vermeden sürdürülebilir üretimi vizyonunun merkezine koyar. Kullandığımız her bir yün, pamuk ve kaşmir lifi; doğaya saygılı ve nesiller boyu aktarılacak bir kalitenin simgesidir.",
+      metrics: [
+        { value: "100%", label: "Doğal Yün" },
+        { value: "72", label: "Yıllık Tecrübe" },
+        { value: "Eco", label: "Sürdürülebilir Üretim" },
+      ],
+      storeTitle: "Size En Yakın AC&CO.",
+      storeBody: "Türkiye ve Balkanlar genelindeki mağazalarımızı keşfedin.",
+      storePlaceholder: "Şehir veya Mağaza Ara",
+      storeButton: "Mağaza Bul",
     },
     about: { eyebrow: "Kurumsal Profil", title: "2009'dan beri güvenilir küresel operasyonlar.", body: "Altinyildiz Group International ticaret, lojistik, perakende, servis ve danışmanlık birimlerini disiplinli bir platformda toplar.", purposeEyebrow: "Amacımız", purposeTitle: "Güven, Ölçek ve Süreklilik İçin Yapılandırıldı", purposeBody: "Grup, farklı operasyon birimlerini tek koordineli yapı altında toplar ve partnerlere güvenilir temas noktası sağlar.", cards: [{ title: "Vizyonumuz", description: "Premium ticaret, lojistik ve marka operasyonları için güvenilir bölgesel platform olmak." }, { title: "Misyonumuz", description: "Yapılandırılmış ekipler, güçlü ortaklıklar ve operasyon disipliniyle güvenilir hizmet sunmak." }] },
     aboutView: {
@@ -72,6 +122,45 @@ export const tr: Translation = {
       "Altinyildiz Group International; ticaret, lojistik ve uzmanlaşmış hizmetlerde yenilik ve hassasiyet sağlayan çok yönlü bir yapıdır.",
     primary: "Birimleri İncele",
     secondary: "Tarihçemiz",
+    overviewTitle: "Onur 2009 Ltd",
+    overviewBody:
+      "2009 yılında Bulgaristan pazarına giriş yaptığımızdan bu yana Onur 2009 Ltd, meyve ve sebze ticaretinde aktif olarak faaliyet göstermektedir. Küçük hacimlerle başlayan yolculuğumuz bugün Türkiye, Yunanistan, Sırbistan, Polonya, Litvanya ve diğer ülkelerden yıllık 8.000 tonun üzerinde ürün ithalatı ve dağıtım organizasyonunu yönetebilecek kapasiteye ulaştı.",
+    overviewHighlights: [
+      { title: "Güçlü Tedarikçi İlişkileri", body: "Türkiye'deki büyük üreticilerle uzun dönemli ortaklıklar kurarak yüksek kaliteli ürünleri rekabetçi fiyatlarla temin ediyoruz." },
+      { title: "Tam Süreç Yönetimi", body: "Üretimden taşımaya, depolamadan teslimata kadar tüm tedarik zinciri süreçlerini profesyonelce yönetiyoruz." },
+      { title: "Esneklik & Kapsamlı Hizmet", body: "Pazar analizleri, yeni ürün fırsatları ve müşteri taleplerine göre özelleştirilmiş ithalat çözümleri sağlıyoruz." },
+    ],
+    capabilitiesTitle: "Faaliyet Alanlarımız",
+    capabilitiesBody:
+      "Taze ürün ticareti, lojistik, oto servis, erkek giyim ve Türk tatlıları dağıtımında farklı operasyonları tek yönetim disiplini altında topluyoruz.",
+    capabilities: [
+      { title: "Meyve & Sebze Portföyü", body: "Domates, biber, soğan, havuç, kornişon, kabak, üzüm, nar, ayva, karpuz, kavun, incir ve narenciye gibi geniş ürün yelpazesi." },
+      { title: "Lojistik & Taşımacılık", body: "Frigorifik ve standart taşıma araçlarıyla farklı dağıtım ihtiyaçlarına yanıt veren güçlü filo ve planlama altyapısı." },
+      { title: "Ambalaj Çözümleri", body: "Perakende, HORECA ve ihracat gereksinimlerine uygun clamshell, file torba, kasa ve karton koli seçenekleri." },
+      { title: "Marka Dağıtımı", body: "SO BAKLAVA ve Altınyıldız AC&CO. Fashion gibi markaları Bulgar tüketicilerle buluşturan perakende ve dağıtım yapısı." },
+    ],
+    teamTitle: "Ekibimiz",
+    teamBody:
+      "Operasyonel başarımız, deneyimli ve görev odaklı ekibimize dayanmaktadır. Ekibimiz ticari ve operasyonel süreçlerde uzman kişilerden oluşur.",
+    team: [
+      { name: "Onur Sapaz", role: "Firma Sahibi & Satış Uzmanı - tedarik fiyatlarını kontrol eder, siparişleri yönetir ve stoktaki ürünlerin satışından sorumludur." },
+      { name: "Anıl Vatansever", role: "Genel Müdür - strateji, tedarikçi ilişkileri ve genel yönetimden sorumludur." },
+      { name: "Katrin Sapaz", role: "Stok & Operasyon Uzmanı - stok ve depo yönetimi ile günlük operasyonlardan sorumludur." },
+      { name: "Gulay Emilova", role: "Evrak İşlem Uzmanı - ithalat, irsaliye ve resmi süreçlerin yürütülmesi." },
+      { name: "Kostandina Barakova", role: "Banka Operasyonları & Ödemeler - finansal akışların yönetimi." },
+      { name: "Barbaros Ozturk", role: "IT Uzmanı & Destek - sistemler, altyapı ve teknik destek." },
+      { name: "Gunes Sapaz", role: "Gümrük ve Transport Yöneticisi - dış pazarlar için iletişim ve koordinasyon." },
+      { name: "Gabriela Krasteva", role: "Asistan & İlişkiler Yöneticisi - müşteri iletişimi ve partner koordinasyonu." },
+    ],
+    partnershipTitle: "İş Ortaklığı ve Gelecek Vizyonu",
+    partnershipBody:
+      "Başarının uzun vadeli iş ortaklıkları, karşılıklı güven ve profesyonellik üzerine inşa edildiğine inanıyoruz. Kalite ve inovasyona bağlılığımız müşterilerimize yalnızca ürün değil, yüksek standartlarda eksiksiz çözümler sunmamızı sağlar.",
+    partnershipItems: [
+      { title: "Genişleme & Çeşitlilik", body: "Ürün ve hizmet portföyümüzü müşteri ihtiyaçlarına göre çeşitlendirmeyi hedefliyoruz." },
+      { title: "Karşılıklı Memnuniyet", body: "Sürdürülebilir ve karşılıklı büyüme sağlayan iş ortaklıkları kuruyoruz." },
+      { title: "Yeni Fırsatlar", body: "Yeni pazarlara açılma, ürün çeşitlendirme ve uzun vadeli katma değer oluşturma fırsatları sunuyoruz." },
+    ],
+    partnershipClosing: "Başarı yolculuğumuzda bize katılın; birlikte yeni fırsatlar ve sınırsız gelişim potansiyeliyle dolu bir gelecek inşa edelim.",
     purposeTitle: "Amacımız",
     purposeBody:
       "Kalite ve yapısal bütünlüğe bağlılıkla küresel ticaretin yönünü belirliyoruz. Sadece ticareti kolaylaştırmıyor, uluslararası büyümenin altyapısını kuruyoruz.",
@@ -133,58 +222,46 @@ export const tr: Translation = {
     footerLegal: "Yasal",
   },
     bulgatexView: {
-    badge: "Bulgatex Consulting",
-    title: "Küresel Pazarlar için Stratejik Mimari",
-    body:
-      "Pazar giriş desteği, detaylı ithalat/ihracat lojistiği ve tekstil ticareti danışmanlığı. Avrupa ve Asya’da büyüyen şirketler için sağlam iş geliştirme stratejileri tasarlarız.",
-    primary: "Hizmetleri İncele",
-    secondary: "Uzmanla Görüş",
-    competenciesTitle: "Temel Yetkinlikler",
-    competenciesBody:
-      "Uluslararası ticaret karmaşıklıklarına uygulanan veri odaklı metodolojiler. Danışmanlık çerçevemiz operasyonel deneyim üzerine kuruludur.",
-    learnMore: "Detayları Gör",
-    cards: [
-      {
-        title: "Pazar Giriş Desteği",
-        body:
-          "Yeni pazarlara giriş için kapsamlı stratejik planlama, risk analizi, mevzuat uyum yol haritası ve rekabet haritalaması.",
-        tags: ["Risk Analizi", "Mevzuat Uyumu"],
-      },
-      {
-        title: "Partner Geliştirme",
-        body:
-          "Pazar varlığınızı güçlendirmek için kritik ortaklıkları ve dağıtım kanallarını belirleme, değerlendirme ve kurma.",
-      },
-      {
-        title: "Tekstil Ticaret Uzmanlığı",
-        body:
-          "Ham madde tedarikinden nihai ürün dağıtımına kadar tekstil tedarik zincirinizi optimize eden sektör ağı.",
-      },
-      {
-        title: "İthalat/İhracat Danışmanlığı",
-        body:
-          "Gümrük süreçleri, tarife sınıflandırmaları ve sınır ötesi lojistik akışlarında operasyonel verimlilik.",
-      },
+    heroBadge: "Sınırları Aşan Ticaret",
+    heroTitlePrefix: "BulgateX PROJESİ:",
+    heroTitleGreen: "Küresel vizyon,",
+    heroTitleRed: "Yerel güç.",
+    heroBody: "Avrupa Birliği pazarına açılmak isteyen firmalara operasyonel destek ve danışmanlık sunarak ihracatlarını artırmayı ve rekabet güçlerini yükseltmeyi hedefliyoruz.",
+    heroPrimary: "Hemen Başla",
+    heroSecondary: "Süreçleri İncele",
+    servicesTitle: "Ana Hizmetler",
+    services: [
+      { title: "Şirket Kuruluşu", body: "Limited şirket (EOOD, OOD) ve anonim şirket (AD) kurulumları ile Avrupa pazarına sorunsuz giriş yapın." },
+      { title: "Depolama Çözümleri", body: "Kuru, soğuk zincir ve nötr depolama alanlarıyla stratejik stok yönetimi ve maliyet optimizasyonu." },
+      { title: "Lojistik ve Dağıtım", body: "Parsiyel ve tam taşımacılık seçenekleriyle Avrupa genelinde hızlı ve güvenilir dağıtım ağı." },
+      { title: "Gümrükleme & Vergi", body: "Bulgaristan ve Türkiye'deki yetkili gümrük acenteleriyle profesyonel dış ticaret yönetimi." },
+      { title: "Yasal Uyum", body: "AB uyum yasaları ve yerel mevzuatlar konusunda uzman danışmanlık ve yasal süreç yönetimi." },
+      { title: "Pazarlama & Satış", body: "Dijital altyapı ve e-ticaret çözümleriyle Avrupa pazarına doğrudan erişim stratejileri." },
     ],
-    processTitle: "Stratejik Entegrasyon Süreci",
-    processBody: "Yeni pazarlarda operasyonel varlık kurmak için aşamalı ve metodik yaklaşım.",
-    phases: [
-      {
-        title: "Faz 01: Denetim & Analiz",
-        body:
-          "Mevcut kabiliyetler, hedef pazar dinamikleri ve mevzuat gereksinimleri detaylı incelenir.",
-      },
-      {
-        title: "Faz 02: Stratejik Planlama",
-        body:
-          "Partner profilleri, tedarik zinciri rotası ve ilk 24 aya yönelik finansal modelleme hazırlanır.",
-      },
-      {
-        title: "Faz 03: Uygulama & Entegrasyon",
-        body:
-          "Müzakereler, yasal yapı ve operasyonel kurulumda sahadaki stratejik mimarınız oluruz.",
-      },
+    storageTitle: "Depolama ve Stok Yönetimi",
+    storageBody: "BulgateX, ihtiyaca uygun, esnek ve maliyet etkin depo çözümleri sunarak firmaların gereksiz yatırım yapmadan operasyonlarını büyütmelerini sağlar.",
+    storageBenefits: [
+      { title: "Yıllık Maliyet Avantajı:", body: "Tır başına düşen net maliyetin hesaplanabilir olması, fiyat rekabeti sağlar." },
+      { title: "Kullanılmayan Alan Ödemesi Yok:", body: "Sadece kullandığınız alan için ödeme yaparsınız, sabit giderlerinizi minimize edersiniz." },
+      { title: "Stratejik Konum:", body: "Avrupa içindeki depolar sayesinde müşterilere daha hızlı ulaşım ve düşük nakliye maliyeti." },
     ],
+    storageExample: "Örnek: 200 m²'lik depo yerine ihtiyacınız olan 50 m² alanı kullanarak yıllık 28.800 €'ya varan tasarruf sağlayabilirsiniz.",
+    reasonsTitle: "Neden BulgateX?",
+    reasons: [
+      { value: "1-2 Ay", label: "Hızlı depo kiralama & kurulum süreci" },
+      { value: "%75", label: "Kısa süreli kiralama ile maliyet tasarrufu" },
+      { value: "10%", label: "Bulgaristan kurumlar vergisi avantajı" },
+      { value: "TAM", label: "AB mevzuatına ve yasalara uyum" },
+    ],
+    logisticsTitle: "Lojistik ve Dağıtım Ağı",
+    logisticsBody: "Daha düşük maliyetle daha hızlı ve verimli lojistik yönetimi sağlayarak, operasyonel süreçlerinizi optimize edin.",
+    logisticsItems: ["Gümrük ve regülasyon desteği", "İzlenebilir ve güvenli taşımacılık", "Kalite kontrol ve konsolidasyon", "Risk ve sigorta yönetimi"],
+    logisticsAdvantageTitle: "Maliyet Avantajı:",
+    logisticsAdvantageBody: "Antalya-Polonya frigo taşımacılık maliyetlerini ara dağıtım stratejimizle 3.500 € - 4.300 € seviyelerine düşürüyoruz.",
+    ctaTitle: "İşinizi Güvenle Büyütün",
+    ctaBody: "BulgateX ile gereksiz yatırımlardan kaçının, sadece kullandığınız kadar ödeyin ve operasyonel maliyetlerinizi kontrol altına alarak kârlılığınızı artırın.",
+    ctaPlaceholder: "E-posta adresiniz",
+    ctaButton: "Teklif Al",
   },
     freshProduceView: {
     heroEyebrow: "Küresel Yaş Sebze Meyve Ticareti",

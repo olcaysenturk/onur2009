@@ -67,6 +67,21 @@ export const en: Translation = {
         { name: "Metro", logo: "/images/partners/metro.png" },
         { name: "Hyatt Regency", logo: "/images/partners/hyatt.png" },
       ] },
+      company: {
+        eyebrow: "Onur 2009 Ltd",
+        title: "We manage production, sourcing, and distribution in Bulgaria through one disciplined operating structure.",
+        body: "Since entering the Bulgarian market in 2009, Onur 2009 Ltd has been active in fruit and vegetable trade. Our journey began with small volumes and has grown into an operation capable of importing and distributing more than 8,000 tons of products annually from Türkiye, Greece, Serbia, Poland, Lithuania, and other countries.",
+        cards: [
+          { title: "Strong Supplier Relationships", body: "We build long-term partnerships with major producers in Türkiye to source high-quality products at competitive prices." },
+          { title: "Complete Process Management", body: "We professionally manage the full supply chain from production and transport to storage and delivery." },
+          { title: "Flexible, Comprehensive Service", body: "We provide customized import solutions based on market analysis, new product opportunities, and customer demand." },
+        ],
+        metrics: [
+          { value: "8,000t+", label: "Annual import and distribution capacity" },
+          { value: "85", label: "Decares of vineyard production area" },
+          { value: "1000t+", label: "Annual grape export volume" },
+        ],
+      },
       contact: {
         title: "Ready to elevate your global operations?",
         body: "Connect with our executive advisory team to discuss bespoke logistics, trade, and distribution solutions tailored for institutional scale.",
@@ -100,11 +115,46 @@ export const en: Translation = {
       explore: "Explore Division",
     },
     retailPage: {
-      readStory: "Read our full story",
-      statLabel: "Years of excellence",
-      heritageLabel: "Our Heritage",
-      body: "As a proud extension of the Altinyildiz Group, our Bulgarian operations bring decades of textile mastery directly to discerning gentlemen. We merge traditional tailoring techniques with contemporary corporate aesthetics.",
-      secondaryBody: "Every garment represents our commitment to structural integrity, using only the finest fabrics designed to maintain composure in high-stakes environments.",
+      heroEyebrow: "Est. 1952",
+      heroTitle: "Textile Heritage from 1952 to Today",
+      heroBody: "We shape the modern gentleman's style with quality fabrics and refined craftsmanship. A destination for quiet luxury and precise tailoring.",
+      heroCta: "Explore Collection",
+      scrollLabel: "Scroll Down",
+      partnershipEyebrow: "Global Vision",
+      partnershipTitle: "AC&CO. Fashion x Onur 2009",
+      partnershipBody: "As the official representative of Turkish menswear quality in Bulgaria, we carry more than seventy years of heritage to the Balkans. Our strategic partnership combines traditional mastery with a modern retail experience.",
+      partnershipQuote: "With Onur 2009 Bulgaria, we define new standards of elegance across the Balkans.",
+      partnershipCta: "Partnership Details",
+      sealYear: "1952",
+      sealLabel: "Craft Seal",
+      collectionsTitle: "Selected Collections",
+      collectionsBody: "Refined designs for every place and every moment.",
+      collectionsCta: "View All",
+      collections: [
+        {
+          eyebrow: "Daily Refined",
+          title: "Smart Casual",
+          body: "A balance of comfort and elegance with lightly textured fabrics and modern cuts.",
+          badge: "New Season",
+        },
+        {
+          eyebrow: "Timeless Elegance",
+          title: "Classic Tailoring",
+          body: "Italian-cut suits for business life and special occasions.",
+          badge: "Premium Series",
+        },
+      ],
+      heritageTitle: "70 Years of Tailoring Art",
+      heritageBody: "Founded in 1952, Altınyıldız keeps sustainable production at the center of its vision without compromising fabric quality. Every wool, cotton, and cashmere fiber we use reflects respect for nature and quality built to last for generations.",
+      metrics: [
+        { value: "100%", label: "Natural Wool" },
+        { value: "72", label: "Years of Experience" },
+        { value: "Eco", label: "Sustainable Production" },
+      ],
+      storeTitle: "Your Nearest AC&CO.",
+      storeBody: "Discover our stores across Türkiye and the Balkans.",
+      storePlaceholder: "Search city or store",
+      storeButton: "Find Store",
     },
     about: {
       eyebrow: "Corporate Profile",
@@ -125,6 +175,45 @@ export const en: Translation = {
       "Altinyildiz Group International is a multifaceted conglomerate driving innovation and precision across trade, logistics, and specialized services worldwide.",
     primary: "Explore Divisions",
     secondary: "Our History",
+    overviewTitle: "Onur 2009 Ltd",
+    overviewBody:
+      "Since entering the Bulgarian market in 2009, Onur 2009 Ltd has been active in fruit and vegetable trade. What began with small volumes has grown into an operation capable of managing the import and distribution of more than 8,000 tons of products annually from Türkiye, Greece, Serbia, Poland, Lithuania, and other countries.",
+    overviewHighlights: [
+      { title: "Strong Supplier Relationships", body: "Long-term partnerships with major producers in Türkiye help us source high-quality products at competitive prices." },
+      { title: "Complete Process Management", body: "We manage every step of the supply chain professionally, from production and transport to storage and delivery." },
+      { title: "Flexible, Comprehensive Service", body: "Market analysis, new product opportunities, and customer-specific import solutions support sustainable growth." },
+    ],
+    capabilitiesTitle: "Operating Areas",
+    capabilitiesBody:
+      "Fresh produce trade, logistics, auto service, menswear, and Turkish dessert distribution operate under one coordinated management discipline.",
+    capabilities: [
+      { title: "Fruit & Vegetable Portfolio", body: "A broad range including tomatoes, peppers, onions, carrots, gherkins, zucchini, grapes, pomegranates, quince, watermelon, melon, figs, and citrus." },
+      { title: "Logistics & Transport", body: "Fleet and planning infrastructure with refrigerated and standard vehicles for varied distribution needs." },
+      { title: "Packaging Solutions", body: "Clamshells, mesh bags, crates, and cartons adapted to retail, HORECA, and export requirements." },
+      { title: "Brand Distribution", body: "Retail and distribution operations connecting SO BAKLAVA and Altınyıldız AC&CO. Fashion with Bulgarian consumers." },
+    ],
+    teamTitle: "Our Team",
+    teamBody:
+      "Our operational success depends on an experienced, task-focused team with expertise across commercial and operational processes.",
+    team: [
+      { name: "Onur Sapaz", role: "Owner & Sales Specialist - controls supplier pricing, manages orders, and leads sales for stocked products." },
+      { name: "Anıl Vatansever", role: "General Manager - responsible for strategy, supplier relationships, and overall management." },
+      { name: "Katrin Sapaz", role: "Stock & Operations Specialist - responsible for stock, warehouse management, and daily operations." },
+      { name: "Gulay Emilova", role: "Documentation Specialist - handles import, dispatch, and official documentation processes." },
+      { name: "Kostandina Barakova", role: "Banking Operations & Payments - manages financial flows." },
+      { name: "Barbaros Ozturk", role: "IT Specialist & Support - systems, infrastructure, and technical support." },
+      { name: "Gunes Sapaz", role: "Customs and Transport Manager - communication and coordination for external markets." },
+      { name: "Gabriela Krasteva", role: "Assistant & Relations Manager - customer communication and partner coordination." },
+    ],
+    partnershipTitle: "Partnership and Future Vision",
+    partnershipBody:
+      "We believe success is built on long-term business partnerships, mutual trust, and professionalism. Our commitment to quality and innovation enables us to offer customers complete solutions at high standards, not only products.",
+    partnershipItems: [
+      { title: "Expansion & Diversity", body: "We aim to broaden our product and service portfolio according to customer needs." },
+      { title: "Mutual Satisfaction", body: "We build business partnerships that support sustainable and mutual growth." },
+      { title: "New Opportunities", body: "We create opportunities for new markets, product diversification, and long-term added value." },
+    ],
+    partnershipClosing: "Join us on our success journey; together we can build a future full of new opportunities and unlimited development potential.",
     purposeTitle: "Our Purpose",
     purposeBody:
       "Defining the trajectory of global commerce through unwavering commitment to quality and structural integrity. We don't just facilitate trade; we build the infrastructure of international growth.",
@@ -186,59 +275,46 @@ export const en: Translation = {
     footerLegal: "Legal",
   },
     bulgatexView: {
-    badge: "Bulgatex Consulting",
-    title: "Strategic Architecture for Global Markets",
-    body:
-      "Expert market entry support, intricate import/export logistics, and specialized textile trade consulting. We engineer robust business development strategies for visionary enterprises expanding across Europe and Asia.",
-    primary: "Explore Services",
-    secondary: "Consult with an Expert",
-    competenciesTitle: "Core Competencies",
-    competenciesBody:
-      "Data-driven methodologies applied to international trade complexities. Our consulting framework is built on decades of operational excellence.",
-    learnMore: "Learn More",
-    cards: [
-      {
-        title: "Market Entry Support",
-        body:
-          "Comprehensive strategic planning for penetrating new territories. We provide detailed risk analysis, regulatory compliance roadmaps, and competitive landscape mapping.",
-        tags: ["Risk Analysis", "Regulatory Compliance"],
-      },
-      {
-        title: "Partnership Development",
-        body:
-          "Identifying, vetting, and establishing critical joint ventures and distribution channels to solidify your market presence.",
-      },
-      {
-        title: "Textile Trade Expertise",
-        body:
-          "Leveraging deep industry networks to optimize your textile supply chain, from raw material sourcing to finished goods distribution.",
-      },
-      {
-        title: "Import/Export Consulting",
-        body:
-          "Navigating complex customs architectures, tariff classifications, and cross-border logistics to streamline your operational efficiency.",
-      },
+    heroBadge: "Trade Beyond Borders",
+    heroTitlePrefix: "BulgateX PROJECT:",
+    heroTitleGreen: "Global vision,",
+    heroTitleRed: "Local strength.",
+    heroBody: "We provide operational support and consulting for companies entering the European Union market, helping them increase exports and strengthen their competitive position.",
+    heroPrimary: "Start Now",
+    heroSecondary: "Review Processes",
+    servicesTitle: "Core Services",
+    services: [
+      { title: "Company Formation", body: "Enter the European market smoothly with limited company (EOOD, OOD) and joint-stock company (AD) setup support." },
+      { title: "Storage Solutions", body: "Strategic stock management and cost optimization with dry, cold-chain, and neutral storage options." },
+      { title: "Logistics & Distribution", body: "Fast and reliable European distribution through partial and full-load transport options." },
+      { title: "Customs & Tax", body: "Professional foreign trade management with authorized customs agents in Bulgaria and Türkiye." },
+      { title: "Legal Compliance", body: "Expert consulting and legal process management for EU compliance laws and local regulations." },
+      { title: "Marketing & Sales", body: "Direct access strategies for the European market through digital infrastructure and e-commerce solutions." },
     ],
-    processTitle: "Strategic Integration Process",
-    processBody:
-      "A methodical, phase-gated approach to establishing your operational footprint in new markets.",
-    phases: [
-      {
-        title: "Phase 01: Audit & Analysis",
-        body:
-          "Deep-dive into current capabilities, target market dynamics, and regulatory requirements. We formulate the baseline data required for strategic positioning.",
-      },
-      {
-        title: "Phase 02: Strategic Blueprinting",
-        body:
-          "Development of the execution roadmap. This includes partner identification profiles, supply chain routing, and financial modeling for the first 24 months.",
-      },
-      {
-        title: "Phase 03: Execution & Integration",
-        body:
-          "Active facilitation of negotiations, legal structure formation, and operational setup. We serve as your on-ground architects during the critical launch window.",
-      },
+    storageTitle: "Storage and Stock Management",
+    storageBody: "BulgateX helps companies grow operations without unnecessary investment by providing flexible, cost-effective warehouse solutions matched to real needs.",
+    storageBenefits: [
+      { title: "Annual Cost Advantage:", body: "Predictable net cost per truck supports stronger price competitiveness." },
+      { title: "No Unused Space Cost:", body: "You only pay for the area you use, minimizing fixed overhead." },
+      { title: "Strategic Location:", body: "Warehouses inside Europe support faster customer reach and lower transport costs." },
     ],
+    storageExample: "Example: Instead of renting a 200 m² warehouse, using the 50 m² you need can save up to €28,800 annually.",
+    reasonsTitle: "Why BulgateX?",
+    reasons: [
+      { value: "1-2 mo", label: "Fast warehouse lease & setup process" },
+      { value: "75%", label: "Cost savings through short-term leasing" },
+      { value: "10%", label: "Bulgarian corporate tax advantage" },
+      { value: "FULL", label: "Compliance with EU regulations and laws" },
+    ],
+    logisticsTitle: "Logistics and Distribution Network",
+    logisticsBody: "Optimize your operational processes with faster and more efficient logistics management at lower cost.",
+    logisticsItems: ["Customs and regulation support", "Traceable and secure transport", "Quality control and consolidation", "Risk and insurance management"],
+    logisticsAdvantageTitle: "Cost Advantage:",
+    logisticsAdvantageBody: "With our intermediate distribution strategy, we reduce Antalya-Poland refrigerated transport costs to the €3,500 - €4,300 range.",
+    ctaTitle: "Grow Your Business with Confidence",
+    ctaBody: "Avoid unnecessary investments with BulgateX, pay only for what you use, and increase profitability by controlling operational costs.",
+    ctaPlaceholder: "Email address",
+    ctaButton: "Get Quote",
   },
     freshProduceView: {
     heroEyebrow: "Global Fresh Produce Trade",

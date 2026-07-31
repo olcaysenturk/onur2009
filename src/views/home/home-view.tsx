@@ -1,4 +1,5 @@
 import { ContactSection } from "@/components/sections/contact-section";
+import { CompanySnapshotSection } from "@/components/sections/company-snapshot-section";
 import { HeritageSection } from "@/components/sections/heritage-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { PartnersSection } from "@/components/sections/partners-section";
@@ -15,6 +16,7 @@ export default function Home() {
         <HeroSection />
         <StatsSection />
         <HeritageSection />
+        <CompanySnapshotSection />
         <ServicesSection />
         <PartnersSection />
         <ContactSection />

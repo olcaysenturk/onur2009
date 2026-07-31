@@ -2,127 +2,195 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Eye, Globe2, Rocket, Share2 } from "lucide-react";
+import {
+  ArrowRight,
+  CakeSlice,
+  FileText,
+  Handshake,
+  Landmark,
+  Monitor,
+  PackageCheck,
+  Route,
+  Shirt,
+  Sprout,
+  Truck,
+  UserRound,
+  UsersRound,
+} from "lucide-react";
+import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { useLanguage } from "@/hooks/useLanguage";
-import { images } from "@/lib/site";
+import { aboutPage, pageImages } from "@/lib/pages";
 import type { Translation } from "@/locales/types";
-import { aboutPage } from "@/lib/pages";
 
 type AboutContent = Translation["aboutView"];
+
+const highlightIcons = [Handshake, Route, PackageCheck];
+const capabilityIcons = [Sprout, Truck, PackageCheck, Shirt];
+const teamIcons = [Handshake, UsersRound, PackageCheck, FileText, Landmark, Monitor, Truck, UserRound];
+const partnershipIcons = [Sprout, UsersRound, Handshake];
+
 export default function AboutPage() {
   const { t } = useLanguage();
   const content = t.aboutView as AboutContent;
-  const divisionLinks = [
-    ...(t.footer.groups[0]?.links ?? []),
-    { label: t.divisions["retail-fashion"].title, href: "/retail-fashion" },
-  ];
-  const corporateLinks = [
-    { label: t.divisions["sobaklava-distribution"].title, href: "/sobaklava-distribution" },
-    { label: t.divisions["bulgatex-consulting"].title, href: "/bulgatex-consulting" },
-    ...(t.footer.groups.at(-1)?.links ?? []),
-  ];
 
   return (
     <>
       <Header />
-      <main className="pt-20 md:pt-24">
-        <section className="mx-auto max-w-[1440px] px-4 py-12 md:px-10 md:py-20">
-          <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-12">
-            <div className="space-y-8 lg:col-span-6">
-              <div className="space-y-4">
-                <h1 className="font-display text-[40px] font-bold leading-[48px] tracking-[-0.01em] text-primary md:text-[64px] md:leading-[72px] md:tracking-[-0.02em]">
-                  {content.title} <br />
-                  <span className="text-accent">{content.accent}</span>
-                </h1>
-                <p className="max-w-xl text-lg leading-7 text-muted">{content.body}</p>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/services" className="rounded-lg bg-primary px-8 py-3 font-display text-base font-semibold tracking-[0.05em] text-white shadow-md transition-all hover:bg-accent">
+      <main className="pt-16 md:pt-20">
+        <section className="relative overflow-hidden bg-primary px-4 py-20 text-white md:px-10 md:py-28">
+          <Image
+            src={pageImages.logisticsHero}
+            alt={content.overviewTitle}
+            fill
+            priority
+            quality={100}
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/88 to-primary/35" />
+          <div className="relative z-10 mx-auto grid max-w-[1280px] grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-7">
+              <p className="font-display text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+                {content.overviewTitle}
+              </p>
+              <h1 className="mt-5 text-balance font-display text-[42px] font-bold leading-[50px] md:text-[64px] md:leading-[72px]">
+                {content.title} <span className="text-accent">{content.accent}</span>
+              </h1>
+              <p className="mt-6 max-w-3xl text-base leading-7 text-white/88 md:text-lg md:leading-8">
+                {content.overviewBody}
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 rounded bg-accent px-7 py-3 font-display text-sm font-semibold text-white transition-colors hover:bg-secondary"
+                >
                   {content.primary}
+                  <ArrowRight aria-hidden className="h-4 w-4" />
                 </Link>
-                <a href="#purpose" className="rounded-lg border border-outline px-8 py-3 font-display text-base font-semibold tracking-[0.05em] text-primary transition-all hover:bg-surface-soft">
+                <a
+                  href="#team"
+                  className="inline-flex items-center rounded border border-white/30 px-7 py-3 font-display text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                >
                   {content.secondary}
                 </a>
               </div>
             </div>
-            <div className="mt-12 lg:col-span-6 lg:mt-0">
-              <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl md:h-[540px]">
-                <Image src={aboutPage.image} alt={content.title} fill priority quality={100} className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-              </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1">
+              {content.overviewHighlights.map((item, index) => {
+                const Icon = highlightIcons[index] ?? Handshake;
+
+                return (
+                  <article key={item.title} className="rounded-lg border border-white/15 bg-white/10 p-5 backdrop-blur">
+                    <Icon aria-hidden className="h-6 w-6 text-accent" />
+                    <h2 className="mt-4 font-display text-lg font-semibold">{item.title}</h2>
+                    <p className="mt-2 text-sm leading-6 text-white/78">{item.body}</p>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        <section id="purpose" className="bg-white py-12 md:py-20">
-          <div className="mx-auto max-w-[1440px] px-4 md:px-10">
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-              <div className="flex flex-col justify-center space-y-6 lg:col-span-4">
-                <div className="h-1 w-12 bg-accent" />
-                <h2 className="font-display text-[32px] font-semibold leading-[40px] tracking-[-0.01em] text-primary">{content.purposeTitle}</h2>
-                <p className="text-base leading-6 text-muted">{content.purposeBody}</p>
+        <section className="bg-background px-4 py-16 md:px-10 md:py-24">
+          <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-5">
+              <h2 className="font-display text-3xl font-semibold leading-10 text-primary md:text-[40px] md:leading-[48px]">
+                {content.capabilitiesTitle}
+              </h2>
+              <p className="mt-5 text-base leading-7 text-muted">{content.capabilitiesBody}</p>
+            </div>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-7">
+              {content.capabilities.map((item, index) => {
+                const Icon = capabilityIcons[index] ?? CakeSlice;
+
+                return (
+                  <article key={item.title} className="rounded-lg border border-outline/30 bg-surface p-6 shadow-sm">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-muted text-accent">
+                      <Icon aria-hidden className="h-6 w-6" />
+                    </div>
+                    <h3 className="mt-5 font-display text-xl font-semibold text-primary">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-muted">{item.body}</p>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white px-4 py-16 md:px-10 md:py-24">
+          <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
+            <div className="relative overflow-hidden rounded-lg shadow-[0_18px_45px_rgba(39,59,120,0.12)] lg:col-span-5">
+              <Image
+                src={aboutPage.image}
+                alt={content.partnershipTitle}
+                width={760}
+                height={860}
+                quality={100}
+                className="aspect-[4/5] w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/25 to-transparent" />
+            </div>
+            <div className="lg:col-span-7">
+              <h2 className="font-display text-3xl font-semibold leading-10 text-primary md:text-[40px] md:leading-[48px]">
+                {content.partnershipTitle}
+              </h2>
+              <p className="mt-5 text-base leading-7 text-muted md:text-lg md:leading-8">
+                {content.partnershipBody}
+              </p>
+              <div className="mt-8 space-y-5">
+                {content.partnershipItems.map((item, index) => {
+                  const Icon = partnershipIcons[index] ?? Handshake;
+
+                  return (
+                    <div key={item.title} className="flex gap-5">
+                      <div className="flex h-16 w-16 flex-none items-center justify-center rounded-full bg-surface-muted text-primary">
+                        <Icon aria-hidden className="h-7 w-7" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-xl font-semibold text-primary">{item.title}</h3>
+                        <p className="mt-2 text-sm leading-6 text-muted">{item.body}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:col-span-8">
-                <article className="relative overflow-hidden rounded-xl border border-outline/40 bg-white p-10 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
-                  <div className="absolute left-0 top-0 h-1.5 w-full bg-accent/20" />
-                  <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-xl bg-surface-muted text-accent">
-                    <Eye className="h-8 w-8" />
-                  </div>
-                  <h3 className="mb-4 font-display text-2xl font-semibold leading-8 text-primary">{content.visionTitle}</h3>
-                  <p className="text-base leading-6 text-muted">{content.visionBody}</p>
-                </article>
-                <article className="relative overflow-hidden rounded-xl bg-primary p-10 text-white shadow-[0_12px_40px_rgba(39,59,120,0.12)]">
-                  <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-xl bg-accent text-white shadow-lg">
-                    <Rocket className="h-8 w-8" />
-                  </div>
-                  <h3 className="mb-4 font-display text-2xl font-semibold leading-8">{content.missionTitle}</h3>
-                  <p className="text-base leading-6 text-white/90">{content.missionBody}</p>
-                </article>
-              </div>
+              <p className="mt-8 text-base leading-7 text-muted">{content.partnershipClosing}</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="team" className="bg-surface-soft px-4 py-16 md:px-10 md:py-24">
+          <div className="mx-auto max-w-[1280px]">
+            <div className="mb-12 max-w-4xl">
+              <h2 className="font-display text-3xl font-semibold leading-10 text-primary md:text-[40px] md:leading-[48px]">
+                {content.teamTitle}
+              </h2>
+              <p className="mt-4 text-base leading-7 text-muted">{content.teamBody}</p>
+            </div>
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              {content.team.map((member, index) => {
+                const Icon = teamIcons[index] ?? UserRound;
+
+                return (
+                  <article
+                    key={member.name}
+                    className="flex gap-5 rounded-lg border border-outline/30 bg-surface p-6 shadow-sm"
+                  >
+                    <div className="flex h-14 w-14 flex-none items-center justify-center rounded-lg bg-surface-muted text-accent">
+                      <Icon aria-hidden className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl font-semibold text-primary">{member.name}</h3>
+                      <p className="mt-2 text-sm leading-6 text-muted">{member.role}</p>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
       </main>
-
-      <footer className="mt-12 bg-primary px-4 pb-12 pt-12 text-white md:px-10 md:pt-20">
-        <div className="mx-auto mb-16 grid max-w-[1440px] grid-cols-1 gap-12 md:grid-cols-12">
-          <div className="flex flex-col space-y-6 md:col-span-4">
-            <Image src={images.logo} alt="" width={600} height={300} className="h-auto w-36 rounded bg-white p-2" />
-            <p className="max-w-xs text-sm leading-5 text-white/70">{content.footerBody}</p>
-            <div className="flex gap-4">
-              <a className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-accent" href="#" aria-label="Global">
-                <Globe2 className="h-5 w-5" />
-              </a>
-              <a className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-accent" href="#" aria-label="Share">
-                <Share2 className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-          <FooterColumn title={content.footerDivisions} links={divisionLinks} />
-          <FooterColumn title={content.footerCorporate} links={corporateLinks} />
-        </div>
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-6 border-t border-white/10 pt-12 md:flex-row">
-          <p className="text-sm leading-5 text-white/50">{content.copyright}</p>
-          <span className="text-sm leading-5 text-white/30">{content.headquarters}</span>
-        </div>
-      </footer>
+      <Footer />
     </>
-  );
-}
-
-function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
-  return (
-    <div className="flex flex-col space-y-6 md:col-span-4">
-      <h3 className="font-display text-base font-semibold uppercase tracking-[0.18em] text-accent">{title}</h3>
-      <div className="flex flex-col space-y-4">
-        {links.map((link, index) => (
-          <Link key={`${link.href}-${link.label}-${index}`} className="inline-flex items-center gap-2 text-base leading-6 text-white/70 transition-colors hover:text-white" href={link.href}>
-            <span className="h-1 w-1 rounded-full bg-accent" />
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </div>
   );
 }
