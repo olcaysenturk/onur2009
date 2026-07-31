@@ -39,7 +39,7 @@ export const navItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Gallery", href: "/retail-fashion" },
+  { label: "Gallery", href: "/altinyildiz" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -81,7 +81,7 @@ export const services: Service[] = [
     description:
       "Exclusive retail distribution and brand management of premium classic menswear across Bulgaria.",
     icon: Shirt,
-    href: "/retail-fashion",
+    href: "/altinyildiz",
     inverted: true,
   },
   {
@@ -118,7 +118,7 @@ export const footerGroups = [
   {
     title: "Brands",
     links: [
-      { label: "Altinyildiz Classics", href: "/retail-fashion" },
+      { label: "Altinyildiz Classics", href: "/altinyildiz" },
       { label: "SoBaklava", href: "/sobaklava-distribution" },
     ],
   },

@@ -18,6 +18,15 @@ const serviceSlugs = [
   "bulgatex-consulting",
 ] as const;
 
+const serviceHrefBySlug: Record<(typeof serviceSlugs)[number], string> = {
+  "fresh-produce-trade": "/fresh-produce-trade",
+  "logistics-transport": "/logistics-transport",
+  "auto-truck-service": "/auto-truck-service",
+  "retail-fashion": "/altinyildiz",
+  "sobaklava-distribution": "/sobaklava-distribution",
+  "bulgatex-consulting": "/bulgatex-consulting",
+};
+
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
@@ -28,7 +37,7 @@ export function Header() {
     "/fresh-produce-trade",
     "/logistics-transport",
     "/auto-truck-service",
-    "/retail-fashion",
+    "/altinyildiz",
     "/sobaklava-distribution",
     "/bulgatex-consulting",
   ]);
@@ -36,7 +45,7 @@ export function Header() {
   const serviceDropdownItems = serviceSlugs.map((slug) => ({
     label: t.divisions[slug].title,
     description: t.divisions[slug].eyebrow,
-    href: `/${slug}`,
+    href: serviceHrefBySlug[slug],
   }));
 
   return (

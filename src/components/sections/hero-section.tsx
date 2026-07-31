@@ -42,7 +42,7 @@ export function HeroSection() {
       eyebrow: t.divisions["retail-fashion"].eyebrow,
       title: t.divisions["retail-fashion"].headline,
       description: t.divisions["retail-fashion"].description,
-      href: "/retail-fashion",
+      href: "/altinyildiz",
     },
     {
       key: "soba",

@@ -27,11 +27,11 @@ export function ContactSection() {
             {t.home.contact.body}
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <ButtonLink href="mailto:sales@onur2009.com" showIcon>
+            <ButtonLink href="mailto:office@onur2009.com" showIcon>
               {t.home.contact.primary}
             </ButtonLink>
             <a
-              href="tel:+359000000000"
+              href="tel:+359878587675"
               className="inline-flex min-h-12 items-center gap-2 rounded border border-white/25 px-6 py-3 font-display text-sm font-semibold uppercase tracking-[0.05em] text-white transition-colors hover:bg-white/10"
             >
               <Phone aria-hidden className="h-4 w-4" />

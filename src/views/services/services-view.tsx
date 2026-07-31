@@ -47,7 +47,7 @@ export default function ServicesPage() {
           </Link>
 
           <ServiceCard href="/auto-truck-service" image={pageImages.servicesAuto} title={divisions["auto-truck-service"].title} body={divisions["auto-truck-service"].description} tag={content.tags[1]} cta={content.exploreService} />
-          <ServiceCard href="/retail-fashion" image={pageImages.servicesRetail} title={divisions["retail-fashion"].title} body={divisions["retail-fashion"].description} tag={content.tags[2]} cta={content.visitBoutiques} />
+          <ServiceCard href="/altinyildiz" image={pageImages.servicesRetail} title={divisions["retail-fashion"].title} body={divisions["retail-fashion"].description} tag={content.tags[2]} cta={content.visitBoutiques} />
           <ServiceCard href="/sobaklava-distribution" image={pageImages.servicesSoba} title={divisions["sobaklava-distribution"].title} body={divisions["sobaklava-distribution"].description} tag={content.tags[3]} cta={content.discoverNetwork} />
 
           <Link href="/bulgatex-consulting" className="group relative mt-8 overflow-hidden rounded-xl border border-outline/30 bg-[#000613] shadow-[0_12px_40px_rgba(0,0,0,0.08)] md:col-span-12">

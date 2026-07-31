@@ -1,4 +1,5 @@
 const galleryImageCount = 21;
+const altinyildizEditorialImageCount = 12;
 
 export const imageAssets = {
   site: {
@@ -48,6 +49,11 @@ export const imageAssets = {
     { length: galleryImageCount },
     (_, index) => `/images/gallery/gallery-${index + 1}.jpg`,
   ),
+  altinyildizEditorial: Array.from(
+    { length: altinyildizEditorialImageCount },
+    (_, index) => `/images/altinyildiz/editorial-${String(index + 1).padStart(2, "0")}.png`,
+  ),
 } as const;
 
 export const galleryImages = imageAssets.gallery;
+export const altinyildizEditorialImages = imageAssets.altinyildizEditorial;

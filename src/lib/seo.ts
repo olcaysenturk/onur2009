@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { divisionPages } from "./pages";
+import { divisionPages, getDivisionHref } from "./pages";
 import { images } from "./site";
 
 const appTitle = process.env.NEXT_PUBLIC_APP_TITLE ?? "ONUR2009";
@@ -117,7 +117,7 @@ export function buildOrganizationSchema() {
           "@type": "Service",
           name: page.title,
           description: page.description,
-          url: resolveUrl(`/${page.slug}`),
+          url: resolveUrl(getDivisionHref(page.slug)),
         },
       })),
     },

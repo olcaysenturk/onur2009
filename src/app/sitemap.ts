@@ -12,7 +12,7 @@ const routes = [
   "/logistics-transport",
   "/fresh-produce-trade",
   "/auto-truck-service",
-  "/retail-fashion",
+  "/altinyildiz",
   "/sobaklava-distribution",
   "/bulgatex-consulting",
 ];

@@ -3,16 +3,45 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Badge, Mail, MapPin, Phone, Store, Truck } from "lucide-react";
+import type { FormEvent } from "react";
 import { Header } from "@/components/layout/header";
 import { useLanguage } from "@/hooks/useLanguage";
 import type { Translation } from "@/locales/types";
-import { pageImages } from "@/lib/pages";
 import { images } from "@/lib/site";
 
 type ContactContent = Translation["contactView"];
+const mapQuery = "Onur 2009, 13 Professor Tsvetan Lazarov Blvd, Sofia Slatina, Bulgaria";
+const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&output=embed`;
+const mapLinkUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+
 export default function ContactPage() {
   const { t } = useLanguage();
   const content = t.contactView as ContactContent;
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const contact = String(data.get("contact") ?? "").trim();
+    const company = String(data.get("company") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    const subject = encodeURIComponent(`${content.formTitle} - ${name || content.headquarters}`);
+    const body = encodeURIComponent(
+      [
+        `${content.fields.firstName}: ${name}`,
+        `${content.fields.businessEmail}: ${contact}`,
+        `${content.fields.company}: ${company || "-"}`,
+        "",
+        `${content.fields.message}:`,
+        message,
+      ].join("\n"),
+    );
+
+    window.location.href = `mailto:${content.email}?subject=${subject}&body=${body}`;
+  }
 
   return (
     <>
@@ -41,26 +70,31 @@ export default function ContactPage() {
           </div>
           <div className="flex flex-col gap-8 lg:col-span-7">
             <div className="relative h-64 overflow-hidden rounded-xl border border-outline/30 bg-[#e2e2e2] md:h-80">
-              <Image src={pageImages.contactMap} alt={content.headquarters} fill quality={100} className="object-cover" />
-              <div className="absolute inset-0 bg-[#000613]/5" />
+              <iframe
+                className="h-full w-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src={mapEmbedUrl}
+                title={`${content.headquarters} ${content.addressLabel}`}
+              />
+              <a
+                className="absolute bottom-4 left-4 rounded-lg bg-white px-4 py-2 font-display text-sm font-semibold text-[#000613] shadow-[0_4px_18px_rgba(0,0,0,0.16)] transition-colors hover:bg-[#ffe089]"
+                href={mapLinkUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Google Maps
+              </a>
             </div>
-            <form className="rounded-xl border border-outline/30 bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+            <form className="rounded-xl border border-outline/30 bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)]" onSubmit={handleSubmit}>
               <h2 className="mb-8 font-display text-2xl font-semibold leading-8 text-[#000613]">{content.formTitle}</h2>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Field label={content.fields.firstName} placeholder={content.placeholders.firstName} />
-                <Field label={content.fields.lastName} placeholder={content.placeholders.lastName} />
-                <Field label={content.fields.businessEmail} placeholder={content.placeholders.businessEmail} type="email" />
-                <Field label={content.fields.company} placeholder={content.placeholders.company} />
-                <label className="flex flex-col gap-2 md:col-span-2">
-                  <span className="font-display text-sm font-semibold tracking-[0.05em] text-muted">{content.fields.department}</span>
-                  <select className="rounded-lg border border-outline/60 bg-white px-4 py-3 text-base text-[#000613] outline-none focus:border-[#000613]">
-                    <option>{content.placeholders.department}</option>
-                    {content.departments.map((department) => <option key={department.type}>{department.title}</option>)}
-                  </select>
-                </label>
+                <Field label={content.fields.firstName} name="name" placeholder={content.placeholders.firstName} required />
+                <Field label={content.fields.businessEmail} name="contact" placeholder={content.placeholders.businessEmail} required />
+                <Field className="md:col-span-2" label={content.fields.company} name="company" placeholder={content.placeholders.company} />
                 <label className="flex flex-col gap-2 md:col-span-2">
                   <span className="font-display text-sm font-semibold tracking-[0.05em] text-muted">{content.fields.message}</span>
-                  <textarea className="min-h-36 resize-none rounded-lg border border-outline/60 bg-white px-4 py-3 text-base text-[#000613] outline-none focus:border-[#000613]" placeholder={content.placeholders.message} />
+                  <textarea className="min-h-36 resize-none rounded-lg border border-outline/60 bg-white px-4 py-3 text-base text-[#000613] outline-none focus:border-[#000613]" name="message" placeholder={content.placeholders.message} required />
                 </label>
               </div>
               <div className="flex justify-end pt-8">
@@ -99,11 +133,11 @@ function DepartmentCard({ department }: { department: ContactContent["department
   );
 }
 
-function Field({ label, placeholder, type = "text" }: { label: string; placeholder: string; type?: string }) {
+function Field({ className = "", label, name, placeholder, required = false, type = "text" }: { className?: string; label: string; name: string; placeholder: string; required?: boolean; type?: string }) {
   return (
-    <label className="flex flex-col gap-2">
+    <label className={`flex flex-col gap-2 ${className}`}>
       <span className="font-display text-sm font-semibold tracking-[0.05em] text-muted">{label}</span>
-      <input className="rounded-lg border border-outline/60 bg-white px-4 py-3 text-base text-[#000613] outline-none focus:border-[#000613]" placeholder={placeholder} type={type} />
+      <input className="rounded-lg border border-outline/60 bg-white px-4 py-3 text-base text-[#000613] outline-none focus:border-[#000613]" name={name} placeholder={placeholder} required={required} type={type} />
     </label>
   );
 }

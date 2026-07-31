@@ -192,6 +192,10 @@ export const divisionPages: DivisionPage[] = [
   },
 ];
 
+export function getDivisionHref(slug: string) {
+  return slug === "retail-fashion" ? "/altinyildiz" : `/${slug}`;
+}
+
 export const aboutPage = {
   eyebrow: "Corporate Profile",
   headline: "Building reliable global operations since 2009.",
@@ -225,7 +229,7 @@ export const contactDepartments = [
 export const serviceOverviewCards = divisionPages.map((page) => ({
   title: page.title,
   description: page.description,
-  href: `/${page.slug}`,
+  href: getDivisionHref(page.slug),
   image:
     {
       "fresh-produce-trade": pageImages.servicesFresh,

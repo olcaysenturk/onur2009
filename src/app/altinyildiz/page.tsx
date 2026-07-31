@@ -7,7 +7,7 @@ export const metadata = createPageMetadata(
   "Altinyildiz Classics Bulgaria",
   "Premium classic menswear retail distribution and brand management across Bulgaria.",
   {
-    path: "/retail-fashion",
+    path: "/altinyildiz",
     keywords: [
       "Altinyildiz Classics Bulgaria",
       "menswear retail",
@@ -20,7 +20,7 @@ export const metadata = createPageMetadata(
   },
 );
 
-export default function RetailFashionPage() {
+export default function AltinyildizPage() {
   return (
     <>
       <JsonLd
@@ -28,7 +28,7 @@ export default function RetailFashionPage() {
           name: "Altinyildiz Classics Bulgaria",
           description:
             "Premium classic menswear retail distribution and brand management across Bulgaria.",
-          path: "/retail-fashion",
+          path: "/altinyildiz",
           image: pageImages.retailHero,
         })}
       />

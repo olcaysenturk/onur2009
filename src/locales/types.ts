@@ -260,6 +260,9 @@ export type Translation = {
       body: string;
       badge: string;
     }[];
+    editorialEyebrow: string;
+    editorialTitle: string;
+    editorialBody: string;
     heritageTitle: string;
     heritageBody: string;
     metrics: { value: string; label: string }[];
