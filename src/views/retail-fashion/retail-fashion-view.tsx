@@ -91,7 +91,7 @@ export default function RetailFashionPage() {
             loop
             muted
             playsInline
-            poster={pageImages.retailCraft}
+            poster={imageAssets.videoPosters.altinyildizHero}
             preload="metadata"
           >
             <source src={imageAssets.videos.altinyildizHero} type="video/mp4" />

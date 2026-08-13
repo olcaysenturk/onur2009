@@ -26,6 +26,7 @@ export function HeroSection() {
         loop
         playsInline
         preload="metadata"
+        poster={imageAssets.videoPosters.freshProduceHero}
         aria-label={t.home.hero.eyebrow}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#05080f]/92 via-[#07101d]/70 to-[#07101d]/25" />

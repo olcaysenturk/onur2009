@@ -6,7 +6,6 @@ import { Boxes, Globe2, Leaf, PackageCheck, ShieldCheck, Truck } from "lucide-re
 import { useLanguage } from "@/hooks/useLanguage";
 import { imageAssets } from "@/lib/assets";
 import { formatCopyright } from "@/lib/copyright";
-import { pageImages } from "@/lib/pages";
 import { images } from "@/lib/site";
 import type { Translation } from "@/locales/types";
 
@@ -68,7 +67,7 @@ export function FreshProducePage() {
           loop
           muted
           playsInline
-          poster={pageImages.freshHero}
+          poster={imageAssets.videoPosters.freshProduceHero}
           preload="metadata"
         >
           <source src={imageAssets.videos.freshProduceHero} type="video/mp4" />

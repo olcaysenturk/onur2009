@@ -51,6 +51,11 @@ export const imageAssets = {
     freshProduceHero: "/videos/onur-2009-hero-fullframe.mp4",
     bulgatexHero: "/videos/bulgatex-consulting-hero.mp4",
   },
+  videoPosters: {
+    altinyildizHero: "/images/video-posters/altinyildiz-classics-hero.jpg",
+    freshProduceHero: "/images/video-posters/onur-2009-hero-fullframe.jpg",
+    bulgatexHero: "/images/video-posters/bulgatex-consulting-hero.jpg",
+  },
   gallery: Array.from(
     { length: galleryImageCount },
     (_, index) => `/images/gallery/gallery-${index + 1}.jpg`,

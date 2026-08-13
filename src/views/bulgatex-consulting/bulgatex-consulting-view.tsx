@@ -37,7 +37,7 @@ export default function BulgatexConsultingView() {
             loop
             muted
             playsInline
-            poster={pageImages.bulgatexHero}
+            poster={imageAssets.videoPosters.bulgatexHero}
             preload="metadata"
           >
             <source src={imageAssets.videos.bulgatexHero} type="video/mp4" />

@@ -29,7 +29,7 @@ export function LogisticsTransportPageContent() {
           loop
           muted
           playsInline
-          poster={pageImages.logisticsHero}
+          poster={imageAssets.videoPosters.freshProduceHero}
           preload="metadata"
         >
           <source src={imageAssets.videos.freshProduceHero} type="video/mp4" />
