@@ -57,7 +57,7 @@ export const imageAssets = {
   ),
   altinyildizEditorial: Array.from(
     { length: altinyildizEditorialImageCount },
-    (_, index) => `/images/altinyildiz/editorial-${String(index + 1).padStart(2, "0")}.png`,
+    (_, index) => `/images/altinyildiz/editorial-${String(index + 1).padStart(2, "0")}.jpg`,
   ),
 } as const;
 

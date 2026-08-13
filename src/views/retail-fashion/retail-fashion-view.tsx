@@ -265,9 +265,10 @@ export default function RetailFashionPage() {
                     <Image
                       src={image}
                       alt={`${content.editorialEyebrow} ${index + 1}`}
-                      width={1080}
-                      height={1350}
-                      quality={95}
+                      width={900}
+                      height={1125}
+                      quality={82}
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                       className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-[1.035]"
                     />
                     <span className="absolute inset-0 bg-[#000c1e]/0 transition-colors group-hover:bg-[#000c1e]/10" />
@@ -360,9 +361,10 @@ export default function RetailFashionPage() {
               <Image
                 src={activeEditorialImage}
                 alt={`${content.editorialEyebrow} ${(activeEditorialIndex ?? 0) + 1}`}
-                width={1080}
-                height={1920}
-                quality={100}
+                width={900}
+                height={1600}
+                quality={90}
+                sizes="90vw"
                 className="max-h-[82vh] w-auto max-w-full object-contain shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
                 priority
               />
