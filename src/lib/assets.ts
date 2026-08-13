@@ -11,7 +11,7 @@ export const imageAssets = {
   },
   pages: {
     logoHome: "/images/pages/logoHome.png",
-    aboutHero: "/images/pages/aboutHero.jpg",
+    aboutHero: "/images/about/corporate-operations-hero.jpg",
     aboutOffice: "/images/pages/aboutOffice.jpg",
     logisticsHero: "/images/pages/logisticsHero.jpg",
     logisticsFacility: "/images/pages/logisticsFacility.jpg",
@@ -44,6 +44,12 @@ export const imageAssets = {
     servicesRetail: "/images/pages/servicesRetail.jpg",
     servicesSoba: "/images/pages/servicesSoba.jpg",
     servicesBulgatex: "/images/pages/servicesBulgatex.jpg",
+    contactHero: "/images/contact/contact-hero.jpg",
+  },
+  videos: {
+    altinyildizHero: "/videos/altinyildiz-classics-hero.mp4",
+    freshProduceHero: "/videos/onur-2009-hero-fullframe.mp4",
+    bulgatexHero: "/videos/bulgatex-consulting-hero.mp4",
   },
   gallery: Array.from(
     { length: galleryImageCount },

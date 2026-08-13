@@ -13,7 +13,7 @@ export const en: Translation = {
     },
     footer: {
       description: "Orchestrating Global Trade & Logistics. Delivering excellence across supply chains, corporate services, and brand management since 2009.",
-      copyright: "© 2024 ONUR2009. All rights reserved.",
+      copyright: "© {year} ONUR2009. All rights reserved.",
       groups: [
         { title: "Logistics & Trade", links: [{ label: "Logistics & Transport", href: "/logistics-transport" }, { label: "Fresh Produce Trade", href: "/fresh-produce-trade" }, { label: "Auto & Truck Service", href: "/auto-truck-service" }] },
         { title: "Brands", links: [{ label: "Altinyildiz Classics", href: "/altinyildiz" }, { label: "SoBaklava", href: "/sobaklava-distribution" }] },
@@ -103,7 +103,7 @@ export const en: Translation = {
     consult: "Consult With Us",
     tags: ["Agriculture & Trade", "Fleet Maintenance", "Retail & Fashion", "FMCG Distribution", "Strategic Advisory"],
     footerBody: "The Architect of Success. Structuring global trade, logistics, and consulting with unwavering reliability.",
-    footerCopyright: "© 2024 LOGO International. All rights reserved.",
+    footerCopyright: "© {year} ONUR2009. All rights reserved.",
     footerDivisions: "Divisions",
     footerBrands: "Brands",
     footerLegal: "Legal",
@@ -230,7 +230,7 @@ export const en: Translation = {
       "Architects of global supply chain and corporate infrastructure. Delivering excellence across Europe and beyond since our foundation.",
     footerDivisions: "Divisions",
     footerCorporate: "Corporate",
-    copyright: "© 2024 LOGO International. All rights reserved.",
+    copyright: "© {year} ONUR2009. All rights reserved.",
     headquarters: "Headquartered in Sofia, Bulgaria",
   },
     galleryView: {
@@ -249,7 +249,7 @@ export const en: Translation = {
     footerSectors: "Sectors",
     footerBrands: "Brands",
     footerLegal: "Legal",
-    copyright: "© 2024 LOGO International. All rights reserved.",
+    copyright: "© {year} ONUR2009. All rights reserved.",
   },
     contactView: {
     title: "Contact Onur 2009",
@@ -271,7 +271,7 @@ export const en: Translation = {
     placeholders: { firstName: "Your name", lastName: "Last name", businessEmail: "+359 ... or name@company.com", company: "Your company", department: "Select a contact...", message: "Tell us what services you need." },
     submit: "Send Message",
     footerBody: "Onur 2009 provides trade, logistics, and business solutions tailored to partner needs.",
-    footerCopyright: "© 2024 ONUR2009. All rights reserved.",
+    footerCopyright: "© {year} ONUR2009. All rights reserved.",
     footerDivisions: "Divisions",
     footerSubsidiaries: "Subsidiaries",
     footerLegal: "Legal",
@@ -325,6 +325,31 @@ export const en: Translation = {
       "Delivering premium citrus, stone fruits, and fresh vegetables across borders. We ensure structural integrity and quality control from farm to international markets.",
     heroPrimary: "Explore Our Categories",
     heroSecondary: "View Supply Chain",
+    heroVideoLabel: "Fresh produce trade",
+    introEyebrow: "Onur 2009 Ltd",
+    introTitle:
+      "What began with small volumes now exceeds 8,000 tons of annual capacity.",
+    introBody:
+      "Since our establishment, we have clarified our short-term goals and grown by improving operations at every step. Today, we have the capacity to organize the import and distribution of more than 8,000 tons of products annually from Turkey, Greece, Serbia, Poland, Lithuania, and other countries.",
+    introFeatures: [
+      {
+        title: "Strong Supplier Relationships",
+        body: "We build long-term partnerships with major producers in Turkey to source high-quality products at competitive prices.",
+      },
+      {
+        title: "End-to-End Process Management",
+        body: "We professionally manage every supply chain stage from production and transport to storage and final delivery.",
+      },
+      {
+        title: "Flexibility & Comprehensive Service",
+        body: "We provide customized import solutions based on market analysis, new product opportunities, and customer demand.",
+      },
+    ],
+    produceHighlights: [
+      { alt: "Fresh vegetable supply", label: "Vegetable supply" },
+      { alt: "Citrus export", label: "Citrus" },
+      { alt: "Packaged fresh produce", label: "Packaging" },
+    ],
     categoriesTitle: "Premium Categories",
     categoriesBody:
       "Sourced globally, delivered flawlessly. Our core focus areas in the fresh produce sector.",
@@ -356,6 +381,24 @@ export const en: Translation = {
       },
     ],
     catalogLabel: "View Full Catalog",
+    productEyebrow: "Product Range",
+    productTitle: "A diverse portfolio covering a large share of the Bulgarian consumer basket.",
+    productBody:
+      "Our fruit and vegetable portfolio is broad enough to serve both fresh consumption and commercial needs throughout the year.",
+    productCategories: [
+      { title: "Tomatoes", body: "Broad supply of red, pink, cherry, Landolin, and cherry mix varieties." },
+      { title: "Peppers", body: "A wide range including green and red kapia, sivri, dolma, hot, and California peppers." },
+      { title: "Onions", body: "Supply of dry onions and fresh spring onions." },
+      { title: "Carrots", body: "Continuous carrot supply throughout the year." },
+      { title: "Gherkins", body: "Gherkin varieties suitable for both fresh use and preserves." },
+      { title: "Zucchini", body: "Supply of light and dark zucchini varieties." },
+      { title: "Grapes", body: "Seedless white, rose, and black grape varieties." },
+      { title: "Pomegranates", body: "Fresh pomegranate supply for retail and wholesale distribution." },
+      { title: "Quince", body: "Seasonal quince supply." },
+      { title: "Watermelon & Melon", body: "Strong summer-season supply products." },
+      { title: "Figs", body: "We source quality fig varieties." },
+      { title: "Citrus", body: "Supply of lemons, oranges, grapefruits, and mandarins." },
+    ],
     operationsTitle: "Precision Import & Export Operations",
     operationsBody:
       "Our supply chain architecture is built for absolute reliability. From the moment of harvest to final destination delivery, we maintain a flawless cold chain.",
@@ -372,9 +415,63 @@ export const en: Translation = {
     ],
     metricValue: "40+",
     metricLabel: "Countries Served",
+    packagingEyebrow: "From Nature to Your Table",
+    packagingTitle: "Packaging Solutions",
+    packagingBody:
+      "As a reliable supplier of high-quality fresh produce, we offer market-ready, export-ready, customer-focused packaging solutions. Packaging options can be customized by product type, logistics requirement, and customer demand.",
+    packagingImageAlt: "Fresh produce packaging solutions",
+    packagingFeatures: [
+      {
+        title: "Broad Seasonal Variety",
+        body: "We meet market needs by supplying different products smoothly throughout the season.",
+      },
+      {
+        title: "Flexible Packaging Options",
+        body: "We offer different packaging formats for retail, HORECA, and large-scale distribution.",
+      },
+      {
+        title: "Export-Ready Logistics",
+        body: "Packaging and labeling solutions aligned with international transport and import procedures.",
+      },
+    ],
+    packagingOptionsTitle: "Our Packaging Options",
+    packagingOptions: [
+      "Clamshell containers — ideal for cherry tomatoes and small fruits",
+      "Mesh bags — for potatoes, onions, and garlic",
+      "Wooden or plastic crates — for bulk transport and storage",
+      "Cardboard boxes — custom printed or plain options",
+    ],
+    vineyardEyebrow: "Vineyards",
+    vineyardTitle:
+      "We produce on 85 decares of our own vineyards and build strong export volumes.",
+    vineyardBody:
+      "As one of Turkey's leading grape producers, we harvest with more than 100 seasonal workers. By combining our own production with products purchased from local suppliers, we provide regular exports to European and Russian markets.",
+    vineyardImageAlt: "Vineyards and seasonal grape production",
+    vineyardImageLabel: "Harvest & export",
+    vineyardImageBody:
+      "We support our own production with local sourcing to create strong and stable export volumes throughout the season.",
+    vineyardMetrics: [
+      {
+        value: "85",
+        label: "Total Vineyard Area (decares)",
+        body: "We produce in our own vineyards using sustainable agriculture practices.",
+      },
+      {
+        value: "300t",
+        label: "Annual Own Production",
+        body: "We obtain approximately 300 tons of grapes from our own vineyards.",
+      },
+      {
+        value: "1000t+",
+        label: "Annual Total Export",
+        body: "Including local purchases, we export more than 1,000 tons of grapes annually to European and Russian markets.",
+      },
+    ],
+    vineyardClosing:
+      "This volume and distribution network demonstrates our strong market position and commitment to quality.",
     footerBody:
       "Architecting the global supply chain. Premium services across fresh produce, logistics, and consulting.",
-    footerCopyright: "© 2024 LOGO International. All rights reserved.",
+    footerCopyright: "© {year} ONUR2009. All rights reserved.",
     footerDivisions: "Divisions",
     footerLegal: "Legal",
     legalExtra: [
@@ -383,45 +480,49 @@ export const en: Translation = {
     ],
   },
     logisticsTransportView: {
-    heroEyebrow: "Global Logistics Division",
-    heroTitle: "Precision Transport,",
-    heroAccent: "Global Scale.",
+    heroEyebrow: "Logistics & Transport",
+    heroTitle: "Efficient delivery and supply chain management.",
+    heroAccent: "Strong fleet, flexible operation.",
     heroBody:
-      "Engineered for high-stakes B2B operations. We deliver structural integrity, visionary supply chain solutions, and the security of an established global leader.",
-    heroPrimary: "Explore Our Fleet",
-    heroSecondary: "Operational Map",
-    operationsTitle: "Architects of the Supply Chain",
+      "We have built a strong fleet and logistics infrastructure for efficient delivery and supply chain management. Our fleet includes trucks, vans, and refrigerated vehicles in different sizes, helping preserve product freshness while ensuring on-time delivery.",
+    heroPrimary: "Fleet & Capacity",
+    heroSecondary: "International Transport",
+    operationsTitle: "Fleet & Capacity",
     operationsBody:
-      "Comprehensive logistical solutions designed for reliability and speed across international borders.",
-    roadTitle: "Road Transport",
+      "An operational infrastructure that responds to diverse distribution needs with refrigerated and standard transport vehicles.",
+    roadTitle: "Refrigerated and standard transport vehicles",
     roadBody:
-      "Our core competency. We operate a massive, modern fleet ensuring uninterrupted supply lines. From standard freight to temperature-controlled logistics, our road network is the backbone of regional trade.",
-    roadItems: ["FTL & LTL Services", "Specialized Cargo Handling"],
-    freightTitle: "Freight Forwarding",
+      "We use a flexible fleet of trucks, vans, and refrigerated vehicles for distribution needs at different scales. Product sensitivity, route planning, and delivery timing are assessed together at the start of the operation.",
+    roadItems: ["Refrigerated transport capacity", "Truck and van distribution"],
+    freightTitle: "International Transport",
     freightBody:
-      "Seamless integration of air, sea, and rail freight to optimize your global supply chain flow.",
-    freightLink: "View Capabilities",
-    customsTitle: "Frictionless Customs clearance",
+      "Thanks to strong industry relationships, we provide logistics services to different countries and create flexible solutions around routes and terms according to demand.",
+    freightLink: "Contact Us for Logistics Planning",
+    customsTitle: "Planning, cost, and timing",
     customsSteps: [
       {
-        title: "Pre-Clearance Verification",
-        body: "Automated document checking to prevent delays at borders.",
+        title: "Detailed Logistics Planning",
+        body: "Routes, vehicle type, cargo sensitivity, and delivery windows are planned according to demand.",
       },
       {
-        title: "Dedicated Brokerage",
-        body: "In-house experts navigating complex international tariffs.",
+        title: "Cost Optimization",
+        body: "Capacity, distance, and operational costs are optimized according to distribution needs.",
+      },
+      {
+        title: "Timing Assurance",
+        body: "Delivery schedules and tracking discipline are maintained to protect product freshness.",
       },
     ],
-    fleetTitle: "Modern, Sustainable Fleet",
-    fleetBody: "Euro 6 compliant vehicles maintained to rigorous aviation-style standards.",
-    footprintTitle: "Operational Footprint",
-    footprintBody: "Connecting strategic economic hubs across Europe and Asia.",
-    mapTitle: "Interactive Map Interface Pending Integration",
-    mapBody: "Connecting Turkey, Bulgaria, and broader European transit routes.",
+    fleetTitle: "Flexible operation model based on demand",
+    fleetBody: "Detailed logistics planning, cost optimization, and timing assurance are provided according to each request.",
+    footprintTitle: "A logistics service network extending across countries",
+    footprintBody: "Our industry relationships and fleet capacity support flexible route and term management for country-specific transport needs.",
+    mapTitle: "Route & operation network",
+    mapBody: "Planned, traceable, and needs-based transport solutions across Turkey, Bulgaria, and European routes.",
     footerBody:
       "Architecting success through premium logistics, fresh produce trade, and robust corporate services.",
     footerCta: "Contact Corporate",
-    footerCopyright: "© 2024 LOGO International. All rights reserved.",
+    footerCopyright: "© {year} ONUR2009. All rights reserved.",
     footerDivisions: "Divisions",
     footerBrands: "Brands",
     footerLegal: "Legal",

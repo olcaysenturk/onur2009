@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Badge, Mail, MapPin, Phone, Store, Truck } from "lucide-react";
+import { Badge, Building2, Mail, MapPin, Navigation, Phone, Store, Truck } from "lucide-react";
 import type { FormEvent } from "react";
 import { Header } from "@/components/layout/header";
 import { useLanguage } from "@/hooks/useLanguage";
-import type { Translation } from "@/locales/types";
+import { formatCopyright } from "@/lib/copyright";
 import { images } from "@/lib/site";
+import { imageAssets } from "@/lib/assets";
+import type { Translation } from "@/locales/types";
 
 type ContactContent = Translation["contactView"];
 const mapQuery = "Onur 2009, 13 Professor Tsvetan Lazarov Blvd, Sofia Slatina, Bulgaria";
@@ -46,77 +48,125 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="mx-auto w-full max-w-[1440px] px-5 py-12 pt-36 md:px-16 md:py-[120px] md:pt-[180px]">
-        <div className="mb-16 max-w-3xl md:mb-24">
-          <h1 className="mb-6 font-display text-[40px] font-bold leading-[48px] tracking-[-0.01em] text-[#000613] md:text-[64px] md:leading-[72px]">{content.title}</h1>
-          <p className="text-lg leading-7 text-muted">{content.body}</p>
-        </div>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          <div className="flex flex-col gap-8 lg:col-span-5">
-            <div className="relative overflow-hidden rounded-xl border border-outline/30 bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
-              <div className="absolute left-0 top-0 h-1 w-full bg-[#cda729]" />
-              <h2 className="mb-8 font-display text-2xl font-semibold leading-8 text-[#000613]">{content.headquarters}</h2>
-              <ul className="space-y-6">
-                <ContactInfo icon="address" label={content.addressLabel} value={content.address} />
-                <ContactInfo icon="phone" label={content.phoneLabel} value={content.phone} />
-                <ContactInfo icon="email" label={content.emailLabel} value={content.email} />
+      <main>
+        <section className="relative flex min-h-[74vh] items-end overflow-hidden bg-[#05080f] px-5 pb-14 pt-36 text-white md:px-16 md:pb-20 md:pt-44">
+          <Image
+            src={imageAssets.pages.contactHero}
+            alt={content.title}
+            fill
+            priority
+            quality={100}
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#05080f]/94 via-[#05080f]/70 to-[#05080f]/22" />
+          <div
+            className="absolute inset-0 opacity-[0.14]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, rgba(0, 0, 0, 0.9) 0.75px, transparent 1.1px)",
+              backgroundSize: "7px 7px",
+            }}
+          />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
+
+          <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-7">
+              <div className="mb-6 inline-flex items-center gap-2 border-l-2 border-accent bg-white/10 px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.08em] backdrop-blur">
+                <Building2 aria-hidden className="h-4 w-4 text-accent" />
+                {content.headquarters}
+              </div>
+              <h1 className="text-balance font-display text-[44px] font-semibold leading-[50px] md:text-[72px] md:leading-[78px]">
+                {content.title}
+              </h1>
+              <p className="mt-6 max-w-2xl text-base leading-7 text-white/78 md:text-lg md:leading-8">
+                {content.body}
+              </p>
+            </div>
+
+            <div className="border border-white/14 bg-white/[0.08] p-6 backdrop-blur-md lg:col-span-5">
+              <ul className="space-y-5">
+                <ContactInfo icon="address" label={content.addressLabel} value={content.address} inverted />
+                <ContactInfo icon="phone" label={content.phoneLabel} value={content.phone} inverted />
+                <ContactInfo icon="email" label={content.emailLabel} value={content.email} inverted />
               </ul>
             </div>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {content.departments.map((department) => (
-                <DepartmentCard key={department.type} department={department} />
-              ))}
-            </div>
           </div>
-          <div className="flex flex-col gap-8 lg:col-span-7">
-            <div className="relative h-64 overflow-hidden rounded-xl border border-outline/30 bg-[#e2e2e2] md:h-80">
-              <iframe
-                className="h-full w-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                src={mapEmbedUrl}
-                title={`${content.headquarters} ${content.addressLabel}`}
-              />
-              <a
-                className="absolute bottom-4 left-4 rounded-lg bg-white px-4 py-2 font-display text-sm font-semibold text-[#000613] shadow-[0_4px_18px_rgba(0,0,0,0.16)] transition-colors hover:bg-[#ffe089]"
-                href={mapLinkUrl}
-                rel="noreferrer"
-                target="_blank"
-              >
-                Google Maps
-              </a>
+        </section>
+
+        <section className="bg-background px-5 py-16 md:px-16 md:py-24">
+          <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-8 lg:grid-cols-12">
+            <div className="space-y-8 lg:col-span-5">
+              <div className="grid grid-cols-1 gap-px bg-outline/40 sm:grid-cols-2">
+                {content.departments.map((department) => (
+                  <DepartmentCard key={department.type} department={department} />
+                ))}
+              </div>
+
+              <div className="relative h-[420px] overflow-hidden bg-[#e2e2e2]">
+                <iframe
+                  className="h-full w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={mapEmbedUrl}
+                  title={`${content.headquarters} ${content.addressLabel}`}
+                />
+                <a
+                  className="absolute bottom-5 left-5 inline-flex items-center gap-2 bg-white px-5 py-3 font-display text-sm font-semibold text-[#000613] shadow-[0_12px_35px_rgba(0,0,0,0.16)] transition-colors hover:bg-[#ffe089]"
+                  href={mapLinkUrl}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Navigation aria-hidden className="h-4 w-4 text-accent" />
+                  Google Maps
+                </a>
+              </div>
             </div>
-            <form className="rounded-xl border border-outline/30 bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)]" onSubmit={handleSubmit}>
-              <h2 className="mb-8 font-display text-2xl font-semibold leading-8 text-[#000613]">{content.formTitle}</h2>
+
+            <form
+              className="bg-white p-6 shadow-[0_22px_70px_rgba(39,59,120,0.10)] md:p-10 lg:col-span-7"
+              onSubmit={handleSubmit}
+            >
+              <div className="mb-8 flex items-start justify-between gap-6 border-b border-outline/35 pb-6">
+                <div>
+                  <p className="font-display text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+                    {content.email}
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl font-semibold leading-10 text-[#000613]">
+                    {content.formTitle}
+                  </h2>
+                </div>
+                <Mail aria-hidden className="mt-1 hidden h-7 w-7 text-muted md:block" />
+              </div>
+
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <Field label={content.fields.firstName} name="name" placeholder={content.placeholders.firstName} required />
                 <Field label={content.fields.businessEmail} name="contact" placeholder={content.placeholders.businessEmail} required />
                 <Field className="md:col-span-2" label={content.fields.company} name="company" placeholder={content.placeholders.company} />
                 <label className="flex flex-col gap-2 md:col-span-2">
                   <span className="font-display text-sm font-semibold tracking-[0.05em] text-muted">{content.fields.message}</span>
-                  <textarea className="min-h-36 resize-none rounded-lg border border-outline/60 bg-white px-4 py-3 text-base text-[#000613] outline-none focus:border-[#000613]" name="message" placeholder={content.placeholders.message} required />
+                  <textarea className="min-h-44 resize-none border border-outline/60 bg-white px-4 py-3 text-base text-[#000613] outline-none transition-colors focus:border-[#000613]" name="message" placeholder={content.placeholders.message} required />
                 </label>
               </div>
               <div className="flex justify-end pt-8">
-                <button className="rounded-lg bg-[#000613] px-8 py-4 font-display text-base font-semibold tracking-[0.05em] text-white transition-all hover:brightness-110" type="submit">{content.submit}</button>
+                <button className="bg-[#000613] px-8 py-4 font-display text-base font-semibold tracking-[0.04em] text-white transition-all hover:bg-accent" type="submit">{content.submit}</button>
               </div>
             </form>
           </div>
-        </div>
+        </section>
       </main>
       <ContactFooter content={content} />
     </>
   );
 }
 
-function ContactInfo({ icon, label, value }: { icon: "address" | "phone" | "email"; label: string; value: string }) {
+function ContactInfo({ icon, label, value, inverted = false }: { icon: "address" | "phone" | "email"; label: string; value: string; inverted?: boolean }) {
   const Icon = icon === "address" ? MapPin : icon === "phone" ? Phone : Mail;
   return (
     <li className="flex items-start gap-4">
-      <Icon className="mt-1 h-5 w-5 text-[#cda729]" />
+      <Icon className="mt-1 h-5 w-5 shrink-0 text-accent" />
       <div>
-        <span className="mb-1 block font-display text-sm font-semibold tracking-[0.05em] text-muted">{label}</span>
-        <span className="whitespace-pre-line text-base leading-6 text-[#000613]">{value}</span>
+        <span className={`mb-1 block font-display text-sm font-semibold tracking-[0.05em] ${inverted ? "text-white/54" : "text-muted"}`}>{label}</span>
+        <span className={`whitespace-pre-line text-base leading-6 ${inverted ? "text-white/88" : "text-[#000613]"}`}>{value}</span>
       </div>
     </li>
   );
@@ -125,9 +175,9 @@ function ContactInfo({ icon, label, value }: { icon: "address" | "phone" | "emai
 function DepartmentCard({ department }: { department: ContactContent["departments"][number] }) {
   const Icon = department.type === "logistics" ? Truck : department.type === "retail" ? Store : Badge;
   return (
-    <article className={`rounded-lg border border-outline/30 bg-[#f3f3f4] p-6 transition-colors hover:border-[#000613] ${department.type === "hr" ? "sm:col-span-2" : ""}`}>
-      <Icon className="mb-4 h-6 w-6 text-muted" />
-      <h3 className="mb-2 font-display text-base font-semibold tracking-[0.05em] text-[#000613]">{department.title}</h3>
+    <article className={`bg-white p-6 transition-colors hover:bg-surface-soft ${department.type === "hr" ? "sm:col-span-2" : ""}`}>
+      <Icon className="mb-5 h-6 w-6 text-accent" />
+      <h3 className="mb-2 font-display text-lg font-semibold text-[#000613]">{department.title}</h3>
       <p className="text-sm leading-5 text-muted">{department.email}</p>
     </article>
   );
@@ -137,7 +187,7 @@ function Field({ className = "", label, name, placeholder, required = false, typ
   return (
     <label className={`flex flex-col gap-2 ${className}`}>
       <span className="font-display text-sm font-semibold tracking-[0.05em] text-muted">{label}</span>
-      <input className="rounded-lg border border-outline/60 bg-white px-4 py-3 text-base text-[#000613] outline-none focus:border-[#000613]" name={name} placeholder={placeholder} required={required} type={type} />
+      <input className="border border-outline/60 bg-white px-4 py-3 text-base text-[#000613] outline-none transition-colors focus:border-[#000613]" name={name} placeholder={placeholder} required={required} type={type} />
     </label>
   );
 }
@@ -148,10 +198,12 @@ function ContactFooter({ content }: { content: ContactContent }) {
     <footer className="mt-auto grid grid-cols-1 gap-8 bg-[#000613] px-5 py-[120px] text-white sm:grid-cols-2 lg:grid-cols-12 md:px-16">
       <div className="flex flex-col justify-between lg:col-span-4">
         <div>
-          <Image src={images.logo} alt="" width={600} height={300} className="h-auto w-36 rounded bg-white p-2" />
+          <Image src={images.logo} alt="" width={1536} height={759} className="mb-6 h-auto w-[132px] object-contain" />
           <p className="mb-8 max-w-xs text-sm leading-5 text-white/70">{content.footerBody}</p>
         </div>
-        <div className="text-sm leading-5 text-white/50">{content.footerCopyright}</div>
+        <div className="text-sm leading-5 text-white/50">
+          {formatCopyright(content.footerCopyright)}
+        </div>
       </div>
       <FooterGroup title={content.footerDivisions} links={t.footer.groups[0]?.links ?? []} />
       <FooterGroup title={content.footerSubsidiaries} links={[...(t.footer.groups[1]?.links ?? []), ...(t.footer.groups[2]?.links ?? [])]} />

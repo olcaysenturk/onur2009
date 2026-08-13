@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { useLanguage } from "@/hooks/useLanguage";
-import { altinyildizEditorialImages } from "@/lib/assets";
+import { altinyildizEditorialImages, imageAssets } from "@/lib/assets";
 import { pageImages } from "@/lib/pages";
 
 const collectionImages = [pageImages.servicesRetail, pageImages.retailHero];
@@ -84,15 +84,29 @@ export default function RetailFashionPage() {
       <Header />
       <main className="bg-[#fbf9f7] pt-16 text-[#1b1c1b] md:pt-20">
         <section className="relative flex min-h-[620px] items-center overflow-hidden md:min-h-[calc(100vh-80px)]">
-          <Image
-            src={pageImages.retailCraft}
-            alt={content.heroTitle}
-            fill
-            priority
-            quality={100}
-            className="object-cover object-[50%_20%] grayscale-[0.18]"
+          <video
+            aria-label={content.heroTitle}
+            autoPlay
+            className="absolute inset-0 h-full w-full object-cover object-[50%_20%] saturate-[0.88] contrast-[1.12] brightness-[0.78]"
+            loop
+            muted
+            playsInline
+            poster={pageImages.retailCraft}
+            preload="metadata"
+          >
+            <source src={imageAssets.videos.altinyildizHero} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#000815]/85 via-[#000c1e]/45 to-[#000c1e]/12" />
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-[0.18]"
+            style={{
+              backgroundImage: "radial-gradient(circle, rgba(0, 0, 0, 0.85) 0.75px, transparent 1.1px)",
+              backgroundSize: "7px 7px",
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#000c1e]/75 via-[#000c1e]/30 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_46%,transparent_36%,rgba(0,8,21,0.48)_100%)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#000815]/70 via-transparent to-[#000815]/28" />
           <div className="relative z-10 mx-auto w-full max-w-[1280px] px-4 py-24 md:px-16">
             <div className="max-w-[640px] text-white">
               <span className="mb-6 block text-[11px] font-semibold uppercase tracking-[0.3em] text-white/80">

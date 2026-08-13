@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Globe2 } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
+import { formatCopyright } from "@/lib/copyright";
 import { images } from "@/lib/site";
 
 export function Footer() {
@@ -50,7 +51,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-white/10 pt-8 md:col-span-12 md:mt-8 md:flex-row md:items-center md:justify-between">
-          <p className="text-xs text-white/70">{t.footer.copyright}</p>
+          <p className="text-xs text-white/70">{formatCopyright(t.footer.copyright)}</p>
           <Link
             href="#"
             className="inline-flex h-10 w-10 items-center justify-center rounded border border-white/15 text-white/70 transition-colors hover:text-accent"

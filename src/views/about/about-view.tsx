@@ -40,7 +40,7 @@ export default function AboutPage() {
       <main className="pt-16 md:pt-20">
         <section className="relative overflow-hidden bg-primary px-4 py-20 text-white md:px-10 md:py-28">
           <Image
-            src={pageImages.logisticsHero}
+            src={pageImages.aboutHero}
             alt={content.overviewTitle}
             fill
             priority

@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="bg">
       <body>
         <JsonLd data={[buildOrganizationSchema(), buildWebsiteSchema()]} />
         <StoreProvider>{children}</StoreProvider>

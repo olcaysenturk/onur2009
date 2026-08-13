@@ -8,7 +8,7 @@ export const tr: Translation = {
     common: { requestQuote: "Teklif İste", requestAssessment: "Değerlendirme İste", selectLanguage: "Dil seç", brandsLabel: "Markalar" },
     footer: {
       description: "Küresel ticaret ve lojistiği yönetiyoruz. 2009'dan beri tedarik zinciri, kurumsal hizmetler ve marka yönetiminde mükemmellik sunuyoruz.",
-      copyright: "© 2024 ONUR2009. Tüm hakları saklıdır.",
+      copyright: "© {year} ONUR2009. Tüm hakları saklıdır.",
       groups: [
         { title: "Lojistik & Ticaret", links: [{ label: "Lojistik & Taşımacılık", href: "/logistics-transport" }, { label: "Yaş Sebze Meyve Ticareti", href: "/fresh-produce-trade" }, { label: "Oto & Kamyon Servisi", href: "/auto-truck-service" }] },
         { title: "Markalar", links: [{ label: "Altinyildiz Classics", href: "/altinyildiz" }, { label: "SoBaklava", href: "/sobaklava-distribution" }] },
@@ -66,7 +66,7 @@ export const tr: Translation = {
     consult: "Bizimle Görüş",
     tags: ["Tarım & Ticaret", "Filo Bakımı", "Perakende & Moda", "FMCG Dağıtım", "Stratejik Danışmanlık"],
     footerBody: "Başarının mimarı. Küresel ticaret, lojistik ve danışmanlığı güvenilirlikle yapılandırıyoruz.",
-    footerCopyright: "© 2024 LOGO International. Tüm hakları saklıdır.",
+    footerCopyright: "© {year} ONUR2009. Tüm hakları saklıdır.",
     footerDivisions: "Birimler",
     footerBrands: "Markalar",
     footerLegal: "Yasal",
@@ -177,7 +177,7 @@ export const tr: Translation = {
       "Küresel tedarik zinciri ve kurumsal altyapının mimarları. Kuruluşumuzdan bu yana Avrupa ve ötesinde mükemmellik sunuyoruz.",
     footerDivisions: "Birimler",
     footerCorporate: "Kurumsal",
-    copyright: "© 2024 LOGO International. Tüm hakları saklıdır.",
+    copyright: "© {year} ONUR2009. Tüm hakları saklıdır.",
     headquarters: "Merkez: Sofya, Bulgaristan",
   },
     galleryView: {
@@ -196,7 +196,7 @@ export const tr: Translation = {
     footerSectors: "Sektörler",
     footerBrands: "Markalar",
     footerLegal: "Yasal",
-    copyright: "© 2024 LOGO International. Tüm hakları saklıdır.",
+    copyright: "© {year} ONUR2009. Tüm hakları saklıdır.",
   },
     contactView: {
     title: "Onur 2009 ile İletişime Geçin",
@@ -218,7 +218,7 @@ export const tr: Translation = {
     placeholders: { firstName: "Adınız soyadınız", lastName: "Soyadınız", businessEmail: "+359 ... veya ad@firma.com", company: "Firma adınız", department: "İletişim kişisi seçin...", message: "Hangi hizmetlere ihtiyacınız olduğunu bize anlatın." },
     submit: "Mesaj Gönder",
     footerBody: "Onur 2009; iş ortaklarının ihtiyaçlarına göre uyarlanmış ticaret, lojistik ve iş çözümleri sunar.",
-    footerCopyright: "© 2024 ONUR2009. Tüm hakları saklıdır.",
+    footerCopyright: "© {year} ONUR2009. Tüm hakları saklıdır.",
     footerDivisions: "Birimler",
     footerSubsidiaries: "Bağlı Şirketler",
     footerLegal: "Yasal",
@@ -272,6 +272,31 @@ export const tr: Translation = {
       "Premium narenciye, sert çekirdekli meyveler ve taze sebzeleri sınırlar ötesine ulaştırıyoruz. Tarladan uluslararası pazarlara kalite kontrol ve operasyonel bütünlük sağlıyoruz.",
     heroPrimary: "Kategorileri İncele",
     heroSecondary: "Tedarik Zincirini Gör",
+    heroVideoLabel: "Yaş sebze meyve ticareti",
+    introEyebrow: "Onur 2009 Ltd",
+    introTitle:
+      "Küçük hacimlerle başlayan yolculuğumuz bugün yıllık 8.000 tonun üzerinde kapasiteye ulaştı.",
+    introBody:
+      "Kuruluşumuzdan itibaren kısa vadeli hedeflerimizi netleştirdik ve operasyonlarımızı her adımda geliştirerek büyüdük. Bugün Türkiye, Yunanistan, Sırbistan, Polonya, Litvanya ve diğer ülkelerden yıllık 8.000 tonun üzerinde ürünün ithalat ve dağıtım organizasyonunu gerçekleştirme kapasitesine sahibiz.",
+    introFeatures: [
+      {
+        title: "Güçlü Tedarikçi İlişkileri",
+        body: "Türkiye'deki büyük üreticilerle uzun dönemli ortaklıklar kurarak, yüksek kaliteli ürünleri rekabetçi fiyatlarla temin ediyoruz.",
+      },
+      {
+        title: "Tam Süreç Yönetimi",
+        body: "Üretimden taşımaya, depolamadan teslimata kadar tüm tedarik zinciri süreçlerini profesyonelce yönetiyoruz.",
+      },
+      {
+        title: "Esneklik & Kapsamlı Hizmet",
+        body: "Pazar analizleri, yeni ürün fırsatları ve müşteri taleplerine göre özelleştirilmiş ithalat çözümleri sağlıyoruz.",
+      },
+    ],
+    produceHighlights: [
+      { alt: "Taze sebze tedariki", label: "Sebze tedariki" },
+      { alt: "Narenciye ihracatı", label: "Narenciye" },
+      { alt: "Ambalajlı taze ürün", label: "Ambalajlama" },
+    ],
     categoriesTitle: "Premium Kategoriler",
     categoriesBody:
       "Küresel kaynak, kusursuz teslimat. Yaş sebze meyve alanındaki temel odaklarımız.",
@@ -303,6 +328,24 @@ export const tr: Translation = {
       },
     ],
     catalogLabel: "Tam Kataloğu Gör",
+    productEyebrow: "Ürün Yelpazesi",
+    productTitle: "Bulgaristan tüketici sepetinin büyük bölümünü karşılayan çeşitlilik.",
+    productBody:
+      "Meyve ve sebze portföyümüz yıl boyunca hem taze tüketim hem de ticari ihtiyaçlara uygun geniş bir ürün gamı sunar.",
+    productCategories: [
+      { title: "Domates", body: "Kırmızı, pembe, cherry, Landolin ve cherry mix çeşitleri ile geniş tedarik." },
+      { title: "Biber", body: "Yeşil ve kırmızı kapya, Sivri, Dolmalık, Acı, California gibi geniş çeşit." },
+      { title: "Soğan", body: "Kuru soğan ve taze soğan tedariki." },
+      { title: "Havuç", body: "Yıl boyunca süreklilik gösteren havuç tedariki." },
+      { title: "Kornişon", body: "Konserve ve taze kullanım için uygun kornişon çeşitleri." },
+      { title: "Kabak", body: "Açık ve koyu renkli kabak temini." },
+      { title: "Üzüm", body: "Çekirdeksiz beyaz, roze ve siyah üzüm çeşitleri." },
+      { title: "Nar", body: "Taze nar temini ve perakende/wholesale dağıtım." },
+      { title: "Ayva", body: "Sezonsal ayva tedariki." },
+      { title: "Karpuz & Kavun", body: "Yaz sezonunun güçlü tedarik ürünleri." },
+      { title: "İncir", body: "Kaliteli incir çeşitleri temin ediyoruz." },
+      { title: "Narenciye", body: "Limon, portakal, greyfurt ve mandalina tedariki." },
+    ],
     operationsTitle: "Hassas İthalat & İhracat Operasyonları",
     operationsBody:
       "Tedarik zinciri mimarimiz mutlak güvenilirlik için kuruludur. Hasat anından nihai teslimata kadar kusursuz soğuk zincir korunur.",
@@ -319,9 +362,63 @@ export const tr: Translation = {
     ],
     metricValue: "40+",
     metricLabel: "Hizmet Verilen Ülke",
+    packagingEyebrow: "Doğadan Sofranıza",
+    packagingTitle: "Ambalaj Çözümleri",
+    packagingBody:
+      "Yüksek kaliteli taze ürünlerin güvenilir tedarikçisi olarak pazara uygun, ihracata hazır ve müşteri odaklı ambalaj çözümleri sunuyoruz. Ambalaj seçeneklerimiz ürünün çeşidine, lojistik gereksinime ve müşteri taleplerine göre özelleştirilebilmektedir.",
+    packagingImageAlt: "Doğadan sofranıza ambalaj çözümleri",
+    packagingFeatures: [
+      {
+        title: "Geniş Mevsimsel Çeşitlilik",
+        body: "Sezon boyunca farklı ürünleri sorunsuz tedarik ederek pazar ihtiyaçlarını karşılıyoruz.",
+      },
+      {
+        title: "Esnek Ambalaj Seçenekleri",
+        body: "Perakende, HORECA veya büyük ölçekli dağıtım için farklı ambalaj formatları sunuyoruz.",
+      },
+      {
+        title: "İhracata Hazır Lojistik",
+        body: "Uluslararası taşımacılık ve ithalat prosedürlerine uygun ambalajlama ve etiketleme çözümleri.",
+      },
+    ],
+    packagingOptionsTitle: "Ambalaj Seçeneklerimiz",
+    packagingOptions: [
+      "Clamshell kaplar — cherry domates ve küçük meyveler için ideal",
+      "File torbalar — patates, soğan, sarımsak için",
+      "Ahşap veya plastik kasalar — toplu taşıma ve depolama",
+      "Karton koliler — özel baskılı veya baskısız seçenekler",
+    ],
+    vineyardEyebrow: "Üzüm Bağları",
+    vineyardTitle:
+      "85 dekar kendi bağımızda üretim yapıyor, güçlü ihracat hacimleri yaratıyoruz.",
+    vineyardBody:
+      "Türkiye'nin önde gelen üzüm üreticilerinden biri olarak sezonluk 100'den fazla çalışanla hasadı gerçekleştiriyoruz. Kendi üretimimiz ile yerel tedarikçilerden satın aldığımız ürünleri harmanlayarak Avrupa ve Rusya pazarlarına düzenli ihracat sağlıyoruz.",
+    vineyardImageAlt: "Üzüm bağları ve sezonluk üretim",
+    vineyardImageLabel: "Hasat & ihracat",
+    vineyardImageBody:
+      "Kendi üretimimizi yerel alımlarla destekleyerek sezon boyunca güçlü ve istikrarlı ihracat hacimleri oluşturuyoruz.",
+    vineyardMetrics: [
+      {
+        value: "85",
+        label: "Toplam Bağ Alanı (dekar)",
+        body: "Kendi bağlarımızda sürdürülebilir tarım uygulamalarıyla üretim yapıyoruz.",
+      },
+      {
+        value: "300t",
+        label: "Yıllık Kendi Üretimimiz",
+        body: "Kendi bağlarımızdan yaklaşık 300 ton üzüm elde ediyoruz.",
+      },
+      {
+        value: "1000t+",
+        label: "Yıllık Toplam İhracat",
+        body: "Yerel alımlar dahil Avrupa ve Rusya pazarlarına yılda 1.000 tonun üzerinde üzüm ihraç ediyoruz.",
+      },
+    ],
+    vineyardClosing:
+      "Bu hacim ve dağıtım ağı, pazardaki güçlü pozisyonumuzu ve kaliteye verdiğimiz önemi göstermektedir.",
     footerBody:
       "Küresel tedarik zincirini tasarlıyoruz. Yaş sebze meyve, lojistik ve danışmanlıkta premium hizmetler.",
-    footerCopyright: "© 2024 LOGO International. Tüm hakları saklıdır.",
+    footerCopyright: "© {year} ONUR2009. Tüm hakları saklıdır.",
     footerDivisions: "Birimler",
     footerLegal: "Yasal",
     legalExtra: [
@@ -330,45 +427,49 @@ export const tr: Translation = {
     ],
   },
     logisticsTransportView: {
-    heroEyebrow: "Küresel Lojistik Birimi",
-    heroTitle: "Hassas Taşımacılık,",
-    heroAccent: "Küresel Ölçek.",
+    heroEyebrow: "Lojistik & Taşımacılık",
+    heroTitle: "Etkin teslimat ve tedarik zinciri yönetimi.",
+    heroAccent: "Güçlü filo, esnek operasyon.",
     heroBody:
-      "Yüksek öncelikli B2B operasyonlar için tasarlandı. Yapısal güvenilirlik, vizyoner tedarik zinciri çözümleri ve köklü bir global liderin güvenini sunuyoruz.",
-    heroPrimary: "Filomuzu İncele",
-    heroSecondary: "Operasyon Haritası",
-    operationsTitle: "Tedarik Zincirinin Mimarları",
+      "Etkin teslimat ve tedarik zinciri yönetimi için güçlü bir filo ve lojistik altyapısı kurduk. Filomuz farklı boyutlarda kamyonlar, minibüsler ve frigorifik araçlar içerir; bu sayede ürünlerin tazeliğini koruyarak zamanında teslimat sağlanır.",
+    heroPrimary: "Filo & Kapasite",
+    heroSecondary: "Uluslararası Taşımacılık",
+    operationsTitle: "Filo & Kapasite",
     operationsBody:
-      "Uluslararası sınırlarda güvenilirlik ve hız için tasarlanmış kapsamlı lojistik çözümler.",
-    roadTitle: "Karayolu Taşımacılığı",
+      "Frigorifik ve standart taşıma araçları ile çeşitli dağıtım ihtiyaçlarına cevap veren operasyonel altyapı.",
+    roadTitle: "Frigorifik ve standart taşıma araçları",
     roadBody:
-      "Temel uzmanlığımız. Kesintisiz tedarik hatları için modern ve büyük ölçekli filo işletiyoruz. Standart yükten sıcaklık kontrollü lojistiğe kadar karayolu ağımız bölgesel ticaretin omurgasıdır.",
-    roadItems: ["FTL & LTL Hizmetleri", "Özel Kargo Elleçleme"],
-    freightTitle: "Freight Forwarding",
+      "Farklı ölçekte dağıtım ihtiyaçları için kamyon, minibüs ve frigorifik araçlardan oluşan esnek bir filo kullanıyoruz. Ürün hassasiyeti, rota planı ve teslimat zamanı operasyonun başında birlikte değerlendirilir.",
+    roadItems: ["Frigorifik taşıma kapasitesi", "Kamyon ve minibüs dağıtımı"],
+    freightTitle: "Uluslararası Taşımacılık",
     freightBody:
-      "Hava, deniz ve demiryolu yüklerinin kusursuz entegrasyonu ile global tedarik zinciri akışınızı optimize eder.",
-    freightLink: "Kabiliyetleri Gör",
-    customsTitle: "Sürtünmesiz Gümrük Süreci",
+      "Güçlü sektör ilişkilerimiz sayesinde farklı ülkelere lojistik hizmeti sunuyor, talebe göre rotalar ve şartlar üzerinde esnek çözümler üretiyoruz.",
+    freightLink: "Lojistik Planlama İçin İletişime Geç",
+    customsTitle: "Planlama, maliyet ve zamanlama",
     customsSteps: [
       {
-        title: "Ön Kontrol Doğrulaması",
-        body: "Sınır gecikmelerini önlemek için otomatik belge kontrolü.",
+        title: "Detaylı Lojistik Planlama",
+        body: "Talebe göre rota, araç tipi, yük hassasiyeti ve teslimat penceresi planlanır.",
       },
       {
-        title: "Dedike Gümrük Müşavirliği",
-        body: "Karmaşık uluslararası tarifeleri yöneten şirket içi uzmanlar.",
+        title: "Maliyet Optimizasyonu",
+        body: "Dağıtım ihtiyacına göre kapasite, mesafe ve operasyon maliyetleri optimize edilir.",
+      },
+      {
+        title: "Zamanlama Garantisi",
+        body: "Ürünlerin tazeliğini koruyacak teslimat takvimi ve takip disiplini sağlanır.",
       },
     ],
-    fleetTitle: "Modern, Sürdürülebilir Filo",
-    fleetBody: "Euro 6 uyumlu araçlar, havacılık düzeyinde sıkı standartlarla bakımdan geçirilir.",
-    footprintTitle: "Operasyonel Kapsam",
-    footprintBody: "Avrupa ve Asya’daki stratejik ekonomik merkezleri birbirine bağlarız.",
-    mapTitle: "Etkileşimli Harita Entegrasyonu Bekleniyor",
-    mapBody: "Türkiye, Bulgaristan ve geniş Avrupa transit rotalarını bağlar.",
+    fleetTitle: "Talebe göre esnek operasyon modeli",
+    fleetBody: "Talep doğrultusunda detaylı lojistik planlama, maliyet optimizasyonu ve zamanlama garantisi sağlanır.",
+    footprintTitle: "Farklı ülkelere uzanan lojistik hizmet ağı",
+    footprintBody: "Sektör ilişkilerimiz ve filo kapasitemiz, ülke bazlı taşıma ihtiyaçlarında esnek rota ve şart yönetimi sağlar.",
+    mapTitle: "Rota & operasyon ağı",
+    mapBody: "Türkiye, Bulgaristan ve Avrupa rotalarında planlı, izlenebilir ve ihtiyaç odaklı taşıma çözümleri.",
     footerBody:
       "Premium lojistik, yaş sebze meyve ticareti ve güçlü kurumsal hizmetlerle başarıyı tasarlıyoruz.",
     footerCta: "Kurumsal İletişim",
-    footerCopyright: "© 2024 LOGO International. Tüm hakları saklıdır.",
+    footerCopyright: "© {year} ONUR2009. Tüm hakları saklıdır.",
     footerDivisions: "Birimler",
     footerBrands: "Markalar",
     footerLegal: "Yasal",

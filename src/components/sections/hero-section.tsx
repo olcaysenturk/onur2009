@@ -1,152 +1,119 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { ChevronLeft, ChevronRight, Rocket } from "lucide-react";
+import { ArrowRight, Globe2, PackageCheck, Rocket } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { useLanguage } from "@/hooks/useLanguage";
-import { images } from "@/lib/site";
-import { pageImages } from "@/lib/pages";
+import { imageAssets } from "@/lib/assets";
 
 export function HeroSection() {
   const { t } = useLanguage();
-  const slides = [
-    {
-      key: "overview",
-      image: images.hero,
-      eyebrow: t.home.hero.eyebrow,
-      title: t.home.hero.title,
-      accent: t.home.hero.accent,
-      description: t.home.hero.description,
-      href: "/services",
-    },
-    {
-      key: "logistics",
-      image: pageImages.logisticsHero,
-      eyebrow: t.divisions["logistics-transport"].eyebrow,
-      title: t.divisions["logistics-transport"].headline,
-      description: t.divisions["logistics-transport"].description,
-      href: "/logistics-transport",
-    },
-    {
-      key: "fresh",
-      image: pageImages.freshHero,
-      eyebrow: t.divisions["fresh-produce-trade"].eyebrow,
-      title: t.divisions["fresh-produce-trade"].headline,
-      description: t.divisions["fresh-produce-trade"].description,
-      href: "/fresh-produce-trade",
-    },
-    {
-      key: "retail",
-      image: pageImages.retailHero,
-      eyebrow: t.divisions["retail-fashion"].eyebrow,
-      title: t.divisions["retail-fashion"].headline,
-      description: t.divisions["retail-fashion"].description,
-      href: "/altinyildiz",
-    },
-    {
-      key: "soba",
-      image: pageImages.sobaklavaHero,
-      eyebrow: t.divisions["sobaklava-distribution"].eyebrow,
-      title: t.divisions["sobaklava-distribution"].headline,
-      description: t.divisions["sobaklava-distribution"].description,
-      href: "/sobaklava-distribution",
-    },
-    {
-      key: "bulgatex",
-      image: pageImages.bulgatexHero,
-      eyebrow: t.divisions["bulgatex-consulting"].eyebrow,
-      title: t.divisions["bulgatex-consulting"].headline,
-      description: t.divisions["bulgatex-consulting"].description,
-      href: "/bulgatex-consulting",
-    },
-  ] as const;
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveSlide((current) => (current + 1) % slides.length);
-    }, 7000);
-
-    return () => window.clearInterval(timer);
-  }, [slides.length]);
-
-  const slide = slides[activeSlide];
+  const featuredDivisions = [
+    { href: "/fresh-produce-trade", title: t.divisions["fresh-produce-trade"].title },
+    { href: "/logistics-transport", title: t.divisions["logistics-transport"].title },
+    { href: "/bulgatex-consulting", title: t.divisions["bulgatex-consulting"].title },
+  ];
 
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden bg-primary text-white md:min-h-[90vh]"
+      className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden bg-[#05080f] text-white md:min-h-[92vh]"
     >
-      {slides.map((item, index) => (
-        <Image
-          key={item.key}
-          src={item.image}
-          alt={item.title}
-          fill
-          quality={100}
-          priority={index === 0}
-          className={`object-cover transition-opacity duration-700 ${index === activeSlide ? "opacity-100" : "pointer-events-none opacity-0"}`}
-        />
-      ))}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/25" />
-      <div className="absolute inset-0 bg-primary/10" />
+      <video
+        className="absolute inset-0 h-full w-full object-cover brightness-[0.72] contrast-[1.1] saturate-[0.92]"
+        src={imageAssets.videos.freshProduceHero}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-label={t.home.hero.eyebrow}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#05080f]/92 via-[#07101d]/70 to-[#07101d]/25" />
+      <div
+        className="absolute inset-0 opacity-[0.16]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(0, 0, 0, 0.9) 0.75px, transparent 1.1px)",
+          backgroundSize: "7px 7px",
+        }}
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_26%,rgba(13,159,196,0.24),transparent_32%),radial-gradient(circle_at_18%_84%,rgba(205,167,41,0.16),transparent_30%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/70 to-transparent" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 gap-8 px-4 py-24 md:grid-cols-12 md:px-10">
-        <div className="space-y-6 md:col-span-7">
-          <div className="inline-flex items-center gap-2 rounded bg-white/10 px-3 py-1.5 font-sans text-xs font-semibold uppercase tracking-[0.05em] backdrop-blur-sm ring-1 ring-white/20">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 gap-12 px-4 py-24 md:grid-cols-12 md:px-10 md:py-28">
+        <div className="max-w-3xl space-y-7 md:col-span-8">
+          <div className="inline-flex items-center gap-2 border-l-2 border-accent bg-white/10 px-4 py-2 font-sans text-xs font-semibold uppercase tracking-[0.08em] backdrop-blur-md">
             <Rocket aria-hidden className="h-3.5 w-3.5 text-accent" />
-            <span>{slide.eyebrow}</span>
+            <span>{t.home.hero.eyebrow}</span>
           </div>
-          <h1 className="text-balance font-display text-[40px] font-bold leading-[48px] tracking-normal md:text-[48px] md:leading-[56px]">
-            {slide.title}
-            {"accent" in slide ? <span className="text-accent"> {slide.accent}</span> : null}
+
+          <h1 className="text-balance font-display text-[44px] font-semibold leading-[48px] tracking-normal md:text-[66px] md:leading-[66px]">
+            {t.home.hero.title}
+            <span className="block text-accent">{t.home.hero.accent}</span>
           </h1>
-          <p className="max-w-2xl text-sm leading-5 text-white/90 md:max-w-[620px]">
-            {slide.description}
+
+          <p className="max-w-2xl text-base leading-7 text-white/84 md:text-lg md:leading-8">
+            {t.home.hero.description}
           </p>
-          <div className="flex flex-wrap gap-4 pt-4">
-            <ButtonLink href={slide.href} showIcon>
+
+          <div className="flex flex-wrap gap-3 pt-2">
+            <ButtonLink href="/services" showIcon>
               {t.home.hero.primary}
             </ButtonLink>
-            <ButtonLink href="#about" variant="ghost">
+            <ButtonLink href="/about" variant="ghost">
               {t.home.hero.secondary}
             </ButtonLink>
           </div>
         </div>
 
-    
+        <aside className="self-end md:col-span-4">
+          <div className="border border-white/15 bg-white/[0.08] p-5 backdrop-blur-md">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center bg-accent text-white">
+                <Globe2 aria-hidden className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="font-display text-sm font-semibold uppercase tracking-[0.08em] text-white/65">
+                  ONUR2009
+                </p>
+                <p className="text-sm text-white/85">{t.home.services.eyebrow}</p>
+              </div>
+            </div>
 
-        <div className="mt-4 flex items-center gap-3 md:col-span-7">
-          <button
-            type="button"
-            aria-label="Previous slide"
-            onClick={() => setActiveSlide((current) => (current - 1 + slides.length) % slides.length)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20"
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <div className="flex items-center gap-2">
-            {slides.map((item, index) => (
-              <button
-                key={item.key}
-                type="button"
-                aria-label={`Go to slide ${index + 1}`}
-                onClick={() => setActiveSlide(index)}
-                className={`h-2.5 rounded-full transition-all ${
-                  index === activeSlide ? "w-8 bg-accent" : "w-2.5 bg-white/35 hover:bg-white/55"
-                }`}
-              />
-            ))}
+            <div className="divide-y divide-white/12">
+              {featuredDivisions.map((division) => (
+                <a
+                  key={division.href}
+                  href={division.href}
+                  className="group flex items-center justify-between gap-4 py-4 text-sm font-semibold text-white transition-colors hover:text-accent"
+                >
+                  <span>{division.title}</span>
+                  <ArrowRight
+                    aria-hidden
+                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                  />
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-4 flex items-center gap-3 bg-black/18 p-4 text-sm leading-6 text-white/78">
+              <PackageCheck aria-hidden className="h-5 w-5 shrink-0 text-accent" />
+              <span>{t.home.company.metrics[0]?.label}</span>
+            </div>
           </div>
-          <button
-            type="button"
-            aria-label="Next slide"
-            onClick={() => setActiveSlide((current) => (current + 1) % slides.length)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </button>
+        </aside>
+
+        <div className="grid grid-cols-2 gap-px bg-white/12 md:col-span-12 md:grid-cols-4">
+          {t.home.stats.map((stat) => (
+            <div key={stat.label} className="bg-white/[0.08] px-5 py-5 backdrop-blur-md">
+              <div className="font-display text-3xl font-semibold leading-none text-white md:text-4xl">
+                {stat.value}
+              </div>
+              <div className="mt-2 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-white/62">
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

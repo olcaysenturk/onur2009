@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
 import { useLanguage } from "@/hooks/useLanguage";
+import { formatCopyright } from "@/lib/copyright";
 import { images } from "@/lib/site";
 import { galleryImages } from "@/lib/assets";
 
@@ -77,14 +78,14 @@ export default function GalleryPage() {
       <footer className="bg-[#000613] px-5 py-[120px] text-white md:px-16">
         <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 md:grid-cols-12">
           <div className="md:col-span-4">
-            <Image src={images.logo} alt="" width={600} height={300} className="h-auto w-36 rounded bg-white p-2" />
+            <Image src={images.logo} alt="" width={1536} height={759} className="mb-6 h-auto w-[132px] object-contain" />
             <p className="max-w-sm text-sm leading-5 text-white/70">{content.footerBody}</p>
           </div>
           <FooterGroup title={content.footerSectors} links={t.footer.groups[0]?.links ?? []} />
           <FooterGroup title={content.footerBrands} links={[...(t.footer.groups[1]?.links ?? []), ...(t.footer.groups[2]?.links ?? [])]} />
           <FooterGroup title={content.footerLegal} links={t.footer.groups.at(-1)?.links ?? []} />
           <div className="mt-12 border-t border-white/20 pt-8 md:col-span-12">
-            <p className="text-sm leading-5 text-white/70">{content.copyright}</p>
+            <p className="text-sm leading-5 text-white/70">{formatCopyright(content.copyright)}</p>
           </div>
         </div>
       </footer>

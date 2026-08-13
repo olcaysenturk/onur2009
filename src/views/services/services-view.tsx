@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Lightbulb, Truck } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { useLanguage } from "@/hooks/useLanguage";
+import { formatCopyright } from "@/lib/copyright";
 import { pageImages } from "@/lib/pages";
 import { images } from "@/lib/site";
 import type { Translation } from "@/locales/types";
@@ -95,14 +96,14 @@ function DarkFooter({ content }: { content: ServicesContent }) {
     <footer className="mt-20 bg-[#000613] px-4 py-16 text-white md:px-10 md:py-[120px]">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 md:grid-cols-12">
         <div className="md:col-span-4">
-          <Image src={images.logo} alt="" width={600} height={300} className="h-auto w-36 rounded bg-white p-2" />
+          <Image src={images.logo} alt="" width={1536} height={759} className="mb-6 h-auto w-[132px] object-contain" />
           <p className="max-w-xs text-sm leading-5 text-white/70">{content.footerBody}</p>
         </div>
         <FooterGroup title={content.footerDivisions} links={t.footer.groups[0]?.links ?? []} />
         <FooterGroup title={content.footerBrands} links={[...(t.footer.groups[1]?.links ?? []), ...(t.footer.groups[2]?.links ?? [])]} />
         <FooterGroup title={content.footerLegal} links={t.footer.groups.at(-1)?.links ?? []} />
         <div className="border-t border-white/10 pt-8 md:col-span-12 md:mt-12">
-          <p className="text-sm leading-5 text-white/50">{content.footerCopyright}</p>
+          <p className="text-sm leading-5 text-white/50">{formatCopyright(content.footerCopyright)}</p>
         </div>
       </div>
     </footer>

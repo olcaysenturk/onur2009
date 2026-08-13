@@ -6,7 +6,7 @@ type LanguageState = {
 };
 
 const initialState: LanguageState = {
-  current: "en",
+  current: "bg",
 };
 
 const languageSlice = createSlice({
