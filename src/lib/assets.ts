@@ -1,5 +1,7 @@
 const galleryImageCount = 21;
 const altinyildizEditorialImageCount = 12;
+const altinyildizStoreImageCount = 11;
+const sobaklavaStoreImageCount = 35;
 
 export const imageAssets = {
   site: {
@@ -64,7 +66,17 @@ export const imageAssets = {
     { length: altinyildizEditorialImageCount },
     (_, index) => `/images/altinyildiz/editorial-${String(index + 1).padStart(2, "0")}.jpg`,
   ),
+  altinyildizStores: Array.from(
+    { length: altinyildizStoreImageCount },
+    (_, index) => `/images/altinyildiz/store/store-${String(index + 1).padStart(2, "0")}.webp`,
+  ),
+  sobaklavaStores: Array.from(
+    { length: sobaklavaStoreImageCount },
+    (_, index) => `/images/sobaklava/store/store-${String(index + 1).padStart(2, "0")}.webp`,
+  ),
 } as const;
 
 export const galleryImages = imageAssets.gallery;
 export const altinyildizEditorialImages = imageAssets.altinyildizEditorial;
+export const altinyildizStoreImages = imageAssets.altinyildizStores;
+export const sobaklavaStoreImages = imageAssets.sobaklavaStores;

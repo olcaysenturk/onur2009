@@ -288,6 +288,9 @@ export type Translation = {
     editorialEyebrow: string;
     editorialTitle: string;
     editorialBody: string;
+    storeImageryEyebrow: string;
+    storeImageryTitle: string;
+    storeImageryBody: string;
     heritageTitle: string;
     heritageBody: string;
     metrics: { value: string; label: string }[];
@@ -310,6 +313,9 @@ export type Translation = {
     experienceLabel: string;
     experienceTitle: string;
     experienceBody: string;
+    storeGalleryLabel: string;
+    storeGalleryTitle: string;
+    storeGalleryBody: string;
     qualityTitle: string;
     craftTitle: string;
     productsLabel: string;

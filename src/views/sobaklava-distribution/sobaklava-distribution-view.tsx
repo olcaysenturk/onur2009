@@ -5,6 +5,8 @@ import Link from "next/link";
 import {
   Award,
   BarChart3,
+  ChevronLeft,
+  ChevronRight,
   Coffee,
   PackageCheck,
   ShieldCheck,
@@ -12,10 +14,13 @@ import {
   Star,
   Store,
   Utensils,
+  X,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { useLanguage } from "@/hooks/useLanguage";
+import { sobaklavaStoreImages } from "@/lib/assets";
 import { pageImages } from "@/lib/pages";
 
 const productImages = [
@@ -34,10 +39,58 @@ const growthBars = [
 export default function SobaklavaDistributionView() {
   const { t } = useLanguage();
   const copy = t.sobaklava;
+  const [activeStoreIndex, setActiveStoreIndex] = useState<number | null>(null);
+  const activeStoreImage = activeStoreIndex === null ? null : sobaklavaStoreImages[activeStoreIndex];
   const products = copy.products.map((product, index) => ({
     ...product,
     image: productImages[index],
   }));
+
+  function closeLightbox() {
+    setActiveStoreIndex(null);
+  }
+
+  function showPreviousStore() {
+    setActiveStoreIndex((current) =>
+      current === null
+        ? current
+        : (current - 1 + sobaklavaStoreImages.length) % sobaklavaStoreImages.length,
+    );
+  }
+
+  function showNextStore() {
+    setActiveStoreIndex((current) =>
+      current === null ? current : (current + 1) % sobaklavaStoreImages.length,
+    );
+  }
+
+  useEffect(() => {
+    if (activeStoreIndex === null) {
+      return;
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPreviousStore();
+      }
+
+      if (event.key === "ArrowRight") {
+        showNextStore();
+      }
+    }
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeStoreIndex]);
 
   return (
     <>
@@ -199,6 +252,51 @@ export default function SobaklavaDistributionView() {
           </div>
         </section>
 
+        <section className="bg-white px-4 py-20 md:px-10 md:py-28">
+          <div className="mx-auto max-w-[1200px]">
+            <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-12 md:items-end">
+              <div className="md:col-span-7">
+                <p className="font-sans text-[11px] font-bold uppercase tracking-[0.12em] text-[#775a19]">
+                  {copy.storeGalleryLabel}
+                </p>
+                <h2 className="mt-4 font-display text-[34px] font-semibold leading-[42px] text-[#1b1c19] md:text-[48px] md:leading-[56px]">
+                  {copy.storeGalleryTitle}
+                </h2>
+              </div>
+              <p className="text-base leading-7 text-[#4e4639] md:col-span-5">
+                {copy.storeGalleryBody}
+              </p>
+            </div>
+
+            <div className="columns-1 gap-4 sm:columns-2 lg:columns-4 md:gap-5">
+              {sobaklavaStoreImages.map((image, index) => (
+                <figure
+                  className="group mb-4 break-inside-avoid overflow-hidden rounded-lg bg-[#eae8e3] md:mb-5"
+                  key={image}
+                >
+                  <button
+                    aria-label={`${copy.storeGalleryLabel} ${index + 1}`}
+                    className="relative block w-full cursor-zoom-in text-left"
+                    onClick={() => setActiveStoreIndex(index)}
+                    type="button"
+                  >
+                    <Image
+                      src={image}
+                      alt={`${copy.storeGalleryLabel} ${index + 1}`}
+                      width={1200}
+                      height={1600}
+                      quality={88}
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="h-auto w-full object-cover transition duration-700 group-hover:scale-[1.035]"
+                    />
+                    <span className="absolute inset-0 bg-[#1b1c19]/0 transition-colors group-hover:bg-[#1b1c19]/10" />
+                  </button>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-[#151713] px-4 py-20 text-white md:px-10 md:py-28">
           <div className="mx-auto grid max-w-[1120px] grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="rounded-lg bg-white p-6 text-[#1b1c19] shadow-[0_20px_55px_rgba(0,0,0,0.2)] lg:col-span-5">
@@ -339,6 +437,66 @@ export default function SobaklavaDistributionView() {
           </div>
         </section>
       </main>
+      {activeStoreImage ? (
+        <div
+          aria-modal="true"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#151713]/92 px-4 py-6 backdrop-blur-sm md:px-10"
+          role="dialog"
+        >
+          <button
+            aria-label="Close"
+            className="absolute inset-0 cursor-zoom-out"
+            onClick={closeLightbox}
+            type="button"
+          />
+          <div className="pointer-events-none relative z-10 flex h-full w-full max-w-[1180px] items-center justify-center">
+            <div className="pointer-events-auto relative max-h-full max-w-full">
+              <Image
+                src={activeStoreImage}
+                alt={`${copy.storeGalleryLabel} ${(activeStoreIndex ?? 0) + 1}`}
+                width={1200}
+                height={1600}
+                quality={92}
+                sizes="90vw"
+                className="max-h-[82vh] w-auto max-w-full object-contain shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
+                priority
+              />
+              <div className="mt-4 flex items-center justify-between text-white/72">
+                <span className="font-sans text-[11px] font-bold uppercase tracking-[0.16em]">
+                  {copy.storeGalleryLabel}
+                </span>
+                <span className="font-sans text-[11px] font-bold uppercase tracking-[0.16em]">
+                  {(activeStoreIndex ?? 0) + 1} / {sobaklavaStoreImages.length}
+                </span>
+              </div>
+            </div>
+          </div>
+          <button
+            aria-label="Previous image"
+            className="absolute left-3 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white hover:text-[#1b1c19] md:left-8 md:h-12 md:w-12"
+            onClick={showPreviousStore}
+            type="button"
+          >
+            <ChevronLeft aria-hidden className="h-6 w-6" />
+          </button>
+          <button
+            aria-label="Next image"
+            className="absolute right-3 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white hover:text-[#1b1c19] md:right-8 md:h-12 md:w-12"
+            onClick={showNextStore}
+            type="button"
+          >
+            <ChevronRight aria-hidden className="h-6 w-6" />
+          </button>
+          <button
+            aria-label="Close"
+            className="absolute right-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#1b1c19] transition-colors hover:bg-[#ffdea5] md:right-8 md:top-8"
+            onClick={closeLightbox}
+            type="button"
+          >
+            <X aria-hidden className="h-5 w-5" />
+          </button>
+        </div>
+      ) : null}
       <Footer />
     </>
   );

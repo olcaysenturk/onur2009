@@ -147,6 +147,9 @@ export const en: Translation = {
       editorialEyebrow: "Campaign Imagery",
       editorialTitle: "An editorial space for the Altınyıldız style story",
       editorialBody: "The new visuals showcase tailoring, linen shirts, and warm-weather combinations with a stronger fashion focus.",
+      storeImageryEyebrow: "Store Imagery",
+      storeImageryTitle: "AC&CO. retail atmosphere in Bulgaria",
+      storeImageryBody: "Store visuals present the customer journey, merchandising standards, and premium retail environment.",
       heritageTitle: "70 Years of Tailoring Art",
       heritageBody: "Founded in 1952, Altınyıldız keeps sustainable production at the center of its vision without compromising fabric quality. Every wool, cotton, and cashmere fiber we use reflects respect for nature and quality built to last for generations.",
       metrics: [
@@ -562,6 +565,10 @@ export const en: Translation = {
     experienceTitle: "Strong Partnerships with Leading Turkish Producers",
     experienceBody:
       "The product portfolio is built on strong partnerships with leading producers in Turkey. Baklava varieties are produced by Seydioglu Baklava, active since 1953, while borek and frozen bakery products are produced by Asli Borek.",
+    storeGalleryLabel: "Store Imagery",
+    storeGalleryTitle: "SO BAKLAVA retail experience in Bulgaria",
+    storeGalleryBody:
+      "A visual look at the bakery counter, product presentation, and store atmosphere across the local retail operation.",
     qualityTitle: "Quality Assurance",
     craftTitle: "Master Craft",
     productsLabel: "Special Selection",

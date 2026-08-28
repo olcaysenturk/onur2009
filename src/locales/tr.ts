@@ -105,6 +105,9 @@ export const tr: Translation = {
       editorialEyebrow: "Kampanya Görselleri",
       editorialTitle: "Altınyıldız stilini sayfada daha güçlü gösteren editorial alan",
       editorialBody: "Yeni görselleri takım elbise, keten gömlek ve yazlık kombinleri öne çıkaracak şekilde sergiliyoruz.",
+      storeImageryEyebrow: "Mağaza Görselleri",
+      storeImageryTitle: "AC&CO. Bulgaristan mağaza atmosferi",
+      storeImageryBody: "Mağaza görselleri müşteri deneyimini, merchandising düzenini ve premium perakende ortamını gösterir.",
       heritageTitle: "70 Yıllık Terzilik Sanatı",
       heritageBody: "1952 yılında temelleri atılan Altınyıldız, kumaş kalitesinden ödün vermeden sürdürülebilir üretimi vizyonunun merkezine koyar. Kullandığımız her bir yün, pamuk ve kaşmir lifi; doğaya saygılı ve nesiller boyu aktarılacak bir kalitenin simgesidir.",
       metrics: [
@@ -493,6 +496,10 @@ export const tr: Translation = {
     experienceTitle: "Türkiye'nin Lider Üreticileriyle Güçlü İş Birlikleri",
     experienceBody:
       "Ürün portföyümüz, Türkiye'nin alanında lider üreticileriyle kurulan iş birlikleri üzerine kuruludur. Baklava çeşitleri 1953 yılından bu yana faaliyet gösteren Seydioğlu Baklava tarafından, börek ve dondurulmuş unlu mamuller ise Aslı Börek tarafından üretilir.",
+    storeGalleryLabel: "Mağaza Görselleri",
+    storeGalleryTitle: "SO BAKLAVA Bulgaristan mağaza deneyimi",
+    storeGalleryBody:
+      "Pastane vitrini, ürün sunumu ve yerel perakende operasyonundaki mağaza atmosferine görsel bir bakış.",
     qualityTitle: "Kalite Garantisi",
     craftTitle: "Usta Eller",
     productsLabel: "Özel Seçki",

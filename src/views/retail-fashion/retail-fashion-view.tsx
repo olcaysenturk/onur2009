@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { useLanguage } from "@/hooks/useLanguage";
-import { altinyildizEditorialImages, imageAssets } from "@/lib/assets";
+import { altinyildizEditorialImages, altinyildizStoreImages, imageAssets } from "@/lib/assets";
 import { pageImages } from "@/lib/pages";
 
 const collectionImages = [pageImages.servicesRetail, pageImages.retailHero];
@@ -25,16 +25,32 @@ const editorialLayouts = [
   "aspect-[4/5]",
   "aspect-[5/4]",
 ];
+const storeMasonryLayouts = [
+  "aspect-[4/3]",
+  "aspect-[3/4]",
+  "aspect-[4/3]",
+  "aspect-[5/4]",
+  "aspect-[3/4]",
+  "aspect-[4/3]",
+  "aspect-[5/4]",
+  "aspect-[3/4]",
+  "aspect-[4/3]",
+  "aspect-[5/4]",
+  "aspect-[4/3]",
+];
 
 export default function RetailFashionPage() {
   const { t } = useLanguage();
   const content = t.retailPage;
   const [activeEditorialIndex, setActiveEditorialIndex] = useState<number | null>(null);
+  const [activeStoreIndex, setActiveStoreIndex] = useState<number | null>(null);
   const activeEditorialImage =
     activeEditorialIndex === null ? null : altinyildizEditorialImages[activeEditorialIndex];
+  const activeStoreImage = activeStoreIndex === null ? null : altinyildizStoreImages[activeStoreIndex];
 
   function closeLightbox() {
     setActiveEditorialIndex(null);
+    setActiveStoreIndex(null);
   }
 
   function showPreviousEditorial() {
@@ -45,14 +61,28 @@ export default function RetailFashionPage() {
     );
   }
 
+  function showPreviousStore() {
+    setActiveStoreIndex((current) =>
+      current === null
+        ? current
+        : (current - 1 + altinyildizStoreImages.length) % altinyildizStoreImages.length,
+    );
+  }
+
   function showNextEditorial() {
     setActiveEditorialIndex((current) =>
       current === null ? current : (current + 1) % altinyildizEditorialImages.length,
     );
   }
 
+  function showNextStore() {
+    setActiveStoreIndex((current) =>
+      current === null ? current : (current + 1) % altinyildizStoreImages.length,
+    );
+  }
+
   useEffect(() => {
-    if (activeEditorialIndex === null) {
+    if (activeEditorialIndex === null && activeStoreIndex === null) {
       return;
     }
 
@@ -62,11 +92,19 @@ export default function RetailFashionPage() {
       }
 
       if (event.key === "ArrowLeft") {
-        showPreviousEditorial();
+        if (activeStoreIndex !== null) {
+          showPreviousStore();
+        } else {
+          showPreviousEditorial();
+        }
       }
 
       if (event.key === "ArrowRight") {
-        showNextEditorial();
+        if (activeStoreIndex !== null) {
+          showNextStore();
+        } else {
+          showNextEditorial();
+        }
       }
     }
 
@@ -77,7 +115,7 @@ export default function RetailFashionPage() {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [activeEditorialIndex]);
+  }, [activeEditorialIndex, activeStoreIndex]);
 
   return (
     <>
@@ -276,6 +314,46 @@ export default function RetailFashionPage() {
                 </figure>
               ))}
             </div>
+
+            <div className="mt-20 border-t border-[#d8d2cb] pt-14 md:mt-24 md:pt-16">
+              <div className="mb-10 grid grid-cols-1 gap-5 md:grid-cols-12 md:items-end">
+                <div className="md:col-span-7">
+                  <h3 className="font-serif text-[28px] font-semibold leading-tight text-[#000c1e] md:text-[36px]">
+                    {content.storeImageryTitle}
+                  </h3>
+                </div>
+                <p className="text-sm leading-6 text-[#43474e] md:col-span-5 md:text-base">
+                  {content.storeImageryBody}
+                </p>
+              </div>
+
+              <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 md:gap-5">
+                {altinyildizStoreImages.map((image, index) => (
+                  <figure
+                    className={`group mb-4 break-inside-avoid overflow-hidden bg-[#ded9d2] md:mb-5 ${storeMasonryLayouts[index] ?? "aspect-[4/3]"}`}
+                    key={image}
+                  >
+                    <button
+                      aria-label={`${content.storeImageryEyebrow} ${index + 1}`}
+                      className="relative block h-full w-full cursor-zoom-in text-left"
+                      onClick={() => setActiveStoreIndex(index)}
+                      type="button"
+                    >
+                      <Image
+                        src={image}
+                        alt={`${content.storeImageryEyebrow} ${index + 1}`}
+                        width={1400}
+                        height={1050}
+                        quality={88}
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-[1.035]"
+                      />
+                      <span className="absolute inset-0 bg-[#000c1e]/0 transition-colors group-hover:bg-[#000c1e]/10" />
+                    </button>
+                  </figure>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -390,6 +468,63 @@ export default function RetailFashionPage() {
             aria-label="Next image"
             className="absolute right-3 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center bg-white/10 text-white transition-colors hover:bg-white hover:text-[#000c1e] md:right-8 md:h-12 md:w-12"
             onClick={showNextEditorial}
+            type="button"
+          >
+            <ChevronRight aria-hidden className="h-6 w-6" />
+          </button>
+          <button
+            aria-label="Close"
+            className="absolute right-4 top-4 z-20 flex h-11 w-11 items-center justify-center bg-white text-[#000c1e] transition-colors hover:bg-[#ffe089] md:right-8 md:top-8"
+            onClick={closeLightbox}
+            type="button"
+          >
+            <X aria-hidden className="h-5 w-5" />
+          </button>
+        </div>
+      ) : null}
+      {activeStoreImage ? (
+        <div
+          aria-modal="true"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#000c1e]/92 px-4 py-6 backdrop-blur-sm md:px-10"
+          role="dialog"
+        >
+          <button
+            aria-label="Close"
+            className="absolute inset-0 cursor-zoom-out"
+            onClick={closeLightbox}
+            type="button"
+          />
+          <div className="pointer-events-none relative z-10 flex h-full w-full max-w-[1180px] items-center justify-center">
+            <div className="pointer-events-auto relative max-h-full max-w-full">
+              <Image
+                src={activeStoreImage}
+                alt={`${content.storeImageryEyebrow} ${(activeStoreIndex ?? 0) + 1}`}
+                width={1400}
+                height={1050}
+                quality={92}
+                sizes="90vw"
+                className="max-h-[82vh] w-auto max-w-full object-contain shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
+                priority
+              />
+              <div className="mt-4 flex items-center justify-between text-white/70">
+                <span className="font-display text-[11px] font-semibold uppercase tracking-[0.18em]">
+                  {(activeStoreIndex ?? 0) + 1} / {altinyildizStoreImages.length}
+                </span>
+              </div>
+            </div>
+          </div>
+          <button
+            aria-label="Previous image"
+            className="absolute left-3 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center bg-white/10 text-white transition-colors hover:bg-white hover:text-[#000c1e] md:left-8 md:h-12 md:w-12"
+            onClick={showPreviousStore}
+            type="button"
+          >
+            <ChevronLeft aria-hidden className="h-6 w-6" />
+          </button>
+          <button
+            aria-label="Next image"
+            className="absolute right-3 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center bg-white/10 text-white transition-colors hover:bg-white hover:text-[#000c1e] md:right-8 md:h-12 md:w-12"
+            onClick={showNextStore}
             type="button"
           >
             <ChevronRight aria-hidden className="h-6 w-6" />
