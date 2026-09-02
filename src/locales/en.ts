@@ -238,8 +238,8 @@ export const en: Translation = {
   },
     galleryView: {
     title: "Our Operations",
-    body: "A visual portfolio showcasing our global logistics network, premium retail spaces, and state-of-the-art service centers. Built on precision and scale.",
-    filters: ["All", "Trucks", "Logistics", "Retail Stores", "Service Centers", "Food Products"],
+    body: "A visual portfolio built from the imagery used across our brand and operations pages.",
+    filters: ["All", "Altinyildiz Classics", "Fresh Produce Trade", "SoBaklava", "BulgaTex Consulting", "Logistics & Transport"],
     items: [
       { title: "Global Freight Terminals", category: "Logistics & Transport" },
       { title: "European Fleet", category: "Trucks" },

@@ -4,9 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Globe2, Route, Snowflake, Timer, Truck } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
-import { imageAssets } from "@/lib/assets";
+import { logisticsFleetHighlightImage, logisticsTransportImages } from "@/lib/assets";
 import { formatCopyright } from "@/lib/copyright";
-import { pageImages } from "@/lib/pages";
 import { images } from "@/lib/site";
 import type { Translation } from "@/locales/types";
 
@@ -18,22 +17,20 @@ export function LogisticsTransportPageContent() {
   const divisionLinks = t.footer.groups[0]?.links ?? [];
   const brandLinks = t.footer.groups[1]?.links ?? [];
   const legalLinks = t.footer.groups.at(-1)?.links ?? [];
+  const [fleetLineup, loadingDock, highwayTruck, yardTruck, warehouseTruck] = logisticsTransportImages;
 
   return (
     <>
       <section className="relative flex min-h-[calc(100vh-64px)] items-center overflow-hidden bg-[#05070b] text-white md:min-h-[calc(100vh-80px)]">
-        <video
-          aria-label={content.heroEyebrow}
-          autoPlay
-          className="absolute inset-0 h-full w-full object-cover object-center saturate-[0.88] contrast-[1.12] brightness-[0.78]"
-          loop
-          muted
-          playsInline
-          poster={imageAssets.videoPosters.freshProduceHero}
-          preload="metadata"
-        >
-          <source src={imageAssets.videos.freshProduceHero} type="video/mp4" />
-        </video>
+        <Image
+          src={fleetLineup}
+          alt={content.heroEyebrow}
+          fill
+          priority
+          quality={100}
+          sizes="100vw"
+          className="absolute inset-0 h-full w-full object-cover object-center saturate-[0.94] contrast-[1.08] brightness-[0.78]"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-[#000815]/85 via-[#000c1e]/45 to-[#000c1e]/12" />
         <div
           aria-hidden
@@ -106,10 +103,10 @@ export function LogisticsTransportPageContent() {
           <div className="relative md:col-span-6">
             <div className="absolute -bottom-6 -left-6 hidden h-full w-full border border-[#cda729]/45 md:block" />
             <Image
-              src={pageImages.logisticsFacility}
-              alt={content.fleetTitle}
-              width={920}
-              height={720}
+              src={logisticsFleetHighlightImage}
+              alt={content.roadTitle}
+              width={1889}
+              height={833}
               quality={100}
               className="relative h-[420px] w-full object-cover shadow-[0_18px_50px_rgba(7,17,29,0.16)] md:h-[560px]"
             />
@@ -172,7 +169,7 @@ export function LogisticsTransportPageContent() {
           </div>
           <div className="relative h-[360px] overflow-hidden bg-[#101b29] md:col-span-7 md:h-[520px]">
             <Image
-              src={pageImages.logisticsHero}
+              src={loadingDock}
               alt={content.footprintTitle}
               fill
               quality={100}
@@ -188,6 +185,47 @@ export function LogisticsTransportPageContent() {
                 {content.mapBody}
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f6f5f1] px-5 py-20 md:px-16 md:py-28">
+        <div className="mx-auto max-w-[1280px]">
+          <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-[680px]">
+              <span className="mb-4 block text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7b6829]">
+                {content.heroEyebrow}
+              </span>
+              <h2 className="font-display text-[32px] font-semibold leading-tight text-[#07111d] md:text-[46px]">
+                {content.operationsTitle}
+              </h2>
+            </div>
+            <p className="max-w-[440px] text-base leading-7 text-[#46505c]">
+              {content.operationsBody}
+            </p>
+          </div>
+          <div className="grid auto-rows-[220px] grid-cols-1 gap-5 md:grid-cols-4 md:auto-rows-[260px]">
+            {[
+              { src: fleetLineup, alt: content.heroEyebrow, className: "md:col-span-2 md:row-span-2" },
+              { src: loadingDock, alt: content.freightTitle, className: "md:col-span-2" },
+              { src: highwayTruck, alt: content.footprintTitle, className: "" },
+              { src: yardTruck, alt: content.roadTitle, className: "" },
+              { src: warehouseTruck, alt: content.fleetTitle, className: "md:col-span-2" },
+            ].map((item) => (
+              <figure
+                className={`relative overflow-hidden bg-white shadow-[0_16px_42px_rgba(7,17,29,0.08)] ${item.className}`}
+                key={item.src}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  quality={100}
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover object-center"
+                />
+              </figure>
+            ))}
           </div>
         </div>
       </section>

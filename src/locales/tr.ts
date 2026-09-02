@@ -185,8 +185,8 @@ export const tr: Translation = {
   },
     galleryView: {
     title: "Operasyonlarımız",
-    body: "Küresel lojistik ağımızı, premium perakende alanlarımızı ve modern servis merkezlerimizi gösteren görsel portföy.",
-    filters: ["Tümü", "Kamyonlar", "Lojistik", "Perakende", "Servis Merkezleri", "Gıda Ürünleri"],
+    body: "Markalarımızın ve operasyonlarımızın farklı sayfalarında kullanılan görsellerden oluşan görsel portföy.",
+    filters: ["Tümü", "Altinyildiz Classics", "Sebze Meyve Ticareti", "SoBaklava", "BulgaTex Consulting", "Lojistik & Taşımacılık"],
     items: [
       { title: "Küresel Yük Terminalleri", category: "Lojistik & Taşımacılık" },
       { title: "Avrupa Filosu", category: "Kamyonlar" },

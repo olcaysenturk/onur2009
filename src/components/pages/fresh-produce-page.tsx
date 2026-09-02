@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Boxes, Globe2, Leaf, PackageCheck, ShieldCheck, Truck } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
-import { imageAssets } from "@/lib/assets";
+import { freshProduceProductImages, imageAssets } from "@/lib/assets";
 import { formatCopyright } from "@/lib/copyright";
 import { images } from "@/lib/site";
 import type { Translation } from "@/locales/types";
@@ -16,20 +16,6 @@ const freshProduceImages = {
   citrus: "/images/fresh-produce/citrus-crates.jpg",
   packaging: "/images/fresh-produce/produce-packaging.jpg",
   vineyard: "/images/fresh-produce/vineyard-grapes.jpg",
-  products: {
-    tomato: "/images/fresh-produce/products/tomato.jpg",
-    pepper: "/images/fresh-produce/products/pepper.jpg",
-    onion: "/images/fresh-produce/products/onion.jpg",
-    carrot: "/images/fresh-produce/products/carrot.jpg",
-    gherkin: "/images/fresh-produce/products/gherkin.jpg",
-    zucchini: "/images/fresh-produce/products/zucchini.jpg",
-    grapes: "/images/fresh-produce/products/grapes.jpg",
-    pomegranate: "/images/fresh-produce/products/pomegranate.jpg",
-    quince: "/images/fresh-produce/products/quince.jpg",
-    watermelonMelon: "/images/fresh-produce/products/watermelon-melon.jpg",
-    fig: "/images/fresh-produce/products/fig.jpg",
-    citrus: "/images/fresh-produce/products/citrus.jpg",
-  },
 } as const;
 
 const produceHighlightImages = [
@@ -38,20 +24,7 @@ const produceHighlightImages = [
   freshProduceImages.packaging,
 ];
 
-const productImages = [
-  freshProduceImages.products.tomato,
-  freshProduceImages.products.pepper,
-  freshProduceImages.products.onion,
-  freshProduceImages.products.carrot,
-  freshProduceImages.products.gherkin,
-  freshProduceImages.products.zucchini,
-  freshProduceImages.products.grapes,
-  freshProduceImages.products.pomegranate,
-  freshProduceImages.products.quince,
-  freshProduceImages.products.watermelonMelon,
-  freshProduceImages.products.fig,
-  freshProduceImages.products.citrus,
-];
+const productImages = freshProduceProductImages;
 
 export function FreshProducePage() {
   const { t } = useLanguage();

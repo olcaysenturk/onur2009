@@ -3,33 +3,65 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { X } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { useLanguage } from "@/hooks/useLanguage";
 import { formatCopyright } from "@/lib/copyright";
 import { images } from "@/lib/site";
-import { galleryImages } from "@/lib/assets";
+import {
+  altinyildizEditorialImages,
+  altinyildizStoreImages,
+  bulgatexGalleryImages,
+  freshProduceProductImages,
+  imageAssets,
+  logisticsTransportImages,
+  sobaklavaStoreImages,
+} from "@/lib/assets";
 
-const galleryCategoryIndexes = [
-  2, 1, 2, 1, 3, 4, 4, 1, 5, 3, 3, 2, 2, 5, 3, 1, 5, 1, 5, 5, 2,
-];
+const pageImages = imageAssets.pages;
+
+const uniqueImages = (items: string[]) => Array.from(new Set(items));
 
 export default function GalleryPage() {
   const { t } = useLanguage();
   const content = t.galleryView;
   const [activeFilterIndex, setActiveFilterIndex] = useState(0);
-  const galleryItems = galleryImages.map((image, index) => {
-    const categoryIndex = galleryCategoryIndexes[index] ?? ((index % (content.filters.length - 1)) + 1);
-    const item = content.items[index] ?? {
-      title: `${content.title} ${index + 1}`,
-      category: content.filters[categoryIndex],
-    };
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const galleryGroups = [
+    uniqueImages([
+      ...altinyildizEditorialImages,
+      ...altinyildizStoreImages,
+    ]),
+    uniqueImages(freshProduceProductImages),
+    uniqueImages([
+      "/images/sobaklava/store/store-07.webp",
+      ...sobaklavaStoreImages,
+      pageImages.servicesSoba,
+      pageImages.sobaklavaHero,
+      pageImages.sobaklavaChef,
+      pageImages.sobaklavaPistachio,
+      pageImages.sobaklavaWalnut,
+      pageImages.sobaklavaAssorted,
+      pageImages.sobaklavaStore,
+      pageImages.sobaklavaHavucDilimi,
+      pageImages.sobaklavaSobiyet,
+      pageImages.sobaklavaCevizliSoguk,
+      pageImages.sobaklavaChocolateClose,
+      pageImages.sobaklavaCikolataListing,
+    ]),
+    uniqueImages(bulgatexGalleryImages),
+    uniqueImages(logisticsTransportImages),
+  ];
+  const galleryItems = galleryGroups.flatMap((group, groupIndex) => {
+    const filterIndex = groupIndex + 1;
+    const category = content.filters[filterIndex] ?? content.filters[0];
 
-    return {
+    return group.map((image) => ({
       image,
-      title: item.title,
-      category: item.category,
-      categoryIndex,
-    };
+      title: category,
+      category,
+      categoryIndex: filterIndex,
+    }));
   });
   const filteredGalleryItems =
     activeFilterIndex === 0
@@ -63,11 +95,15 @@ export default function GalleryPage() {
         </div>
         <div className="grid auto-rows-[300px] grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredGalleryItems.map((item, index) => (
-            <article key={`${item.title}-${index}`} className={`group relative cursor-pointer overflow-hidden rounded-lg border border-outline/40 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.04)] ${index === 0 ? "md:col-span-2 md:row-span-2" : ""} ${index === 3 ? "md:row-span-2" : ""}`}>
+            <article
+              key={`${item.title}-${index}`}
+              className={`group relative cursor-pointer overflow-hidden rounded-lg border border-outline/40 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.04)] ${index === 0 ? "md:col-span-2 md:row-span-2" : ""} ${index === 3 ? "md:row-span-2" : ""}`}
+              onClick={() => setSelectedImageIndex(index)}
+            >
               <Image src={item.image} alt={item.title} fill quality={100} className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 flex flex-col justify-end bg-[#000613]/40 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="translate-y-4 rounded bg-white/90 p-3 backdrop-blur-sm transition-transform duration-300 group-hover:translate-y-0">
-                  <h2 className="font-display text-base font-semibold text-[#000613]">{item.title}</h2>
+                  <h2>{item.title}</h2>
                   <p className="text-sm leading-5 text-muted">{item.category}</p>
                 </div>
               </div>
@@ -75,6 +111,35 @@ export default function GalleryPage() {
           ))}
         </div>
       </main>
+
+      {selectedImageIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setSelectedImageIndex(null)}
+        >
+          <div
+            className="relative flex max-h-[90vh] max-w-[90vw] flex-col items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedImageIndex(null)}
+              className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+              aria-label="Close"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <Image
+              src={filteredGalleryItems[selectedImageIndex].image}
+              alt={filteredGalleryItems[selectedImageIndex].title}
+              width={1920}
+              height={1080}
+              quality={100}
+              className="h-auto max-h-[85vh] w-auto rounded-lg object-contain"
+            />
+          </div>
+        </div>
+      )}
+
       <footer className="bg-[#000613] px-5 py-[120px] text-white md:px-16">
         <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 md:grid-cols-12">
           <div className="md:col-span-4">

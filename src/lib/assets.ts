@@ -2,6 +2,8 @@ const galleryImageCount = 21;
 const altinyildizEditorialImageCount = 12;
 const altinyildizStoreImageCount = 11;
 const sobaklavaStoreImageCount = 35;
+const logisticsTransportImageCount = 5;
+const bulgatexGalleryImageCount = 10;
 
 export const imageAssets = {
   site: {
@@ -41,11 +43,11 @@ export const imageAssets = {
     bulgatexHero: "/images/pages/bulgatexHero.jpg",
     contactMap: "/images/pages/contactMap.jpg",
     servicesFresh: "/images/pages/servicesFresh.jpg",
-    servicesLogistics: "/images/pages/servicesLogistics.jpg",
+    servicesLogistics: "/images/logistics-transport/highway-truck.png",
     servicesAuto: "/images/pages/servicesAuto.jpg",
-    servicesRetail: "/images/pages/servicesRetail.jpg",
+    servicesRetail: "/images/altinyildiz/editorial-01.jpg",
     servicesSoba: "/images/pages/servicesSoba.jpg",
-    servicesBulgatex: "/images/pages/servicesBulgatex.jpg",
+    servicesBulgatex: "/images/bulgatex/gallery/bulgatex-gallery-06.png",
     contactHero: "/images/contact/contact-hero.jpg",
   },
   videos: {
@@ -62,6 +64,20 @@ export const imageAssets = {
     { length: galleryImageCount },
     (_, index) => `/images/gallery/gallery-${index + 1}.jpg`,
   ),
+  freshProduceProducts: {
+    tomato: "/images/fresh-produce/products/tomato.jpg",
+    pepper: "/images/fresh-produce/products/pepper.jpg",
+    onion: "/images/fresh-produce/products/onion.jpg",
+    carrot: "/images/fresh-produce/products/carrot.jpg",
+    gherkin: "/images/fresh-produce/products/gherkin.jpg",
+    zucchini: "/images/fresh-produce/products/zucchini.jpg",
+    grapes: "/images/fresh-produce/products/grapes.jpg",
+    pomegranate: "/images/fresh-produce/products/pomegranate.jpg",
+    quince: "/images/fresh-produce/products/quince.jpg",
+    watermelonMelon: "/images/fresh-produce/products/watermelon-melon.jpg",
+    fig: "/images/fresh-produce/products/fig.jpg",
+    citrus: "/images/fresh-produce/products/citrus.jpg",
+  },
   altinyildizEditorial: Array.from(
     { length: altinyildizEditorialImageCount },
     (_, index) => `/images/altinyildiz/editorial-${String(index + 1).padStart(2, "0")}.jpg`,
@@ -74,9 +90,25 @@ export const imageAssets = {
     { length: sobaklavaStoreImageCount },
     (_, index) => `/images/sobaklava/store/store-${String(index + 1).padStart(2, "0")}.webp`,
   ),
+  logisticsTransport: [
+    "/images/logistics-transport/fleet-lineup.png",
+    "/images/logistics-transport/loading-dock.png",
+    "/images/logistics-transport/highway-truck.png",
+    "/images/logistics-transport/yard-truck.png",
+    "/images/logistics-transport/warehouse-truck.png",
+  ].slice(0, logisticsTransportImageCount),
+  logisticsFleetHighlight: "/images/logistics-transport/fleet-highway.png",
+  bulgatexGallery: Array.from(
+    { length: bulgatexGalleryImageCount },
+    (_, index) => `/images/bulgatex/gallery/bulgatex-gallery-${String(index + 1).padStart(2, "0")}.png`,
+  ),
 } as const;
 
 export const galleryImages = imageAssets.gallery;
+export const freshProduceProductImages = Object.values(imageAssets.freshProduceProducts);
 export const altinyildizEditorialImages = imageAssets.altinyildizEditorial;
 export const altinyildizStoreImages = imageAssets.altinyildizStores;
 export const sobaklavaStoreImages = imageAssets.sobaklavaStores;
+export const logisticsTransportImages = imageAssets.logisticsTransport;
+export const logisticsFleetHighlightImage = imageAssets.logisticsFleetHighlight;
+export const bulgatexGalleryImages = imageAssets.bulgatexGallery;
