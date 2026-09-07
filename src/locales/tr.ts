@@ -155,7 +155,7 @@ export const tr: Translation = {
       { name: "Gulay Emilova", role: "Evrak İşlem Uzmanı - ithalat, irsaliye ve resmi süreçlerin yürütülmesi." },
       { name: "Kostandina Barakova", role: "Banka Operasyonları & Ödemeler - finansal akışların yönetimi." },
       { name: "Barbaros Ozturk", role: "IT Uzmanı & Destek - sistemler, altyapı ve teknik destek." },
-      { name: "Gunes Sapaz", role: "Gümrük ve Transport Yöneticisi - dış pazarlar için iletişim ve koordinasyon." },
+      { name: "Nazlı Talih", role: "Gümrük ve Transport Yöneticisi - dış pazarlar için iletişim ve koordinasyon." },
       { name: "Gabriela Krasteva", role: "Asistan & İlişkiler Yöneticisi - müşteri iletişimi ve partner koordinasyonu." },
     ],
     partnershipTitle: "İş Ortaklığı ve Gelecek Vizyonu",

@@ -208,7 +208,7 @@ export const en: Translation = {
       { name: "Gulay Emilova", role: "Documentation Specialist - handles import, dispatch, and official documentation processes." },
       { name: "Kostandina Barakova", role: "Banking Operations & Payments - manages financial flows." },
       { name: "Barbaros Ozturk", role: "IT Specialist & Support - systems, infrastructure, and technical support." },
-      { name: "Gunes Sapaz", role: "Customs and Transport Manager - communication and coordination for external markets." },
+      { name: "Nazlı Talih", role: "Customs and Transport Manager - communication and coordination for external markets." },
       { name: "Gabriela Krasteva", role: "Assistant & Relations Manager - customer communication and partner coordination." },
     ],
     partnershipTitle: "Partnership and Future Vision",
