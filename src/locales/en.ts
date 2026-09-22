@@ -483,7 +483,7 @@ export const en: Translation = {
     ],
   },
     autoTruckServiceView: {
-    heroEyebrow: "Fleet Engineering",
+    eyebrow: "Fleet Engineering",
     heroTitle: "Service center working for fleet reliability.",
     heroBody: "We showcase vehicle acceptance, lift areas, service capacity, and daily operations with fresh field imagery.",
     heroPrimaryCta: "Create Service Request",

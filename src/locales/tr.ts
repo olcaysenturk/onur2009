@@ -430,7 +430,7 @@ export const tr: Translation = {
     ],
   },
     autoTruckServiceView: {
-    heroEyebrow: "Filo Mühendisliği",
+    eyebrow: "Filo Mühendisliği",
     heroTitle: "Servis merkezi, filo güvenilirliği için çalışır.",
     heroBody: "Yeni saha görselleriyle araç kabulünü, lift alanlarını, bakım kapasitesini ve günlük servis akışını doğrudan gösteriyoruz.",
     heroPrimaryCta: "Servis Talebi Oluştur",

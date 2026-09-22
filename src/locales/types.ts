@@ -160,6 +160,22 @@ export type FreshProduceViewTranslation = {
   legalExtra: { label: string; href: string }[];
 };
 
+export type AutoTruckServiceViewTranslation = {
+  eyebrow: string;
+  heroTitle: string;
+  heroBody: string;
+  heroPrimaryCta: string;
+  heroSecondaryCta: string;
+  serviceMetrics: { value: string; label: string }[];
+  workshopTitle: string;
+  workshopSubtitle: string;
+  workshopBody: string;
+  processTitle: string;
+  processSubtitle: string;
+  introTitle: string;
+  introBody: string;
+};
+
 export type LogisticsTransportViewTranslation = {
   heroEyebrow: string;
   heroTitle: string;
@@ -351,6 +367,7 @@ export type Translation = {
   contactView: ContactViewTranslation;
   bulgatexView: BulgatexViewTranslation;
   freshProduceView: FreshProduceViewTranslation;
+  autoTruckServiceView: AutoTruckServiceViewTranslation;
   logisticsTransportView: LogisticsTransportViewTranslation;
   contact: {
     eyebrow: string;
