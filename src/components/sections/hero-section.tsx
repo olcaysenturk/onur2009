@@ -19,30 +19,19 @@ export function HeroSection() {
       className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden bg-[#05080f] text-white md:min-h-[92vh]"
     >
       <video
-        className="absolute inset-0 h-full w-full object-cover brightness-[0.72] contrast-[1.1] saturate-[0.92]"
-        src={imageAssets.videos.freshProduceHero}
+        className="absolute inset-0 h-full w-full object-cover"
+        src={imageAssets.videos.homeHero}
         autoPlay
         muted
         loop
         playsInline
         preload="metadata"
-        poster={imageAssets.videoPosters.freshProduceHero}
+        poster={imageAssets.videoPosters.homeHero}
         aria-label={t.home.hero.eyebrow}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#05080f]/92 via-[#07101d]/70 to-[#07101d]/25" />
-      <div
-        className="absolute inset-0 opacity-[0.16]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(0, 0, 0, 0.9) 0.75px, transparent 1.1px)",
-          backgroundSize: "7px 7px",
-        }}
-      />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_26%,rgba(13,159,196,0.24),transparent_32%),radial-gradient(circle_at_18%_84%,rgba(205,167,41,0.16),transparent_30%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/70 to-transparent" />
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 gap-12 px-4 py-24 md:grid-cols-12 md:px-10 md:py-28">
-        <div className="max-w-3xl space-y-7 md:col-span-8">
+        <div className="max-w-3xl space-y-7 drop-shadow-[0_3px_16px_rgba(0,0,0,0.75)] md:col-span-8">
           <div className="inline-flex items-center gap-2 border-l-2 border-accent bg-white/10 px-4 py-2 font-sans text-xs font-semibold uppercase tracking-[0.08em] backdrop-blur-md">
             <Rocket aria-hidden className="h-3.5 w-3.5 text-accent" />
             <span>{t.home.hero.eyebrow}</span>

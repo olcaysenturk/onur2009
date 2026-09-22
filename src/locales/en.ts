@@ -239,7 +239,7 @@ export const en: Translation = {
     galleryView: {
     title: "Our Operations",
     body: "A visual portfolio built from the imagery used across our brand and operations pages.",
-    filters: ["All", "Altinyildiz Classics", "Fresh Produce Trade", "SoBaklava", "BulgaTex Consulting", "Logistics & Transport"],
+    filters: ["All", "Altinyildiz Classics", "Fresh Produce Trade", "SoBaklava", "BulgaTex Consulting", "Logistics & Transport", "Auto truck service"],
     items: [
       { title: "Global Freight Terminals", category: "Logistics & Transport" },
       { title: "European Fleet", category: "Trucks" },
@@ -481,6 +481,25 @@ export const en: Translation = {
       { label: "Bulgatex Consulting", href: "/bulgatex-consulting" },
       { label: "Altinyildiz Classics Bulgaria", href: "/altinyildiz" },
     ],
+  },
+    autoTruckServiceView: {
+    heroEyebrow: "Fleet Engineering",
+    heroTitle: "Service center working for fleet reliability.",
+    heroBody: "We showcase vehicle acceptance, lift areas, service capacity, and daily operations with fresh field imagery.",
+    heroPrimaryCta: "Create Service Request",
+    heroSecondaryCta: "View Gallery",
+    serviceMetrics: [
+      { value: "360°", label: "service acceptance process" },
+      { value: "24", label: "operation photos" },
+      { value: "4", label: "main service stages" },
+    ],
+    workshopTitle: "Workshop Capacity",
+    workshopSubtitle: "We visualize workshop capacity.",
+    workshopBody: "These photos showcase vehicle reception areas, service lifts, multi-vehicle positioning, and equipment density.",
+    processTitle: "Service Flow",
+    processSubtitle: "Clear service flow from reception to handover.",
+    introTitle: "Authorized Parts Inventory",
+    introBody: "Technical service operations built around preventive maintenance, expert diagnostics, and master technicians.",
   },
     logisticsTransportView: {
     heroEyebrow: "Logistics & Transport",

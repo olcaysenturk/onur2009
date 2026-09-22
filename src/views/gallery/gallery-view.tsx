@@ -15,6 +15,7 @@ import {
   freshProduceProductImages,
   imageAssets,
   logisticsTransportImages,
+  serviceOperationImages,
   sobaklavaStoreImages,
 } from "@/lib/assets";
 
@@ -51,6 +52,7 @@ export default function GalleryPage() {
     ]),
     uniqueImages(bulgatexGalleryImages),
     uniqueImages(logisticsTransportImages),
+    uniqueImages(serviceOperationImages),
   ];
   const galleryItems = galleryGroups.flatMap((group, groupIndex) => {
     const filterIndex = groupIndex + 1;

@@ -1,9 +1,7 @@
 import { JsonLd } from "@/components/seo/json-ld";
-import { DivisionPageTemplate } from "@/components/pages/division-page-template";
-import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
 import { pageImages } from "@/lib/pages";
 import { buildServiceSchema, createPageMetadata } from "@/lib/seo";
+import AutoTruckServiceView from "@/views/auto-truck-service/auto-truck-service-view";
 
 export const metadata = createPageMetadata(
   "Auto & Truck Service",
@@ -34,11 +32,7 @@ export default function AutoTruckServicePage() {
           image: pageImages.autoHero,
         })}
       />
-      <Header />
-      <main className="pt-16 md:pt-20">
-        <DivisionPageTemplate slug="auto-truck-service" />
-      </main>
-      <Footer />
+      <AutoTruckServiceView />
     </>
   );
 }

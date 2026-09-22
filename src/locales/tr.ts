@@ -186,7 +186,7 @@ export const tr: Translation = {
     galleryView: {
     title: "Operasyonlarımız",
     body: "Markalarımızın ve operasyonlarımızın farklı sayfalarında kullanılan görsellerden oluşan görsel portföy.",
-    filters: ["Tümü", "Altinyildiz Classics", "Sebze Meyve Ticareti", "SoBaklava", "BulgaTex Consulting", "Lojistik & Taşımacılık"],
+    filters: ["Tümü", "Altinyildiz Classics", "Sebze Meyve Ticareti", "SoBaklava", "BulgaTex Consulting", "Lojistik & Taşımacılık", "Auto truck service"],
     items: [
       { title: "Küresel Yük Terminalleri", category: "Lojistik & Taşımacılık" },
       { title: "Avrupa Filosu", category: "Kamyonlar" },
@@ -428,6 +428,25 @@ export const tr: Translation = {
       { label: "Bulgatex Consulting", href: "/bulgatex-consulting" },
       { label: "Altinyildiz Classics Bulgaria", href: "/altinyildiz" },
     ],
+  },
+    autoTruckServiceView: {
+    heroEyebrow: "Filo Mühendisliği",
+    heroTitle: "Servis merkezi, filo güvenilirliği için çalışır.",
+    heroBody: "Yeni saha görselleriyle araç kabulünü, lift alanlarını, bakım kapasitesini ve günlük servis akışını doğrudan gösteriyoruz.",
+    heroPrimaryCta: "Servis Talebi Oluştur",
+    heroSecondaryCta: "Galeriyi Gör",
+    serviceMetrics: [
+      { value: "360°", label: "servis kabul süreci" },
+      { value: "24", label: "operasyon fotoğrafı" },
+      { value: "4", label: "ana servis aşaması" },
+    ],
+    workshopTitle: "Atölye Kapasitesi",
+    workshopSubtitle: "Atölye kapasitesini görselle anlatıyoruz.",
+    workshopBody: "Bu bölümdeki fotoğraflar araç kabul alanını, bakım liftlerini, çoklu araç yerleşimini ve ekipman yoğunluğunu doğrudan gösterir.",
+    processTitle: "Servis Akışı",
+    processSubtitle: "Kabulden teslimata net servis akışı.",
+    introTitle: "Yetkili Parça Envanteri",
+    introBody: "Önleyici bakım, uzman diagnostik ve usta teknisyenler etrafında kurulan teknik servis operasyonu.",
   },
     logisticsTransportView: {
     heroEyebrow: "Lojistik & Taşımacılık",

@@ -47,16 +47,15 @@ export default function AboutPage() {
             quality={100}
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/88 to-primary/35" />
-          <div className="relative z-10 mx-auto grid max-w-[1280px] grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
+          <div className="relative z-10 mx-auto grid max-w-[1280px] grid-cols-1 gap-10 drop-shadow-[0_4px_18px_rgba(0,0,0,0.82)] lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
-              <p className="font-display text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+              <p className="w-fit bg-primary-deep/68 px-3 py-2 font-display text-sm font-semibold uppercase tracking-[0.12em] text-accent backdrop-blur-sm">
                 {content.overviewTitle}
               </p>
               <h1 className="mt-5 text-balance font-display text-[42px] font-bold leading-[50px] md:text-[64px] md:leading-[72px]">
                 {content.title} <span className="text-accent">{content.accent}</span>
               </h1>
-              <p className="mt-6 max-w-3xl text-base leading-7 text-white/88 md:text-lg md:leading-8">
+              <p className="mt-6 max-w-3xl bg-[#000613]/46 px-4 py-3 text-base leading-7 text-white md:text-lg md:leading-8">
                 {content.overviewBody}
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -69,7 +68,7 @@ export default function AboutPage() {
                 </Link>
                 <a
                   href="#team"
-                  className="inline-flex items-center rounded border border-white/30 px-7 py-3 font-display text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                  className="inline-flex items-center rounded border border-white/55 bg-[#000613]/32 px-7 py-3 font-display text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#000613]"
                 >
                   {content.secondary}
                 </a>
@@ -80,10 +79,10 @@ export default function AboutPage() {
                 const Icon = highlightIcons[index] ?? Handshake;
 
                 return (
-                  <article key={item.title} className="rounded-lg border border-white/15 bg-white/10 p-5 backdrop-blur">
+                  <article key={item.title} className="rounded-lg border border-white/70 bg-white/78 p-5 text-[#000613] shadow-[0_18px_45px_rgba(0,6,19,0.14)] backdrop-blur-sm">
                     <Icon aria-hidden className="h-6 w-6 text-accent" />
                     <h2 className="mt-4 font-display text-lg font-semibold">{item.title}</h2>
-                    <p className="mt-2 text-sm leading-6 text-white/78">{item.body}</p>
+                    <p className="mt-2 text-sm leading-6 text-[#45505c]">{item.body}</p>
                   </article>
                 );
               })}

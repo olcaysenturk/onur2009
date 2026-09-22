@@ -186,7 +186,7 @@ export const bg: Translation = {
     galleryView: {
     title: "Нашите операции",
     body: "Визуално портфолио от изображенията, използвани в страниците на нашите марки и операции.",
-    filters: ["Всички", "Altinyildiz Classics", "Търговия с пресни продукти", "SoBaklava", "BulgaTex Consulting", "Логистика & транспорт"],
+    filters: ["Всички", "Altinyildiz Classics", "Търговия с пресни продукти", "SoBaklava", "BulgaTex Consulting", "Логистика & транспорт", "Auto truck service"],
     items: [
       { title: "Глобални товарни терминали", category: "Логистика & Транспорт" },
       { title: "Европейски флот", category: "Камиони" },
@@ -428,6 +428,25 @@ export const bg: Translation = {
       { label: "Bulgatex Consulting", href: "/bulgatex-consulting" },
       { label: "Altinyildiz Classics Bulgaria", href: "/altinyildiz" },
     ],
+  },
+    autoTruckServiceView: {
+    heroEyebrow: "Инженерия на флота",
+    heroTitle: "Сервизен център работи за надеждност на флота.",
+    heroBody: "Демонстрираме приемане на превозни средства, зони на повдигане, капацитет за сервиз и ежедневни операции със свежи снимки от терена.",
+    heroPrimaryCta: "Създайте заявка за услуга",
+    heroSecondaryCta: "Виж галерията",
+    serviceMetrics: [
+      { value: "360°", label: "процес на приемане на услугата" },
+      { value: "24", label: "снимки на операции" },
+      { value: "4", label: "основни етапи на услугата" },
+    ],
+    workshopTitle: "Капацитет на работилницата",
+    workshopSubtitle: "Визуализираме капацитета на работилницата.",
+    workshopBody: "Тези снимки показват зоните за приемане на превозни средства, сервизни повдигачи, многоместна позиция на превозни средства и плътност на оборудването.",
+    processTitle: "Поток на услугата",
+    processSubtitle: "Ясен поток на услугата от приемане до предаване.",
+    introTitle: "Инвентар от оторизирани части",
+    introBody: "Технически сервизни операции, построени около профилактична поддръжка, експертна диагностика и майстор техници.",
   },
     logisticsTransportView: {
     heroEyebrow: "Логистика & транспорт",

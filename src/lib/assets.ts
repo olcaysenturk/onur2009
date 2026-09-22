@@ -4,6 +4,7 @@ const altinyildizStoreImageCount = 11;
 const sobaklavaStoreImageCount = 35;
 const logisticsTransportImageCount = 5;
 const bulgatexGalleryImageCount = 10;
+const serviceOperationImageCount = 24;
 
 export const imageAssets = {
   site: {
@@ -51,11 +52,13 @@ export const imageAssets = {
     contactHero: "/images/contact/contact-hero.jpg",
   },
   videos: {
+    homeHero: "/videos/home-hero.mp4",
     altinyildizHero: "/videos/altinyildiz-classics-hero.mp4",
     freshProduceHero: "/videos/onur-2009-hero-fullframe.mp4",
     bulgatexHero: "/videos/bulgatex-consulting-hero.mp4",
   },
   videoPosters: {
+    homeHero: "/images/video-posters/home-hero.jpg",
     altinyildizHero: "/images/video-posters/altinyildiz-classics-hero.jpg",
     freshProduceHero: "/images/video-posters/onur-2009-hero-fullframe.jpg",
     bulgatexHero: "/images/video-posters/bulgatex-consulting-hero.jpg",
@@ -102,6 +105,10 @@ export const imageAssets = {
     { length: bulgatexGalleryImageCount },
     (_, index) => `/images/bulgatex/gallery/bulgatex-gallery-${String(index + 1).padStart(2, "0")}.png`,
   ),
+  serviceOperations: Array.from(
+    { length: serviceOperationImageCount },
+    (_, index) => `/images/services/operations/service-operation-${String(index + 1).padStart(2, "0")}.jpg`,
+  ),
 } as const;
 
 export const galleryImages = imageAssets.gallery;
@@ -112,3 +119,4 @@ export const sobaklavaStoreImages = imageAssets.sobaklavaStores;
 export const logisticsTransportImages = imageAssets.logisticsTransport;
 export const logisticsFleetHighlightImage = imageAssets.logisticsFleetHighlight;
 export const bulgatexGalleryImages = imageAssets.bulgatexGallery;
+export const serviceOperationImages = imageAssets.serviceOperations;

@@ -36,30 +36,18 @@ export function FreshProducePage() {
         <video
           aria-label={content.heroVideoLabel}
           autoPlay
-          className="absolute inset-0 h-full w-full object-cover object-center saturate-[0.88] contrast-[1.12] brightness-[0.78]"
+          className="absolute inset-0 h-full w-full object-cover object-center"
           loop
           muted
           playsInline
-          poster={imageAssets.videoPosters.freshProduceHero}
+          poster={imageAssets.videoPosters.homeHero}
           preload="metadata"
         >
-          <source src={imageAssets.videos.freshProduceHero} type="video/mp4" />
+          <source src={imageAssets.videos.homeHero} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#030806]/88 via-[#06140d]/50 to-[#06140d]/14" />
-        <div
-          aria-hidden
-          className="absolute inset-0 opacity-[0.18]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, rgba(0, 0, 0, 0.85) 0.75px, transparent 1.1px)",
-            backgroundSize: "7px 7px",
-          }}
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_46%,transparent_36%,rgba(3,8,6,0.48)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#030806]/72 via-transparent to-[#030806]/28" />
 
         <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 py-20 md:px-16">
-          <div className="max-w-[760px]">
+          <div className="max-w-[760px] drop-shadow-[0_3px_16px_rgba(0,0,0,0.75)]">
             <span className="mb-6 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/78">
               <Truck aria-hidden className="h-4 w-4 text-[#cda729]" />
               {content.heroEyebrow}

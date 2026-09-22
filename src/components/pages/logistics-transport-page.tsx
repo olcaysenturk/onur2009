@@ -29,23 +29,11 @@ export function LogisticsTransportPageContent() {
           priority
           quality={100}
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover object-center saturate-[0.94] contrast-[1.08] brightness-[0.78]"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#000815]/85 via-[#000c1e]/45 to-[#000c1e]/12" />
-        <div
-          aria-hidden
-          className="absolute inset-0 opacity-[0.18]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, rgba(0, 0, 0, 0.85) 0.75px, transparent 1.1px)",
-            backgroundSize: "7px 7px",
-          }}
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_46%,transparent_36%,rgba(0,8,21,0.48)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#000815]/70 via-transparent to-[#000815]/28" />
 
         <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 py-20 md:px-16">
-          <div className="max-w-[760px]">
+          <div className="max-w-[760px] drop-shadow-[0_3px_16px_rgba(0,0,0,0.75)]">
             <span className="mb-6 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/76">
               <Truck aria-hidden className="h-4 w-4 text-[#cda729]" />
               {content.heroEyebrow}

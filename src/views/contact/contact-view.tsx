@@ -58,18 +58,8 @@ export default function ContactPage() {
             quality={100}
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#05080f]/94 via-[#05080f]/70 to-[#05080f]/22" />
-          <div
-            className="absolute inset-0 opacity-[0.14]"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle, rgba(0, 0, 0, 0.9) 0.75px, transparent 1.1px)",
-              backgroundSize: "7px 7px",
-            }}
-          />
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
 
-          <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
+          <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 gap-10 drop-shadow-[0_3px_16px_rgba(0,0,0,0.75)] lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <div className="mb-6 inline-flex items-center gap-2 border-l-2 border-accent bg-white/10 px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.08em] backdrop-blur">
                 <Building2 aria-hidden className="h-4 w-4 text-accent" />

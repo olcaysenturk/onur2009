@@ -19,10 +19,9 @@ export function PageHero({
 
   return (
     <section className="relative flex min-h-[560px] items-center overflow-hidden bg-primary px-4 py-24 text-white md:min-h-[720px] md:px-10">
-      <Image src={image} alt={title} fill priority quality={100} className="object-cover opacity-45 mix-blend-multiply" />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary/20" />
+      <Image src={image} alt={title} fill priority quality={100} className="object-cover" />
       <div
-        className={`relative z-10 mx-auto w-full max-w-[1440px] ${
+        className={`relative z-10 mx-auto w-full max-w-[1440px] drop-shadow-[0_3px_16px_rgba(0,0,0,0.75)] ${
           isCenter ? "text-center" : "text-left"
         }`}
       >

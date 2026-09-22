@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowRight, ChevronDown, Globe2, Menu, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { images } from "@/lib/site";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -27,11 +27,17 @@ const serviceHrefBySlug: Record<(typeof serviceSlugs)[number], string> = {
   "bulgatex-consulting": "/bulgatex-consulting",
 };
 
+const languageOptions: { code: Language; label: string; flag: string }[] = [
+  { code: "tr", label: "Türkçe", flag: "🇹🇷" },
+  { code: "en", label: "English", flag: "🇬🇧" },
+  { code: "bg", label: "Български", flag: "🇧🇬" },
+];
+
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const { language, t, changeLanguage } = useLanguage();
-  const languages = Object.entries(t.languages) as [Language, string][];
+  const selectedLanguage = languageOptions.find((option) => option.code === language) ?? languageOptions[0];
   const servicePaths = new Set([
     "/services",
     "/fresh-produce-trade",
@@ -144,22 +150,23 @@ export function Header() {
               type="button"
               className="flex h-10 items-center gap-2 border border-outline/35 bg-white px-3 font-display text-sm font-semibold text-primary transition-colors hover:border-accent/50 hover:text-accent"
             >
-              <Globe2 aria-hidden className="h-4 w-4" />
-              {t.languages[language]}
+              <span aria-hidden>{selectedLanguage.flag}</span>
+              {selectedLanguage.label}
               <ChevronDown aria-hidden className="h-4 w-4" />
             </button>
-            <div className="invisible absolute right-0 top-full mt-3 w-44 translate-y-2 border border-outline/30 bg-white p-1.5 opacity-0 shadow-[0_18px_45px_rgba(12,36,97,0.14)] transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-              {languages.map(([code, label]) => (
+            <div className="invisible absolute right-0 top-full mt-3 w-48 translate-y-2 border border-outline/30 bg-white p-1.5 opacity-0 shadow-[0_18px_45px_rgba(12,36,97,0.14)] transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              {languageOptions.map(({ code, label, flag }) => (
                 <button
                   type="button"
                   key={code}
                   onClick={() => changeLanguage(code)}
-                  className={`block w-full cursor-pointer px-3 py-2 text-left text-sm transition-colors ${
+                  className={`flex w-full cursor-pointer items-center gap-2 px-3 py-2 text-left text-sm transition-colors ${
                     code === language
                       ? "bg-primary text-white"
                       : "text-muted hover:bg-surface-soft hover:text-primary"
                   }`}
                 >
+                  <span aria-hidden>{flag}</span>
                   {label}
                 </button>
               ))}
@@ -239,17 +246,18 @@ export function Header() {
             })}
           </nav>
           <div className="mt-3 flex flex-wrap gap-2 border border-outline/30 p-2">
-            {languages.map(([code, label]) => (
+            {languageOptions.map(({ code, label, flag }) => (
               <button
                 key={code}
                 type="button"
                 onClick={() => changeLanguage(code)}
-                className={`px-3 py-2 text-sm ${
+                className={`inline-flex items-center gap-2 px-3 py-2 text-sm ${
                   code === language
                     ? "bg-primary text-white"
                     : "border border-outline/40 text-muted"
                 }`}
               >
+                <span aria-hidden>{flag}</span>
                 {label}
               </button>
             ))}
